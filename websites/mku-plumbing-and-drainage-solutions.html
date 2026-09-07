@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Reliable, straightforward plumbing solutions for homes and small businesses">
+  <meta name="description" content="Reliable, transparent plumbing services for homes and small businesses">
   <meta name="robots" content="noindex, nofollow">
   <title>MKU Plumbing and Drainage Solutions | Plumbing Services</title>
 
@@ -19,11 +19,14 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f8fafc;
-      color: #172033;
-      line-height: 1.6;
-    }
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background: #f8fafc;
+  color: #172033;
+  line-height: 1.6;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
 
     .container {
       width: min(1120px, 90%);
@@ -31,15 +34,18 @@
     }
 
     header {
-      background: #ffffff;
-      border-bottom: 1px solid #e7ebf0;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e7ebf0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
 
     nav {
-      min-height: 74px;
+      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -47,10 +53,13 @@
     }
 
     .logo {
-      font-size: 20px;
-      font-weight: 800;
-      color: #0b3b66;
-    }
+  font-size: 21px;
+  font-weight: 800;
+  color: #0b3b66;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  max-width: 420px;
+}
 
     .nav-links {
       display: flex;
@@ -59,32 +68,50 @@
     }
 
     .nav-links a {
-      color: #334155;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
+  color: #334155;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 10px 2px;
+  position: relative;
+  transition: color 0.2s ease;
+}
+.nav-links a:hover {
+  color: #0b66c3;
+}
     .button {
-      display: inline-block;
-      background: #0b66c3;
-      color: white !important;
-      padding: 13px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-    }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0b66c3, #0754a3);
+  color: white !important;
+  padding: 14px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1;
+  box-shadow: 0 6px 18px rgba(11, 102, 195, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
     .button.secondary {
-      background: white;
-      color: #0b3b66 !important;
-      border: 1px solid #d7e0ea;
-    }
+  background: #ffffff;
+  color: #0b3b66 !important;
+  border: 1px solid #d7e0ea;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
 
     .hero {
-      background: linear-gradient(135deg, #072f55, #0b66c3);
-      color: white;
-      padding: 100px 0;
-    }
+  background:
+    radial-gradient(circle at 85% 20%, rgba(56, 189, 248, 0.20), transparent 32%),
+    radial-gradient(circle at 10% 90%, rgba(14, 165, 233, 0.14), transparent 30%),
+    linear-gradient(135deg, #061f38 0%, #073d70 55%, #0b66c3 100%);
+  color: white;
+  padding: 120px 0 110px;
+  position: relative;
+  overflow: hidden;
+}
 
     .hero-inner {
       max-width: 780px;
@@ -101,17 +128,20 @@
     }
 
     h1 {
-      font-size: clamp(38px, 6vw, 68px);
-      line-height: 1.05;
-      margin-bottom: 22px;
-    }
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 1.02;
+  margin-bottom: 24px;
+  letter-spacing: -0.04em;
+  max-width: 760px;
+}
 
     .hero p {
-      font-size: 20px;
-      max-width: 700px;
-      color: #e6f1fb;
-      margin-bottom: 30px;
-    }
+  font-size: clamp(18px, 2vw, 21px);
+  max-width: 640px;
+  color: #e6f1fb;
+  line-height: 1.65;
+  margin-bottom: 34px;
+}
 
     .hero-buttons {
       display: flex;
@@ -120,8 +150,8 @@
     }
 
     section {
-      padding: 80px 0;
-    }
+  padding: 96px 0;
+}
 
     .section-heading {
       text-align: center;
@@ -130,10 +160,13 @@
     }
 
     .section-heading h2 {
-      font-size: 36px;
-      color: #0b3b66;
-      margin-bottom: 12px;
-    }
+  font-size: clamp(32px, 4vw, 44px);
+  line-height: 1.1;
+  color: #0b3b66;
+  margin-bottom: 14px;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
 
     .services {
       background: white;
@@ -146,29 +179,42 @@
     }
 
     .service-card {
-      padding: 28px;
-      border: 1px solid #e5eaf0;
-      border-radius: 14px;
-      background: #ffffff;
-      box-shadow: 0 8px 25px rgba(0,0,0,.05);
-    }
+  padding: 30px;
+  border: 1px solid #e5eaf0;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  border-color: #bae6fd;
+}
 
     .service-icon {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      background: #e7f2ff;
-      color: #0b66c3;
-      border-radius: 10px;
-      font-weight: 900;
-      margin-bottom: 18px;
-    }
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+  color: #0b66c3;
+  border-radius: 14px;
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 22px;
+  box-shadow: 0 6px 16px rgba(11, 102, 195, 0.12);
+}
 
     .service-card h3 {
-      color: #0b3b66;
-      margin-bottom: 10px;
-    }
+  color: #0b3b66;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
 
     .trust {
       background: #f1f6fb;
@@ -182,33 +228,44 @@
     }
 
     .trust-item {
-      background: white;
-      padding: 30px 20px;
-      border-radius: 14px;
-    }
-
+  background: #ffffff;
+  padding: 32px 24px;
+  border-radius: 16px;
+  border: 1px solid #e5eaf0;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.trust-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.10);
+}
     .trust-item strong {
       display: block;
       color: #0b66c3;
-      font-size: 22px;
+      font-size: 24px;
       margin-bottom: 5px;
     }
 
     .cta {
-      background: #0b3b66;
-      color: white;
-      text-align: center;
-    }
+  background: linear-gradient(135deg, #061f38 0%, #073d70 55%, #0b66c3 100%);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
 
     .cta h2 {
-      font-size: 38px;
+      font-size: clamp(36px, 5vw, 52px);
       margin-bottom: 15px;
     }
 
     .cta p {
-      color: #dbeafe;
-      margin-bottom: 25px;
-    }
+  color: #dbeafe;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 650px;
+  margin: 0 auto 32px;
+}
 
     footer {
       background: #061f36;
@@ -250,7 +307,7 @@
       <div class="nav-links">
         <a href="#services">Services</a>
         <a href="#why-us">Why Us</a>
-        <a class="button" href="tel:0467198415">Call now</a>
+        <a class="button" href="tel:0467198415">Call 0467 198 415</a>
       </div>
     </nav>
   </div>
@@ -264,13 +321,13 @@
 
         <span class="eyebrow">Local Plumbing Professionals</span>
 
-        <h1>Your local plumbing and drainage experts in Roxburgh Park, VIC</h1>
+        <h1>Your Local Plumbing Experts in Roxburgh Park</h1>
 
-        <p>From dripping taps to blocked drains, MKU Plumbing and Drainage Solutions delivers practical, reliable plumbing with clear communication and local know-how.</p>
+        <p>Quality plumbing solutions with a local touch. Quick response, clear pricing, and lasting fixes for Roxburgh Park homes and businesses.</p>
 
         <div class="hero-buttons">
-          <a class="button" href="tel:0467198415">Call now</a>
-          <a class="button secondary" href="#services">Request a free quote</a>
+          <a class="button" href="tel:0467198415">Call 0467 198 415</a>
+          <a class="button secondary" href="#services">Learn more</a>
         </div>
 
       </div>
@@ -289,32 +346,26 @@
         
     <article class="service-card">
       <div class="service-icon">✓</div>
-      <h3>General plumbing repair and maintenance</h3>
-      <p>Leaks, taps, toilets and routine maintenance to keep your home running smoothly.</p>
+      <h3>Emergency Plumbing</h3>
+      <p>Rapid response to urgent leaks, blockages and other plumbing emergencies to minimise damage and downtime.</p>
     </article>
   
     <article class="service-card">
       <div class="service-icon">✓</div>
-      <h3>Blocked drains and sewer services</h3>
-      <p>Unblocking drains and clearing blockages with professional tools and techniques.</p>
+      <h3>Drainage and Blockages</h3>
+      <p>Assessment, clearing and remedial work to keep drains flowing and prevent backups.</p>
     </article>
   
     <article class="service-card">
       <div class="service-icon">✓</div>
-      <h3>Drainage system inspections and maintenance</h3>
-      <p>Preventative checks and maintenance to identify issues early.</p>
+      <h3>Residential Plumbing</h3>
+      <p>General plumbing maintenance, fixture repairs and replacements for homes.</p>
     </article>
   
     <article class="service-card">
       <div class="service-icon">✓</div>
-      <h3>Hot water systems</h3>
-      <p>Installation, replacement and servicing of residential hot water systems.</p>
-    </article>
-  
-    <article class="service-card">
-      <div class="service-icon">✓</div>
-      <h3>Leak detection and fix</h3>
-      <p>Locating concealed leaks and providing targeted repairs to minimise damage.</p>
+      <h3>Water Systems and Fixtures</h3>
+      <p>Inspection, maintenance and replacement of taps, toilets, and basic water system components.</p>
     </article>
   
       </div>
@@ -327,7 +378,7 @@
 
       <div class="section-heading">
         <h2>Why Choose MKU Plumbing and Drainage Solutions?</h2>
-        <p>Reliable, straightforward plumbing solutions for homes and small businesses</p>
+        <p>Reliable, transparent plumbing services for homes and small businesses</p>
       </div>
 
       <div class="trust-grid">
@@ -355,7 +406,7 @@
       <h2>Need a Plumber?</h2>
       <p>Get in touch with MKU Plumbing and Drainage Solutions today.</p>
 
-      <a class="button" href="tel:0467198415">Call now</a>
+      <a class="button" href="tel:0467198415">Call 0467 198 415</a>
     </div>
   </section>
 
