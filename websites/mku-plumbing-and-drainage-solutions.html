@@ -1,13 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Reliable, responsive plumbing for homes and businesses in the local area.">
-  <meta name="robots" content="noindex, nofollow">
-  <title>MKU Plumbing and Drainage Solutions | Plumbing Services</title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Reliable, responsive plumbing for homes and businesses in the local area."
+  >
+
+  <meta
+    name="robots"
+    content="noindex, nofollow"
+  >
+
+  <title>
+    MKU Plumbing and Drainage Solutions | Plumbing Services
+  </title>
 
   <style>
+
+    :root {
+      --primary: #0f766e;
+      --primary-2: #0d9488;
+      --dark: #042f2e;
+      --dark-2: #115e59;
+      --accent: #2dd4bf;
+      --soft: #ccfbf1;
+      --soft-2: #d1fae5;
+
+      --text: #172033;
+      --muted: #64748b;
+      --border: #e5eaf0;
+      --background: #f8fafc;
+      --white: #ffffff;
+
+      --shadow:
+        0 18px 50px rgba(15, 23, 42, 0.09);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -19,154 +56,616 @@
     }
 
     body {
-  font-family: Inter, Arial, Helvetica, sans-serif;
-  background: #f8fafc;
-  color: #172033;
-  line-height: 1.6;
-  font-size: 16px;
-  letter-spacing: -0.01em;
-  -webkit-font-smoothing: antialiased;
-}
+      font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
 
-    .container {
-      width: min(1120px, 90%);
-      margin: auto;
+      background: var(--background);
+      color: var(--text);
+
+      font-size: 16px;
+      line-height: 1.65;
+
+      letter-spacing: -0.01em;
+
+      -webkit-font-smoothing: antialiased;
     }
 
+    a {
+      color: inherit;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+      fill: none;
+
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin-inline: auto;
+    }
+
+    /* -----------------------------------------------------
+       CONCEPT NOTICE
+    ----------------------------------------------------- */
+
+    .demo-banner {
+      background: #fff3cd;
+      color: #664d03;
+
+      padding: 10px 20px;
+
+      text-align: center;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      border-bottom:
+        1px solid #ffecb5;
+    }
+
+    /* -----------------------------------------------------
+       HEADER
+    ----------------------------------------------------- */
+
     header {
-  background: rgba(255, 255, 255, 0.96);
-  border-bottom: 1px solid #e7ebf0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background:
+        rgba(255, 255, 255, 0.96);
+
+      border-bottom:
+        1px solid rgba(226, 232, 240, 0.9);
+
+      box-shadow:
+        0 5px 24px rgba(15, 23, 42, 0.05);
+
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
 
     nav {
       min-height: 82px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+
+      gap: 24px;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      min-width: 0;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+
+      flex: 0 0 auto;
+
+      display: grid;
+      place-items: center;
+
+      color: white;
+
+      border-radius: 12px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary-2),
+          var(--primary)
+        );
+
+      box-shadow:
+        0 7px 18px rgba(15, 23, 42, 0.14);
+    }
+
+    .logo-mark svg {
+      width: 23px;
+      height: 23px;
     }
 
     .logo {
-  font-size: 21px;
-  font-weight: 800;
-  color: #0b3b66;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-  max-width: 420px;
-}
+      max-width: 430px;
+
+      color: var(--dark);
+
+      font-size: 20px;
+      font-weight: 850;
+
+      line-height: 1.15;
+
+      letter-spacing: -0.035em;
+    }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 25px;
     }
 
     .nav-links a {
-  color: #334155;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 15px;
-  padding: 10px 2px;
-  position: relative;
-  transition: color 0.2s ease;
-}
-.nav-links a:hover {
-  color: #0b66c3;
-}
+      position: relative;
+
+      color: #334155;
+
+      font-size: 15px;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition:
+        color 0.2s ease;
+    }
+
+    .nav-links a:not(.button):hover {
+      color: var(--primary-2);
+    }
+
+    /* -----------------------------------------------------
+       BUTTONS
+    ----------------------------------------------------- */
+
     .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #0b66c3, #0754a3);
-  color: white !important;
-  padding: 14px 22px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 1;
-  box-shadow: 0 6px 18px rgba(11, 102, 195, 0.22);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+
+      min-height: 48px;
+
+      padding: 14px 22px;
+
+      border-radius: 11px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary-2),
+          var(--primary)
+        );
+
+      color: white !important;
+
+      text-decoration: none;
+
+      font-size: 15px;
+      font-weight: 800;
+
+      line-height: 1;
+
+      box-shadow:
+        0 8px 22px
+        color-mix(
+          in srgb,
+          var(--primary-2) 24%,
+          transparent
+        );
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 12px 28px
+        rgba(15, 23, 42, 0.18);
+    }
 
     .button.secondary {
-  background: #ffffff;
-  color: #0b3b66 !important;
-  border: 1px solid #d7e0ea;
-  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
-}
+      background: white;
+
+      color: var(--dark) !important;
+
+      border:
+        1px solid rgba(255,255,255,.35);
+
+      box-shadow:
+        0 8px 22px rgba(15, 23, 42, .10);
+    }
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
 
     .hero {
-  background:
-    radial-gradient(circle at 85% 20%, rgba(56, 189, 248, 0.20), transparent 32%),
-    radial-gradient(circle at 10% 90%, rgba(14, 165, 233, 0.14), transparent 30%),
-    linear-gradient(135deg, #061f38 0%, #073d70 55%, #0b66c3 100%);
-  color: white;
-  padding: 120px 0 110px;
-  position: relative;
-  overflow: hidden;
-}
+      position: relative;
+      overflow: hidden;
 
-    .hero-inner {
-      max-width: 780px;
+      color: white;
+
+      padding:
+        110px 0 105px;
+
+      background:
+        radial-gradient(
+          circle at 82% 18%,
+          color-mix(
+            in srgb,
+            var(--accent) 30%,
+            transparent
+          ),
+          transparent 29%
+        ),
+        radial-gradient(
+          circle at 8% 90%,
+          color-mix(
+            in srgb,
+            var(--accent) 15%,
+            transparent
+          ),
+          transparent 31%
+        ),
+        linear-gradient(
+          135deg,
+          var(--dark) 0%,
+          var(--dark-2) 55%,
+          var(--primary-2) 100%
+        );
+    }
+
+    .hero::after {
+      content: '';
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      right: -250px;
+      bottom: -270px;
+
+      border:
+        70px solid rgba(255,255,255,.035);
+
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.1fr)
+        minmax(320px, .9fr);
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .hero-copy {
+      max-width: 720px;
     }
 
     .eyebrow {
-      display: inline-block;
-      background: rgba(255,255,255,.12);
-      padding: 7px 12px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
       margin-bottom: 20px;
+
+      padding: 8px 13px;
+
+      border-radius: 999px;
+
+      background:
+        rgba(255,255,255,.12);
+
+      border:
+        1px solid rgba(255,255,255,.12);
+
+      font-size: 13px;
+      font-weight: 800;
+
+      letter-spacing: .02em;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+
+      background: var(--accent);
+
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 0 5px
+        rgba(255,255,255,.07);
     }
 
     h1 {
-  font-size: clamp(42px, 6vw, 72px);
-  line-height: 1.02;
-  margin-bottom: 24px;
-  letter-spacing: -0.04em;
-  max-width: 760px;
-}
+      max-width: 760px;
 
-    .hero p {
-  font-size: clamp(18px, 2vw, 21px);
-  max-width: 640px;
-  color: #e6f1fb;
-  line-height: 1.65;
-  margin-bottom: 34px;
-}
+      margin-bottom: 25px;
+
+      font-size:
+        clamp(
+          44px,
+          5.7vw,
+          74px
+        );
+
+      line-height: 1.01;
+
+      letter-spacing: -0.055em;
+
+      font-weight: 850;
+    }
+
+    .hero-description {
+      max-width: 660px;
+
+      margin-bottom: 34px;
+
+      color: #e6f1fb;
+
+      font-size:
+        clamp(
+          18px,
+          2vw,
+          21px
+        );
+
+      line-height: 1.68;
+    }
 
     .hero-buttons {
       display: flex;
-      gap: 12px;
       flex-wrap: wrap;
+
+      gap: 12px;
     }
 
+    /* -----------------------------------------------------
+       HERO ILLUSTRATION
+    ----------------------------------------------------- */
+
+    .hero-visual {
+      position: relative;
+
+      min-height: 470px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .visual-card {
+      position: relative;
+
+      width: min(430px, 100%);
+      min-height: 410px;
+
+      padding: 35px;
+
+      overflow: hidden;
+
+      border-radius: 28px;
+
+      background:
+        rgba(255,255,255,.10);
+
+      border:
+        1px solid rgba(255,255,255,.18);
+
+      box-shadow:
+        0 35px 80px
+        rgba(0,0,0,.22);
+
+      backdrop-filter: blur(10px);
+    }
+
+    .concept-label {
+      position: absolute;
+
+      top: 22px;
+      right: 22px;
+
+      z-index: 4;
+
+      padding: 6px 10px;
+
+      border-radius: 999px;
+
+      color: rgba(255,255,255,.82);
+
+      background:
+        rgba(0,0,0,.18);
+
+      font-size: 11px;
+      font-weight: 800;
+
+      letter-spacing: .04em;
+
+      text-transform: uppercase;
+    }
+
+    .plumbing-illustration {
+      position: absolute;
+
+      inset: 70px 25px 25px;
+
+      color: white;
+    }
+
+    .plumbing-illustration svg {
+      stroke-width: 1.3;
+    }
+
+    .visual-info {
+      position: absolute;
+
+      left: 25px;
+      right: 25px;
+      bottom: 25px;
+
+      z-index: 3;
+
+      padding: 20px;
+
+      border-radius: 17px;
+
+      background:
+        rgba(255,255,255,.94);
+
+      color: var(--text);
+
+      box-shadow:
+        0 16px 45px
+        rgba(0,0,0,.13);
+    }
+
+    .visual-info small {
+      display: block;
+
+      margin-bottom: 5px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: .05em;
+    }
+
+    .visual-info strong {
+      display: block;
+
+      color: var(--dark);
+
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    .rating-card {
+      margin-top: 22px;
+
+      display: inline-flex;
+      align-items: center;
+
+      gap: 13px;
+
+      padding: 11px 15px;
+
+      border:
+        1px solid rgba(255,255,255,.17);
+
+      border-radius: 12px;
+
+      background:
+        rgba(255,255,255,.10);
+    }
+
+    .rating-card .stars {
+      color: #fbbf24;
+
+      font-size: 16px;
+
+      letter-spacing: 1px;
+    }
+
+    .rating-card strong {
+      display: block;
+
+      font-size: 15px;
+    }
+
+    .rating-card span {
+      display: block;
+
+      color: rgba(255,255,255,.74);
+
+      font-size: 12px;
+    }
+
+    /* -----------------------------------------------------
+       GENERAL SECTIONS
+    ----------------------------------------------------- */
+
     section {
-  padding: 96px 0;
-}
+      padding: 100px 0;
+    }
 
     .section-heading {
+      max-width: 720px;
+
+      margin:
+        0 auto 48px;
+
       text-align: center;
-      max-width: 700px;
-      margin: 0 auto 45px;
+    }
+
+    .section-label {
+      display: inline-block;
+
+      margin-bottom: 10px;
+
+      color: var(--primary-2);
+
+      font-size: 13px;
+      font-weight: 850;
+
+      text-transform: uppercase;
+
+      letter-spacing: .08em;
     }
 
     .section-heading h2 {
-  font-size: clamp(32px, 4vw, 44px);
-  line-height: 1.1;
-  color: #0b3b66;
-  margin-bottom: 14px;
-  letter-spacing: -0.03em;
-  font-weight: 800;
-}
+      margin-bottom: 15px;
+
+      color: var(--dark);
+
+      font-size:
+        clamp(
+          32px,
+          4vw,
+          45px
+        );
+
+      line-height: 1.08;
+
+      letter-spacing: -0.04em;
+
+      font-weight: 850;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+
+      font-size: 17px;
+
+      line-height: 1.75;
+    }
+
+    /* -----------------------------------------------------
+       SERVICES
+    ----------------------------------------------------- */
 
     .services {
       background: white;
@@ -174,113 +673,372 @@
 
     .service-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 22px;
     }
 
     .service-card {
-  padding: 30px;
-  border: 1px solid #e5eaf0;
-  border-radius: 16px;
-  background: #ffffff;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
+      position: relative;
 
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
-  border-color: #bae6fd;
-}
+      padding: 32px;
+
+      overflow: hidden;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 19px;
+
+      background: white;
+
+      box-shadow:
+        0 10px 30px
+        rgba(15, 23, 42, .065);
+
+      transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease;
+    }
+
+    .service-card::after {
+      content: '';
+
+      position: absolute;
+
+      width: 120px;
+      height: 120px;
+
+      top: -65px;
+      right: -65px;
+
+      border-radius: 50%;
+
+      background: var(--soft);
+
+      opacity: .55;
+    }
+
+    .service-card:hover {
+      transform:
+        translateY(-6px);
+
+      border-color:
+        color-mix(
+          in srgb,
+          var(--accent) 45%,
+          var(--border)
+        );
+
+      box-shadow:
+        0 20px 45px
+        rgba(15, 23, 42, .11);
+    }
 
     .service-icon {
-  width: 52px;
-  height: 52px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, #e0f2fe, #dbeafe);
-  color: #0b66c3;
-  border-radius: 14px;
-  font-size: 20px;
-  font-weight: 900;
-  margin-bottom: 22px;
-  box-shadow: 0 6px 16px rgba(11, 102, 195, 0.12);
-}
+      width: 54px;
+      height: 54px;
+
+      margin-bottom: 24px;
+
+      display: grid;
+      place-items: center;
+
+      padding: 13px;
+
+      color: var(--primary-2);
+
+      border-radius: 15px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--soft),
+          var(--soft-2)
+        );
+
+      box-shadow:
+        0 7px 18px
+        rgba(15, 23, 42, .07);
+    }
+
+    .service-number {
+      position: absolute;
+
+      top: 22px;
+      right: 24px;
+
+      z-index: 2;
+
+      color: #cbd5e1;
+
+      font-size: 13px;
+      font-weight: 850;
+
+      letter-spacing: .06em;
+    }
 
     .service-card h3 {
-  color: #0b3b66;
-  font-size: 21px;
-  font-weight: 800;
-  line-height: 1.25;
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
-}
+      margin-bottom: 11px;
+
+      color: var(--dark);
+
+      font-size: 21px;
+      font-weight: 850;
+
+      line-height: 1.25;
+
+      letter-spacing: -0.025em;
+    }
+
+    .service-card p {
+      color: var(--muted);
+
+      font-size: 15px;
+
+      line-height: 1.72;
+    }
+
+    /* -----------------------------------------------------
+       WHY US
+    ----------------------------------------------------- */
 
     .trust {
-      background: #f1f6fb;
+      background:
+        linear-gradient(
+          180deg,
+          #f8fafc,
+          #f1f5f9
+        );
     }
 
     .trust-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      text-align: center;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 21px;
     }
 
     .trust-item {
-  background: #ffffff;
-  padding: 32px 24px;
-  border-radius: 16px;
-  border: 1px solid #e5eaf0;
-  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.trust-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.10);
-}
-    .trust-item strong {
-      display: block;
-      color: #0b66c3;
-      font-size: 24px;
-      margin-bottom: 5px;
+      padding: 32px 26px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 18px;
+
+      background: white;
+
+      box-shadow:
+        0 11px 30px
+        rgba(15, 23, 42, .055);
+
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
     }
 
+    .trust-item:hover {
+      transform:
+        translateY(-5px);
+
+      box-shadow:
+        0 17px 38px
+        rgba(15, 23, 42, .09);
+    }
+
+    .trust-check {
+      width: 36px;
+      height: 36px;
+
+      margin-bottom: 20px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 10px;
+
+      color: var(--primary-2);
+
+      background: var(--soft);
+
+      font-weight: 900;
+    }
+
+    .trust-item strong {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: var(--dark);
+
+      font-size: 21px;
+
+      letter-spacing: -.02em;
+    }
+
+    .trust-item p {
+      color: var(--muted);
+
+      font-size: 15px;
+
+      line-height: 1.65;
+    }
+
+    /* -----------------------------------------------------
+       CTA
+    ----------------------------------------------------- */
+
     .cta {
-  background: linear-gradient(135deg, #061f38 0%, #073d70 55%, #0b66c3 100%);
-  color: white;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
+      position: relative;
+      overflow: hidden;
+
+      color: white;
+
+      text-align: center;
+
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          color-mix(
+            in srgb,
+            var(--accent) 22%,
+            transparent
+          ),
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          var(--dark),
+          var(--dark-2),
+          var(--primary-2)
+        );
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 2;
+
+      max-width: 760px;
+
+      margin: auto;
+    }
 
     .cta h2 {
-      font-size: clamp(36px, 5vw, 52px);
-      margin-bottom: 15px;
+      margin-bottom: 17px;
+
+      font-size:
+        clamp(
+          37px,
+          5vw,
+          54px
+        );
+
+      line-height: 1.05;
+
+      letter-spacing: -.04em;
     }
 
     .cta p {
-  color: #dbeafe;
-  font-size: 18px;
-  line-height: 1.7;
-  max-width: 650px;
-  margin: 0 auto 32px;
-}
+      max-width: 650px;
+
+      margin:
+        0 auto 32px;
+
+      color: #dbeafe;
+
+      font-size: 18px;
+
+      line-height: 1.7;
+    }
+
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
 
     footer {
-      background: #061f36;
-      color: #cbd5e1;
       padding: 30px 0;
+
+      background: var(--dark);
+
+      color: #cbd5e1;
+
       text-align: center;
     }
 
+    footer p {
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* -----------------------------------------------------
+       RESPONSIVE
+    ----------------------------------------------------- */
+
+    @media (max-width: 960px) {
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .hero-copy {
+        max-width: 760px;
+      }
+
+      .hero-visual {
+        min-height: 400px;
+      }
+
+      .visual-card {
+        width: min(520px, 100%);
+      }
+
+    }
+
     @media (max-width: 800px) {
+
       .nav-links a:not(.button) {
         display: none;
       }
 
+      nav {
+        min-height: 74px;
+      }
+
+      .logo {
+        font-size: 17px;
+      }
+
+      .logo-mark {
+        width: 38px;
+        height: 38px;
+      }
+
       .hero {
-        padding: 75px 0;
+        padding:
+          75px 0 72px;
+      }
+
+      .hero-grid {
+        gap: 35px;
+      }
+
+      .hero-visual {
+        min-height: 350px;
+      }
+
+      .visual-card {
+        min-height: 340px;
       }
 
       .service-grid,
@@ -289,140 +1047,545 @@
       }
 
       section {
-        padding: 60px 0;
+        padding: 68px 0;
       }
+
     }
+
+    @media (max-width: 540px) {
+
+      .container {
+        width: min(92%, 1160px);
+      }
+
+      .nav-links .button {
+        padding: 12px 14px;
+        font-size: 13px;
+      }
+
+      .logo-mark {
+        display: none;
+      }
+
+      h1 {
+        font-size:
+          clamp(
+            38px,
+            12vw,
+            54px
+          );
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons .button {
+        width: 100%;
+      }
+
+      .hero-visual {
+        min-height: 310px;
+      }
+
+      .visual-card {
+        min-height: 300px;
+        padding: 22px;
+      }
+
+      .plumbing-illustration {
+        inset:
+          58px 18px 18px;
+      }
+
+      .service-card,
+      .trust-item {
+        padding: 26px 22px;
+      }
+
+      .demo-banner {
+        font-size: 12px;
+      }
+
+    }
+
   </style>
+
 </head>
 
 <body>
-<div style="background:#fff3cd;color:#664d03;text-align:center;padding:10px 20px;font-family:Arial,sans-serif;font-size:14px;font-weight:600;">
-  Concept website created as a demonstration only. This is not the official website of MKU Plumbing and Drainage Solutions.
-</div>
-<header>
-  <div class="container">
-    <nav>
-      <div class="logo">MKU Plumbing and Drainage Solutions</div>
 
-      <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#why-us">Why Us</a>
-        <a class="button" href="tel:0467198415">Get a Quote</a>
-      </div>
-    </nav>
+  <div class="demo-banner">
+    Concept website preview • Not the official website of MKU Plumbing and Drainage Solutions.
   </div>
-</header>
 
-<main>
+  <header>
 
-  <section class="hero">
     <div class="container">
-      <div class="hero-inner">
 
-        <span class="eyebrow">Local Plumbing Professionals</span>
+      <nav>
 
-        <h1>Local Plumbing &amp; Drainage Experts in Roxburgh Park</h1>
+        <div class="logo-wrap">
 
-        <p>We are a local plumbing and drainage service based in Roxburgh Park. Our team focuses on clear communication, dependable workmanship, and easy-to-use contact options to get your job started quickly.</p>
+          <div class="logo-mark">
 
-        <div class="hero-buttons">
-          <a class="button" href="tel:0467198415">Get a Quote</a>
-          <a class="button secondary" href="#services">Call Now</a>
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M14.5 6.5a4 4 0 0 0-5.1 5.1L4 17l3 3 5.4-5.4a4 4 0 0 0 5.1-5.1l-2.6 2.6-3-3 2.6-2.6z"/>
+            </svg>
+
+          </div>
+
+          <div class="logo">
+            MKU Plumbing and Drainage Solutions
+          </div>
+
+        </div>
+
+        <div class="nav-links">
+
+          <a href="#services">
+            Services
+          </a>
+
+          <a href="#why-us">
+            Why Us
+          </a>
+
+          
+                <a
+                  class="button"
+                  href="tel:0467198415"
+                >
+                  Get a Quote
+                </a>
+              
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="hero-grid">
+
+          <div class="hero-copy">
+
+            <div class="eyebrow">
+
+              <span class="eyebrow-dot"></span>
+
+              Local Plumbing Services
+
+              
+
+            </div>
+
+            <h1>
+              Local Plumbing &amp; Drainage Experts in Roxburgh Park
+            </h1>
+
+            <p class="hero-description">
+              We are a local plumbing and drainage service based in Roxburgh Park. Our team focuses on clear communication, dependable workmanship, and easy-to-use contact options to get your job started quickly.
+            </p>
+
+            <div class="hero-buttons">
+
+              
+                    <a
+                      class="button"
+                      href="tel:0467198415"
+                    >
+                      Get a Quote
+                    </a>
+                  
+
+              <a
+                class="button secondary"
+                href="#services"
+              >
+                Call Now
+              </a>
+
+            </div>
+
+            
+
+          </div>
+
+          <div class="hero-visual">
+
+            <div class="visual-card">
+
+              <div class="concept-label">
+                Concept Visual
+              </div>
+
+              <div class="plumbing-illustration">
+
+                <svg
+                  viewBox="0 0 520 420"
+                  aria-hidden="true"
+                >
+
+                  <defs>
+
+                    <linearGradient
+                      id="pipeGradient"
+                      x1="0"
+                      x2="1"
+                    >
+                      <stop
+                        offset="0%"
+                        stop-color="rgba(255,255,255,.95)"
+                      />
+
+                      <stop
+                        offset="100%"
+                        stop-color="rgba(255,255,255,.55)"
+                      />
+                    </linearGradient>
+
+                  </defs>
+
+                  <path
+                    d="M65 65h180v85h100"
+                    stroke="url(#pipeGradient)"
+                    stroke-width="26"
+                  />
+
+                  <path
+                    d="M345 150v95h95"
+                    stroke="url(#pipeGradient)"
+                    stroke-width="26"
+                  />
+
+                  <circle
+                    cx="65"
+                    cy="65"
+                    r="20"
+                    stroke="rgba(255,255,255,.9)"
+                    stroke-width="9"
+                  />
+
+                  <circle
+                    cx="440"
+                    cy="245"
+                    r="20"
+                    stroke="rgba(255,255,255,.9)"
+                    stroke-width="9"
+                  />
+
+                  <path
+                    d="M170 280s45-48 45-80c0 32 45 80 45 80a45 45 0 1 1-90 0z"
+                    fill="rgba(255,255,255,.12)"
+                    stroke="rgba(255,255,255,.9)"
+                    stroke-width="7"
+                  />
+
+                  <path
+                    d="M202 290c7 12 17 18 30 18"
+                    stroke="rgba(255,255,255,.8)"
+                    stroke-width="6"
+                  />
+
+                </svg>
+
+              </div>
+
+              <div class="visual-info">
+
+                <small>
+                  Plumbing & Drainage
+                </small>
+
+                <strong>
+                  A cleaner online presence designed to make contacting MKU Plumbing and Drainage Solutions simple.
+                </strong>
+
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
       </div>
-    </div>
-  </section>
 
-  <section class="services" id="services">
-    <div class="container">
+    </section>
 
-      <div class="section-heading">
-        <h2>Our Plumbing Services</h2>
-        <p>Professional plumbing solutions for local homes and businesses.</p>
-      </div>
+    <section
+      class="services"
+      id="services"
+    >
 
-      <div class="service-grid">
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="section-label">
+            Services
+          </span>
+
+          <h2>
+            Plumbing help when you need it
+          </h2>
+
+          <p>
+            Explore the plumbing services available from MKU Plumbing and Drainage Solutions.
+          </p>
+
+        </div>
+
+        <div class="service-grid">
+
+          
+    <article class="service-card">
+      <div class="service-icon">
         
-    <article class="service-card">
-      <div class="service-icon">✓</div>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 7h10a4 4 0 0 1 4 4v1"/>
+          <path d="M18 12v5"/>
+          <path d="M15 17h6"/>
+          <circle cx="6" cy="7" r="2"/>
+        </svg>
+      
+      </div>
+
+      <div class="service-number">
+        01
+      </div>
+
       <h3>Blocked Drains &amp; Drain Cleaning</h3>
-      <p>Assess, clear and unblock drains using safe, effective methods to help restore flow.</p>
+
+      <p>
+        Assess, clear and unblock drains using safe, effective methods to help restore flow.
+      </p>
     </article>
   
     <article class="service-card">
-      <div class="service-icon">✓</div>
+      <div class="service-icon">
+        
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M14.5 6.5a4 4 0 0 0-5.1 5.1L4 17l3 3 5.4-5.4a4 4 0 0 0 5.1-5.1l-2.6 2.6-3-3 2.6-2.6z"/>
+      </svg>
+    
+      </div>
+
+      <div class="service-number">
+        02
+      </div>
+
       <h3>Emergency Plumbing</h3>
-      <p>Fast response for leaks, bursts, and urgent repair needs.</p>
+
+      <p>
+        Fast response for leaks, bursts, and urgent repair needs.
+      </p>
     </article>
   
     <article class="service-card">
-      <div class="service-icon">✓</div>
+      <div class="service-icon">
+        
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3c1.8 3 4 4.8 4 8a4 4 0 0 1-8 0c0-1.8.8-3.4 2.4-5.2"/>
+          <path d="M12 13c1.2 1.2 1.6 2 1.6 3a1.6 1.6 0 0 1-3.2 0c0-.8.4-1.6 1.6-3z"/>
+        </svg>
+      
+      </div>
+
+      <div class="service-number">
+        03
+      </div>
+
       <h3>Hot Water Systems</h3>
-      <p>Installation, maintenance and repair of residential hot water systems.</p>
+
+      <p>
+        Installation, maintenance and repair of residential hot water systems.
+      </p>
     </article>
   
     <article class="service-card">
-      <div class="service-icon">✓</div>
+      <div class="service-icon">
+        
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3s5 5.5 5 10a5 5 0 0 1-10 0c0-4.5 5-10 5-10z"/>
+          <path d="M9.5 14.5c.6 1.2 1.5 1.8 2.8 1.8"/>
+        </svg>
+      
+      </div>
+
+      <div class="service-number">
+        04
+      </div>
+
       <h3>Leak Detection &amp; Repairs</h3>
-      <p>Identify hidden leaks in pipes and fixtures and repair them to prevent further damage.</p>
+
+      <p>
+        Identify hidden leaks in pipes and fixtures and repair them to prevent further damage.
+      </p>
     </article>
   
     <article class="service-card">
-      <div class="service-icon">✓</div>
+      <div class="service-icon">
+        
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M14.5 6.5a4 4 0 0 0-5.1 5.1L4 17l3 3 5.4-5.4a4 4 0 0 0 5.1-5.1l-2.6 2.6-3-3 2.6-2.6z"/>
+      </svg>
+    
+      </div>
+
+      <div class="service-number">
+        05
+      </div>
+
       <h3>General Plumbing Maintenance</h3>
-      <p>Preventative checks and minor repairs to keep your plumbing in good condition.</p>
+
+      <p>
+        Preventative checks and minor repairs to keep your plumbing in good condition.
+      </p>
     </article>
   
+
+        </div>
+
       </div>
 
-    </div>
-  </section>
+    </section>
 
-  <section class="trust" id="why-us">
+    <section
+      class="trust"
+      id="why-us"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="section-label">
+            Why This Works
+          </span>
+
+          <h2>
+            A simpler way for customers to connect
+          </h2>
+
+          <p>
+            Reliable, responsive plumbing for homes and businesses in the local area.
+          </p>
+
+        </div>
+
+        <div class="trust-grid">
+
+          <div class="trust-item">
+
+            <div class="trust-check">
+              ✓
+            </div>
+
+            <strong>
+              Local Focus
+            </strong>
+
+            <p>
+              Designed around the needs of customers searching for plumbing services in their local area.
+            </p>
+
+          </div>
+
+          <div class="trust-item">
+
+            <div class="trust-check">
+              ✓
+            </div>
+
+            <strong>
+              Easy Contact
+            </strong>
+
+            <p>
+              Clear call-to-action buttons make it easy for customers to contact the business from any device.
+            </p>
+
+          </div>
+
+          <div class="trust-item">
+
+            <div class="trust-check">
+              ✓
+            </div>
+
+            <strong>
+              Mobile Ready
+            </strong>
+
+            <p>
+              The layout automatically adapts for phones, tablets and desktop screens.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="cta">
+
+      <div class="container">
+
+        <div class="cta-inner">
+
+          <h2>
+            Need a Plumber?
+          </h2>
+
+          <p>
+            Get in touch with MKU Plumbing and Drainage Solutions for plumbing enquiries.
+          </p>
+
+          
+                <a
+                  class="button secondary"
+                  href="tel:0467198415"
+                >
+                  Get a Quote
+                </a>
+              
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+
     <div class="container">
 
-      <div class="section-heading">
-        <h2>Why Choose MKU Plumbing and Drainage Solutions?</h2>
-        <p>Reliable, responsive plumbing for homes and businesses in the local area.</p>
-      </div>
-
-      <div class="trust-grid">
-        <div class="trust-item">
-          <strong>Local</strong>
-          Plumbing services for the local community
-        </div>
-
-        <div class="trust-item">
-          <strong>Reliable</strong>
-          Clear communication and dependable service
-        </div>
-
-        <div class="trust-item">
-          <strong>Professional</strong>
-          Quality workmanship for every job
-        </div>
-      </div>
+      <p>
+        <strong>Concept website preview.</strong>
+        This demonstration was created for presentation purposes and is not the official website of MKU Plumbing and Drainage Solutions.
+      </p>
 
     </div>
-  </section>
 
-  <section class="cta">
-    <div class="container">
-      <h2>Need a Plumber?</h2>
-      <p>Get in touch with MKU Plumbing and Drainage Solutions today.</p>
-
-      <a class="button" href="tel:0467198415">Get a Quote</a>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="container">
-    <p>© 2026 MKU Plumbing and Drainage Solutions. All rights reserved.</p>
-  </div>
-</footer>
+  </footer>
 
 </body>
+
 </html>
