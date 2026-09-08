@@ -12,7 +12,7 @@
 
   <meta
     name="description"
-    content="Clear pricing. Honest advice. Fast answers."
+    content="Fast, reliable plumbing and drainage solutions for homes and businesses"
   >
 
   <meta
@@ -990,6 +990,145 @@
       color: white;
     }
 
+
+    /* -----------------------------------------------------
+       AUTOMATIC LAYOUT VARIATIONS
+       Layout 1 = original split hero
+       Layout 2 = image-led hero with overlay-style copy
+       Layout 3 = centred copy with wide image below
+    ----------------------------------------------------- */
+
+    body.layout-2 .hero {
+      padding: 72px 0 82px;
+    }
+
+    body.layout-2 .hero-grid {
+      min-height: 610px;
+      grid-template-columns: 1fr;
+      align-items: end;
+      isolation: isolate;
+    }
+
+    body.layout-2 .hero-copy {
+      position: relative;
+      z-index: 4;
+      max-width: 760px;
+      padding: 44px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 28px;
+      background: rgba(15,23,42,.62);
+      box-shadow: 0 30px 80px rgba(0,0,0,.28);
+      backdrop-filter: blur(12px);
+    }
+
+    body.layout-2 h1 {
+      font-size: clamp(44px, 6vw, 76px);
+    }
+
+    body.layout-2 .hero-visual {
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      min-height: 0;
+      align-items: stretch;
+    }
+
+    body.layout-2 .visual-card {
+      width: 100%;
+      min-height: 100%;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    body.layout-2 .plumbing-photo {
+      inset: 0;
+      border-radius: 0;
+    }
+
+    body.layout-2 .plumbing-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(8,25,43,.86) 0%,
+          rgba(8,25,43,.62) 46%,
+          rgba(8,25,43,.22) 100%
+        );
+    }
+
+    body.layout-2 .concept-label {
+      top: 26px;
+      right: 26px;
+      z-index: 5;
+    }
+
+    body.layout-2 .visual-info {
+      display: none;
+    }
+
+    body.layout-3 .hero {
+      padding: 82px 0 88px;
+    }
+
+    body.layout-3 .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 46px;
+      text-align: center;
+    }
+
+    body.layout-3 .hero-copy {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    body.layout-3 .eyebrow,
+    body.layout-3 .rating-card {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    body.layout-3 h1 {
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: clamp(46px, 6.4vw, 80px);
+    }
+
+    body.layout-3 .hero-description {
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    body.layout-3 .hero-buttons {
+      justify-content: center;
+    }
+
+    body.layout-3 .hero-visual {
+      min-height: 430px;
+    }
+
+    body.layout-3 .visual-card {
+      width: min(940px, 100%);
+      min-height: 420px;
+    }
+
+    body.layout-3 .plumbing-photo {
+      inset: 18px;
+    }
+
+    body.layout-3 .visual-info {
+      left: 42px;
+      right: 42px;
+      bottom: 32px;
+      max-width: 560px;
+      text-align: left;
+    }
+
     /* -----------------------------------------------------
        RESPONSIVE
     ----------------------------------------------------- */
@@ -1051,6 +1190,34 @@
         min-height: 340px;
       }
 
+      body.layout-2 .hero-grid {
+        min-height: auto;
+      }
+
+      body.layout-2 .hero-copy {
+        padding: 30px 24px;
+      }
+
+      body.layout-2 .hero-visual {
+        position: relative;
+        inset: auto;
+        min-height: 340px;
+      }
+
+      body.layout-2 .visual-card {
+        min-height: 340px;
+        border-radius: 24px;
+        overflow: hidden;
+      }
+
+      body.layout-2 .plumbing-photo {
+        inset: 0;
+      }
+
+      body.layout-3 .visual-card {
+        min-height: 350px;
+      }
+
       .service-grid,
       .trust-grid {
         grid-template-columns: 1fr;
@@ -1108,6 +1275,14 @@
           58px 18px 18px;
       }
 
+      body.layout-2 .plumbing-photo {
+        inset: 0;
+      }
+
+      body.layout-3 .plumbing-photo {
+        inset: 18px;
+      }
+
       .service-card,
       .trust-item {
         padding: 26px 22px;
@@ -1123,7 +1298,7 @@
 
 </head>
 
-<body>
+<body class="layout-1">
 
   <div class="demo-banner">
     Concept website preview • Not the official website of MKU Plumbing and Drainage Solutions.
@@ -1169,7 +1344,7 @@
                   class="button"
                   href="tel:0467198415"
                 >
-                  Call 0467 198 415
+                  Call now: 0467 198 415
                 </a>
               
 
@@ -1202,11 +1377,11 @@
             </div>
 
             <h1>
-              Reliable local plumbing in Roxburgh Park
+              Your Local Plumbers in Roxburgh Park
             </h1>
 
             <p class="hero-description">
-              Your trusted plumbing partner in Roxburgh Park. We handle leaks, blockages, hot water, and general maintenance with a focus on clear communication and quality workmanship.
+              MKU Plumbing and Drainage Solutions provides dependable plumbing and drainage services in Roxburgh Park, VIC. Contact us today for fast help and a clear quote.
             </p>
 
             <div class="hero-buttons">
@@ -1216,7 +1391,7 @@
                       class="button"
                       href="tel:0467198415"
                     >
-                      Call 0467 198 415
+                      Call now: 0467 198 415
                     </a>
                   
 
@@ -1224,7 +1399,7 @@
                 class="button secondary"
                 href="#services"
               >
-                Learn more
+                Request a quote
               </a>
 
             </div>
@@ -1311,10 +1486,10 @@
         01
       </div>
 
-      <h3>Emergency plumbing</h3>
+      <h3>General plumbing</h3>
 
       <p>
-        Rapid response to leaks, blockages and urgent repairs to minimise damage and downtime.
+        Leak repairs, fixture installations, maintenance and small-scale repairs for homes and small businesses.
       </p>
     </article>
   
@@ -1334,10 +1509,10 @@
         02
       </div>
 
-      <h3>Drainage and blockages</h3>
+      <h3>Drainage &amp; drains</h3>
 
       <p>
-        Drain clearing, pipe inspection and maintenance to keep systems flowing.
+        Unblocking drains, pipe inspections and drainage maintenance.
       </p>
     </article>
   
@@ -1358,27 +1533,28 @@
       <h3>Hot water systems</h3>
 
       <p>
-        Installation, maintenance and repair of electric and gas hot water systems.
+        Installation, servicing and repairs of storage and instantaneous hot water systems.
       </p>
     </article>
   
     <article class="service-card">
       <div class="service-icon">
         
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M14.5 6.5a4 4 0 0 0-5.1 5.1L4 17l3 3 5.4-5.4a4 4 0 0 0 5.1-5.1l-2.6 2.6-3-3 2.6-2.6z"/>
-      </svg>
-    
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3s5 5.5 5 10a5 5 0 0 1-10 0c0-4.5 5-10 5-10z"/>
+          <path d="M9.5 14.5c.6 1.2 1.5 1.8 2.8 1.8"/>
+        </svg>
+      
       </div>
 
       <div class="service-number">
         04
       </div>
 
-      <h3>General plumbing maintenance</h3>
+      <h3>Fixtures, taps &amp; toilets</h3>
 
       <p>
-        Preventative checks, servicing and minor repairs to keep your plumbing reliable.
+        Replacement, installation and repairs of basins, taps, toilets and kitchen fixtures.
       </p>
     </article>
   
@@ -1407,7 +1583,7 @@
           </h2>
 
           <p>
-            Clear pricing. Honest advice. Fast answers.
+            Fast, reliable plumbing and drainage solutions for homes and businesses
           </p>
 
         </div>
@@ -1487,7 +1663,7 @@
                   class="button secondary"
                   href="tel:0467198415"
                 >
-                  Call 0467 198 415
+                  Call now: 0467 198 415
                 </a>
               
 
