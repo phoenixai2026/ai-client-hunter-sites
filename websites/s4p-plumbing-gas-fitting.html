@@ -12,7 +12,7 @@
 
   <meta
     name="description"
-    content="Local plumbing and gas fitting specialists delivering clear, straightforward service."
+    content="Reliable service for homes in and around Epping."
   >
 
   <meta
@@ -993,117 +993,10 @@
 
     /* -----------------------------------------------------
        AUTOMATIC LAYOUT VARIATIONS
-       Layout 1 = original split hero
-       Layout 2 = image-led hero with overlay-style copy
-       Layout 3 = centred copy with wide image below
+       Layout 1 = classic split hero
+       Layout 3 = centred hero with wide image below
+       Layout 2 has been removed.
     ----------------------------------------------------- */
-
-    body.layout-2 .hero {
-      padding: 78px 0 86px;
-    }
-
-    body.layout-2 .hero-grid {
-      min-height: 570px;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      align-items: center;
-      gap: 0;
-    }
-
-    body.layout-2 .hero-copy {
-      position: relative;
-      z-index: 5;
-      grid-column: 1 / span 7;
-      grid-row: 1;
-      max-width: none;
-      margin-right: -54px;
-      padding: 46px;
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 28px;
-      background:
-        linear-gradient(
-          145deg,
-          rgba(6,31,56,.94),
-          rgba(15,23,42,.84)
-        );
-      box-shadow: 0 30px 80px rgba(0,0,0,.30);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
-
-    body.layout-2 h1 {
-      max-width: 720px;
-      font-size: clamp(43px, 5.5vw, 72px);
-    }
-
-    body.layout-2 .hero-description {
-      max-width: 620px;
-    }
-
-    body.layout-2 .hero-visual {
-      position: relative;
-      z-index: 2;
-      grid-column: 6 / -1;
-      grid-row: 1;
-      min-height: 570px;
-      align-items: stretch;
-      justify-content: stretch;
-    }
-
-    body.layout-2 .visual-card {
-      width: 100%;
-      min-height: 570px;
-      border: 1px solid rgba(255,255,255,.20);
-      border-radius: 30px;
-      background: rgba(255,255,255,.08);
-      box-shadow: 0 34px 90px rgba(0,0,0,.32);
-    }
-
-    body.layout-2 .plumbing-photo {
-      inset: 0;
-      border-radius: 30px;
-    }
-
-    body.layout-2 .plumbing-photo img {
-      object-position: center;
-    }
-
-    body.layout-2 .plumbing-photo::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(6,31,56,.28) 0%,
-          rgba(6,31,56,.08) 42%,
-          rgba(6,31,56,.02) 72%
-        ),
-        linear-gradient(
-          180deg,
-          rgba(6,31,56,.02) 45%,
-          rgba(6,31,56,.34) 100%
-        );
-    }
-
-    body.layout-2 .concept-label {
-      top: 24px;
-      right: 24px;
-      z-index: 7;
-      background: rgba(6,31,56,.62);
-      backdrop-filter: blur(8px);
-    }
-
-    body.layout-2 .visual-info {
-      left: auto;
-      right: 28px;
-      bottom: 28px;
-      width: min(360px, calc(100% - 56px));
-      padding: 17px 18px;
-    }
-
-    body.layout-2 .visual-info strong {
-      font-size: 16px;
-    }
 
     body.layout-3 .hero {
       padding: 82px 0 88px;
@@ -1225,120 +1118,6 @@
         min-height: 340px;
       }
 
-      body.layout-2 .hero-grid {
-        min-height: auto;
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      body.layout-2 .hero-copy {
-        grid-column: 1;
-        grid-row: 1;
-        margin-right: 0;
-        padding: 32px 26px;
-      }
-
-      body.layout-2 .hero-visual {
-        grid-column: 1;
-        grid-row: 2;
-        min-height: 390px;
-      }
-
-      body.layout-2 .visual-card {
-        min-height: 390px;
-        border-radius: 24px;
-        overflow: hidden;
-      }
-
-      body.layout-2 .plumbing-photo {
-        inset: 0;
-        border-radius: 24px;
-      }
-
-      body.layout-2 .visual-info {
-        right: 22px;
-        bottom: 22px;
-        width: min(340px, calc(100% - 44px));
-      }
-
-      body.layout-3 .visual-card {
-        min-height: 350px;
-      }
-
-      .service-grid,
-      .trust-grid {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 68px 0;
-      }
-
-    }
-
-    @media (max-width: 540px) {
-
-      .container {
-        width: min(92%, 1160px);
-      }
-
-      .nav-links .button {
-        padding: 12px 14px;
-        font-size: 13px;
-      }
-
-      .logo-mark {
-        display: none;
-      }
-
-      h1 {
-        font-size:
-          clamp(
-            38px,
-            12vw,
-            54px
-          );
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .hero-buttons .button {
-        width: 100%;
-      }
-
-      .hero-visual {
-        min-height: 310px;
-      }
-
-      .visual-card {
-        min-height: 300px;
-        padding: 22px;
-      }
-
-      .plumbing-photo {
-        inset:
-          58px 18px 18px;
-      }
-
-      body.layout-2 .plumbing-photo {
-        inset: 0;
-      }
-
-      body.layout-2 .hero-copy {
-        padding: 26px 20px;
-        border-radius: 22px;
-      }
-
-      body.layout-2 .hero-visual,
-      body.layout-2 .visual-card {
-        min-height: 320px;
-      }
-
-      body.layout-2 .visual-info {
-        display: none;
-      }
 
       body.layout-3 .plumbing-photo {
         inset: 18px;
@@ -1359,7 +1138,7 @@
 
 </head>
 
-<body class="layout-2">
+<body class="layout-1">
 
   <div class="demo-banner">
     Concept website preview • Not the official website of S4P Plumbing &amp; Gas Fitting.
@@ -1405,7 +1184,7 @@
                   class="button"
                   href="tel:0481513001"
                 >
-                  Call 0481 513 001
+                  Call now: 0481 513 001
                 </a>
               
 
@@ -1438,11 +1217,11 @@
             </div>
 
             <h1>
-              Reliable Plumbing &amp; Gas Fitting for Homes in Epping
+              Local plumbing and gas fitting in Epping, VIC
             </h1>
 
             <p class="hero-description">
-              We provide practical, reliable plumbing and gas fitting solutions for homes in the Epping area. Fast response, tidy workmanship and clear communication.
+              Your trusted local plumbers in Epping, VIC for practical plumbing and gas fitting solutions.
             </p>
 
             <div class="hero-buttons">
@@ -1452,7 +1231,7 @@
                       class="button"
                       href="tel:0481513001"
                     >
-                      Call 0481 513 001
+                      Call now: 0481 513 001
                     </a>
                   
 
@@ -1460,7 +1239,7 @@
                 class="button secondary"
                 href="#services"
               >
-                Request a quote
+                Learn more
               </a>
 
             </div>
@@ -1547,10 +1326,10 @@
         01
       </div>
 
-      <h3>General Plumbing</h3>
+      <h3>General plumbing</h3>
 
       <p>
-        Blockages, leaks, hot water systems and routine maintenance for domestic properties.
+        Tap repairs, leak detection, blocked drains and routine maintenance.
       </p>
     </article>
   
@@ -1568,30 +1347,31 @@
         02
       </div>
 
-      <h3>Gas Fitting &amp; Appliances</h3>
+      <h3>Gas fitting &amp; appliance connections</h3>
 
       <p>
-        Installation, fault finding and repair for gas appliances and fittings (where safe and compliant).
+        Gas line work and safe appliance connections where appropriate.
       </p>
     </article>
   
     <article class="service-card">
       <div class="service-icon">
         
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M14.5 6.5a4 4 0 0 0-5.1 5.1L4 17l3 3 5.4-5.4a4 4 0 0 0 5.1-5.1l-2.6 2.6-3-3 2.6-2.6z"/>
-      </svg>
-    
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3c1.8 3 4 4.8 4 8a4 4 0 0 1-8 0c0-1.8.8-3.4 2.4-5.2"/>
+          <path d="M12 13c1.2 1.2 1.6 2 1.6 3a1.6 1.6 0 0 1-3.2 0c0-.8.4-1.6 1.6-3z"/>
+        </svg>
+      
       </div>
 
       <div class="service-number">
         03
       </div>
 
-      <h3>Emergency &amp; Responsive Repairs</h3>
+      <h3>Water heating &amp; hot water systems</h3>
 
       <p>
-        Fast response for urgent leaks, overflows or broken fixtures.
+        Installation, servicing and repairs of hot water systems.
       </p>
     </article>
   
@@ -1608,10 +1388,10 @@
         04
       </div>
 
-      <h3>Maintenance &amp; Inspections</h3>
+      <h3>Urgent plumbing repairs</h3>
 
       <p>
-        Seasonal checks, preventative maintenance and safety considerations for homes.
+        Timely response to urgent issues such as leaks or blockages.
       </p>
     </article>
   
@@ -1640,7 +1420,7 @@
           </h2>
 
           <p>
-            Local plumbing and gas fitting specialists delivering clear, straightforward service.
+            Reliable service for homes in and around Epping.
           </p>
 
         </div>
@@ -1720,7 +1500,7 @@
                   class="button secondary"
                   href="tel:0481513001"
                 >
-                  Call 0481 513 001
+                  Call now: 0481 513 001
                 </a>
               
 
