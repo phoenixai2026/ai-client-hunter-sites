@@ -12,7 +12,7 @@
 
   <meta
     name="description"
-    content="Your Roxburgh Park area plumbers delivering practical, top-quality service"
+    content="Reliable, transparent plumbing services for homes and small businesses."
   >
 
   <meta
@@ -998,74 +998,40 @@
        Layout 3 = centred copy with wide image below
     ----------------------------------------------------- */
 
+    /* Layout 2: editorial image-led hero.
+       The photo becomes a wide background panel with a compact floating
+       content card, making this layout structurally distinct from Layout 1. */
     body.layout-2 .hero {
-      padding: 78px 0 86px;
+      padding: 72px 0 78px;
     }
 
     body.layout-2 .hero-grid {
-      min-height: 570px;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      align-items: center;
-      gap: 0;
-    }
-
-    body.layout-2 .hero-copy {
       position: relative;
-      z-index: 5;
-      grid-column: 1 / span 7;
-      grid-row: 1;
-      max-width: none;
-      margin-right: -54px;
-      padding: 42px 44px;
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 28px;
-      background:
-        linear-gradient(
-          145deg,
-          rgba(6,31,56,.94),
-          rgba(15,23,42,.84)
-        );
-      box-shadow: 0 30px 80px rgba(0,0,0,.30);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
-
-    body.layout-2 h1 {
-      max-width: 690px;
-      margin-bottom: 22px;
-      font-size: clamp(38px, 4.8vw, 62px);
-      line-height: 1.02;
-    }
-
-    body.layout-2 .hero-description {
-      max-width: 600px;
-      margin-bottom: 28px;
-      font-size: 17px;
-      line-height: 1.65;
+      display: block;
+      min-height: 590px;
     }
 
     body.layout-2 .hero-visual {
-      position: relative;
-      z-index: 2;
-      grid-column: 6 / -1;
-      grid-row: 1;
-      min-height: 570px;
-      align-items: stretch;
-      justify-content: stretch;
+      position: absolute;
+      inset: 0;
+      min-height: 590px;
+      display: block;
     }
 
     body.layout-2 .visual-card {
       width: 100%;
-      min-height: 570px;
-      border: 1px solid rgba(255,255,255,.20);
-      border-radius: 30px;
+      min-height: 590px;
+      height: 100%;
+      border-radius: 32px;
+      border: 1px solid rgba(255,255,255,.18);
+      overflow: hidden;
       background: rgba(255,255,255,.08);
-      box-shadow: 0 34px 90px rgba(0,0,0,.32);
+      box-shadow: 0 34px 90px rgba(0,0,0,.30);
     }
 
     body.layout-2 .plumbing-photo {
       inset: 0;
-      border-radius: 30px;
+      border-radius: 32px;
     }
 
     body.layout-2 .plumbing-photo img {
@@ -1079,35 +1045,81 @@
       background:
         linear-gradient(
           90deg,
-          rgba(6,31,56,.28) 0%,
-          rgba(6,31,56,.08) 42%,
-          rgba(6,31,56,.02) 72%
+          rgba(4, 22, 40, .92) 0%,
+          rgba(4, 22, 40, .78) 36%,
+          rgba(4, 22, 40, .30) 68%,
+          rgba(4, 22, 40, .10) 100%
         ),
         linear-gradient(
-          180deg,
-          rgba(6,31,56,.02) 45%,
-          rgba(6,31,56,.34) 100%
+          0deg,
+          rgba(4, 22, 40, .22),
+          transparent 45%
         );
     }
 
-    body.layout-2 .concept-label {
-      top: 24px;
-      right: 24px;
-      z-index: 7;
-      background: rgba(6,31,56,.62);
+    body.layout-2 .hero-copy {
+      position: relative;
+      z-index: 8;
+      width: min(620px, 54%);
+      min-height: 590px;
+      max-width: none;
+      padding: 62px 0 58px 54px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    body.layout-2 .eyebrow {
+      margin-bottom: 20px;
+      background: rgba(255,255,255,.13);
       backdrop-filter: blur(8px);
+    }
+
+    body.layout-2 h1 {
+      max-width: 590px;
+      margin-bottom: 22px;
+      font-size: clamp(42px, 4.8vw, 68px);
+      line-height: .99;
+      letter-spacing: -.05em;
+    }
+
+    body.layout-2 .hero-description {
+      max-width: 540px;
+      margin-bottom: 28px;
+      color: #e2e8f0;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    body.layout-2 .hero-buttons {
+      margin-top: 2px;
+    }
+
+    body.layout-2 .rating-card {
+      background: rgba(4,22,40,.42);
+      backdrop-filter: blur(10px);
+    }
+
+    body.layout-2 .concept-label {
+      top: 26px;
+      right: 26px;
+      z-index: 10;
+      background: rgba(4,22,40,.68);
+      backdrop-filter: blur(9px);
     }
 
     body.layout-2 .visual-info {
       left: auto;
-      right: 28px;
-      bottom: 28px;
-      width: min(360px, calc(100% - 56px));
-      padding: 17px 18px;
+      right: 26px;
+      bottom: 26px;
+      width: min(390px, 34%);
+      padding: 17px 19px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 16px 38px rgba(0,0,0,.18);
     }
 
     body.layout-2 .visual-info strong {
-      font-size: 16px;
+      font-size: 15px;
     }
 
     body.layout-3 .hero {
@@ -1230,22 +1242,33 @@
         min-height: 340px;
       }
 
+      body.layout-2 .hero {
+        padding: 58px 0 64px;
+      }
+
       body.layout-2 .hero-grid {
+        display: flex;
+        flex-direction: column;
         min-height: auto;
-        grid-template-columns: 1fr;
         gap: 24px;
       }
 
       body.layout-2 .hero-copy {
-        grid-column: 1;
-        grid-row: 1;
-        margin-right: 0;
-        padding: 32px 26px;
+        order: 1;
+        width: 100%;
+        min-height: auto;
+        max-width: 760px;
+        padding: 0;
+      }
+
+      body.layout-2 h1 {
+        font-size: clamp(40px, 11vw, 60px);
       }
 
       body.layout-2 .hero-visual {
-        grid-column: 1;
-        grid-row: 2;
+        order: 2;
+        position: relative;
+        inset: auto;
         min-height: 390px;
       }
 
@@ -1260,89 +1283,20 @@
         border-radius: 24px;
       }
 
-      body.layout-2 .visual-info {
-        right: 22px;
-        bottom: 22px;
-        width: min(340px, calc(100% - 44px));
-      }
-
-      body.layout-3 .visual-card {
-        min-height: 350px;
-      }
-
-      .service-grid,
-      .trust-grid {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 68px 0;
-      }
-
-    }
-
-    @media (max-width: 540px) {
-
-      .container {
-        width: min(92%, 1160px);
-      }
-
-      .nav-links .button {
-        padding: 12px 14px;
-        font-size: 13px;
-      }
-
-      .logo-mark {
-        display: none;
-      }
-
-      h1 {
-        font-size:
-          clamp(
-            38px,
-            12vw,
-            54px
+      body.layout-2 .plumbing-photo::after {
+        background:
+          linear-gradient(
+            0deg,
+            rgba(4,22,40,.46) 0%,
+            rgba(4,22,40,.05) 58%
           );
       }
 
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .hero-buttons .button {
-        width: 100%;
-      }
-
-      .hero-visual {
-        min-height: 310px;
-      }
-
-      .visual-card {
-        min-height: 300px;
-        padding: 22px;
-      }
-
-      .plumbing-photo {
-        inset:
-          58px 18px 18px;
-      }
-
-      body.layout-2 .plumbing-photo {
-        inset: 0;
-      }
-
-      body.layout-2 .hero-copy {
-        padding: 26px 20px;
-        border-radius: 22px;
-      }
-
-      body.layout-2 .hero-visual,
-      body.layout-2 .visual-card {
-        min-height: 320px;
-      }
-
       body.layout-2 .visual-info {
-        display: none;
+        left: 22px;
+        right: 22px;
+        bottom: 22px;
+        width: auto;
       }
 
       body.layout-3 .plumbing-photo {
@@ -1410,7 +1364,7 @@
                   class="button"
                   href="tel:0467198415"
                 >
-                  Call now
+                  Call Now
                 </a>
               
 
@@ -1443,11 +1397,11 @@
             </div>
 
             <h1>
-              Reliable local plumbing solutions
+              Your Local Plumber in Roxburgh Park
             </h1>
 
             <p class="hero-description">
-              Proudly serving Roxburgh Park with a 4.6/5 Google rating from 10 reviews. Fast, friendly plumbing for homes and small businesses.
+              MKU Plumbing and Drainage Solutions provides practical plumbing solutions with clear communication and reliable workmanship. Based in Roxburgh Park, VIC, we help homeowners and small businesses maintain a safe, efficient plumbing system.
             </p>
 
             <div class="hero-buttons">
@@ -1457,7 +1411,7 @@
                       class="button"
                       href="tel:0467198415"
                     >
-                      Call now
+                      Call Now
                     </a>
                   
 
@@ -1465,7 +1419,7 @@
                 class="button secondary"
                 href="#services"
               >
-                Request a free quote
+                Contact Us
               </a>
 
             </div>
@@ -1552,10 +1506,10 @@
         01
       </div>
 
-      <h3>General plumbing</h3>
+      <h3>Emergency Plumbing and Repairs</h3>
 
       <p>
-        Maintenance, repairs and installations for everyday plumbing needs, including taps, toilets and small-diameter piping.
+        Timely response for urgent issues such as leaks, bursts and major blockages. (Details of availability to be confirmed.)
       </p>
     </article>
   
@@ -1575,10 +1529,10 @@
         02
       </div>
 
-      <h3>Drainage and blockages</h3>
+      <h3>Drain Cleaning and Blocked Drains</h3>
 
       <p>
-        Drain clearing and blockage assessment for sinks, showers and drainage lines, with practical, site-friendly solutions.
+        Unblocking drains and clearing blockages to restore flow and prevent damage using safe, modern methods.
       </p>
     </article>
   
@@ -1596,30 +1550,52 @@
         03
       </div>
 
-      <h3>Hot water systems</h3>
+      <h3>Hot Water Systems &amp; Installation</h3>
 
       <p>
-        Installation, maintenance and repair of storage and on-demand hot water systems.
+        Assessment, installation, maintenance and fault finding for common hot water appliances.
       </p>
     </article>
   
     <article class="service-card">
       <div class="service-icon">
         
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M14.5 6.5a4 4 0 0 0-5.1 5.1L4 17l3 3 5.4-5.4a4 4 0 0 0 5.1-5.1l-2.6 2.6-3-3 2.6-2.6z"/>
-      </svg>
-    
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3s5 5.5 5 10a5 5 0 0 1-10 0c0-4.5 5-10 5-10z"/>
+          <path d="M9.5 14.5c.6 1.2 1.5 1.8 2.8 1.8"/>
+        </svg>
+      
       </div>
 
       <div class="service-number">
         04
       </div>
 
-      <h3>Emergency and responsive call-outs</h3>
+      <h3>Taps, Toilets and Fixtures</h3>
 
       <p>
-        Prompt response for urgent plumbing issues, with transparent communication and on-site assessment.
+        Repair and replacement of leaking taps, toilets, and fixtures, plus fittings upgrades.
+      </p>
+    </article>
+  
+    <article class="service-card">
+      <div class="service-icon">
+        
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3s5 5.5 5 10a5 5 0 0 1-10 0c0-4.5 5-10 5-10z"/>
+          <path d="M9.5 14.5c.6 1.2 1.5 1.8 2.8 1.8"/>
+        </svg>
+      
+      </div>
+
+      <div class="service-number">
+        05
+      </div>
+
+      <h3>Pipework and Leak Detection</h3>
+
+      <p>
+        Diagnosing leaks, repairing pipes, and planning replacements where needed.
       </p>
     </article>
   
@@ -1648,7 +1624,7 @@
           </h2>
 
           <p>
-            Your Roxburgh Park area plumbers delivering practical, top-quality service
+            Reliable, transparent plumbing services for homes and small businesses.
           </p>
 
         </div>
@@ -1728,7 +1704,7 @@
                   class="button secondary"
                   href="tel:0467198415"
                 >
-                  Call now
+                  Call Now
                 </a>
               
 
