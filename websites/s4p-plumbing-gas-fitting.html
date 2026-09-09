@@ -12,7 +12,7 @@
 
   <meta
     name="description"
-    content="Reliable service for homes in and around Epping."
+    content="Local, professional plumbing services focused on clear pricing and reliable results."
   >
 
   <meta
@@ -990,73 +990,6 @@
       color: white;
     }
 
-
-    /* -----------------------------------------------------
-       AUTOMATIC LAYOUT VARIATIONS
-       Layout 1 = classic split hero
-       Layout 3 = centred hero with wide image below
-       Layout 2 has been removed.
-    ----------------------------------------------------- */
-
-    body.layout-3 .hero {
-      padding: 82px 0 88px;
-    }
-
-    body.layout-3 .hero-grid {
-      grid-template-columns: 1fr;
-      gap: 46px;
-      text-align: center;
-    }
-
-    body.layout-3 .hero-copy {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    body.layout-3 .eyebrow,
-    body.layout-3 .rating-card {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    body.layout-3 h1 {
-      max-width: 980px;
-      margin-left: auto;
-      margin-right: auto;
-      font-size: clamp(46px, 6.4vw, 80px);
-    }
-
-    body.layout-3 .hero-description {
-      max-width: 760px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    body.layout-3 .hero-buttons {
-      justify-content: center;
-    }
-
-    body.layout-3 .hero-visual {
-      min-height: 430px;
-    }
-
-    body.layout-3 .visual-card {
-      width: min(940px, 100%);
-      min-height: 420px;
-    }
-
-    body.layout-3 .plumbing-photo {
-      inset: 18px;
-    }
-
-    body.layout-3 .visual-info {
-      left: 42px;
-      right: 42px;
-      bottom: 32px;
-      max-width: 560px;
-      text-align: left;
-    }
-
     /* -----------------------------------------------------
        RESPONSIVE
     ----------------------------------------------------- */
@@ -1118,9 +1051,61 @@
         min-height: 340px;
       }
 
+      .service-grid,
+      .trust-grid {
+        grid-template-columns: 1fr;
+      }
 
-      body.layout-3 .plumbing-photo {
-        inset: 18px;
+      section {
+        padding: 68px 0;
+      }
+
+    }
+
+    @media (max-width: 540px) {
+
+      .container {
+        width: min(92%, 1160px);
+      }
+
+      .nav-links .button {
+        padding: 12px 14px;
+        font-size: 13px;
+      }
+
+      .logo-mark {
+        display: none;
+      }
+
+      h1 {
+        font-size:
+          clamp(
+            38px,
+            12vw,
+            54px
+          );
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons .button {
+        width: 100%;
+      }
+
+      .hero-visual {
+        min-height: 310px;
+      }
+
+      .visual-card {
+        min-height: 300px;
+        padding: 22px;
+      }
+
+      .plumbing-photo {
+        inset:
+          58px 18px 18px;
       }
 
       .service-card,
@@ -1138,7 +1123,7 @@
 
 </head>
 
-<body class="layout-1">
+<body>
 
   <div class="demo-banner">
     Concept website preview • Not the official website of S4P Plumbing &amp; Gas Fitting.
@@ -1184,7 +1169,7 @@
                   class="button"
                   href="tel:0481513001"
                 >
-                  Call now: 0481 513 001
+                  Get a Free Quote
                 </a>
               
 
@@ -1217,11 +1202,11 @@
             </div>
 
             <h1>
-              Local plumbing and gas fitting in Epping, VIC
+              Trusted Plumbing &amp; Gas Fitting in Epping, VIC
             </h1>
 
             <p class="hero-description">
-              Your trusted local plumbers in Epping, VIC for practical plumbing and gas fitting solutions.
+              S4P Plumbing &amp; Gas Fitting delivers practical, reliable plumbing and gas solutions for homeowners. We focus on clear quotes, transparent communication and quality workmanship to keep your home running smoothly.
             </p>
 
             <div class="hero-buttons">
@@ -1231,7 +1216,7 @@
                       class="button"
                       href="tel:0481513001"
                     >
-                      Call now: 0481 513 001
+                      Get a Free Quote
                     </a>
                   
 
@@ -1239,7 +1224,7 @@
                 class="button secondary"
                 href="#services"
               >
-                Learn more
+                Call 0481 513 001
               </a>
 
             </div>
@@ -1326,10 +1311,10 @@
         01
       </div>
 
-      <h3>General plumbing</h3>
+      <h3>General Plumbing</h3>
 
       <p>
-        Tap repairs, leak detection, blocked drains and routine maintenance.
+        Leak detection, maintenance, fixture installations and repairs for homes.
       </p>
     </article>
   
@@ -1347,10 +1332,10 @@
         02
       </div>
 
-      <h3>Gas fitting &amp; appliance connections</h3>
+      <h3>Gas Fitting &amp; Appliance Connections</h3>
 
       <p>
-        Gas line work and safe appliance connections where appropriate.
+        Gas line fittings, connections to appliances and safety checks.
       </p>
     </article>
   
@@ -1368,10 +1353,10 @@
         03
       </div>
 
-      <h3>Water heating &amp; hot water systems</h3>
+      <h3>Hot Water Systems</h3>
 
       <p>
-        Installation, servicing and repairs of hot water systems.
+        Installations, replacements and servicing of hot water units.
       </p>
     </article>
   
@@ -1388,10 +1373,10 @@
         04
       </div>
 
-      <h3>Urgent plumbing repairs</h3>
+      <h3>Maintenance &amp; Inspections</h3>
 
       <p>
-        Timely response to urgent issues such as leaks or blockages.
+        Routine checks to help prevent leaks and water damage.
       </p>
     </article>
   
@@ -1420,7 +1405,7 @@
           </h2>
 
           <p>
-            Reliable service for homes in and around Epping.
+            Local, professional plumbing services focused on clear pricing and reliable results.
           </p>
 
         </div>
@@ -1500,7 +1485,7 @@
                   class="button secondary"
                   href="tel:0481513001"
                 >
-                  Call now: 0481 513 001
+                  Get a Free Quote
                 </a>
               
 
