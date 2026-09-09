@@ -355,19 +355,15 @@
     }
 
     .hero-grid {
-      position: relative;
-      z-index: 2;
+  position: relative;
+  z-index: 2;
 
-      display: grid;
+  display: grid;
+  grid-template-columns: 1fr;
 
-      grid-template-columns:
-        minmax(0, 1.08fr)
-        minmax(360px, .92fr);
-
-      align-items: center;
-
-      gap: 65px;
-    }
+  align-items: center;
+  gap: 0;
+}
 
     .hero-copy {
       max-width: 690px;
@@ -509,7 +505,7 @@
 
       min-height: 470px;
 
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
     }
