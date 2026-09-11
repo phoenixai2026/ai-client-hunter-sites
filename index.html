@@ -38,6 +38,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 95px;
     }
 
     body {
@@ -587,7 +588,17 @@ aspect-ratio: 1758 / 855;
       color: var(--ink);
       font-size: 18px;
     }
-
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: var(--ink);
+  color: var(--white);
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  font-size: 22px;
+  cursor: pointer;
+}
     @media (max-width: 900px) {
   .nav-links {
     display: none;
@@ -604,7 +615,9 @@ aspect-ratio: 1758 / 855;
     border-radius: 20px;
     box-shadow: var(--shadow);
   }
-
+.menu-toggle {
+  display: block;
+}
   .nav-links.open {
     display: flex;
   }
