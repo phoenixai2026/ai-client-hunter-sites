@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>WebWallaby | Websites for Australian Small Business</title>
+  <meta name="description" content="Professional, affordable websites for Australian small businesses. Website setup from $499 with optional ongoing care from $39 per month.">
+
+  <style>
+    :root {
+      --ink: #17211d;
+      --muted: #617069;
+      --cream: #f7f3e9;
+      --cream-dark: #eee8da;
+      --white: #ffffff;
+      --green: #214f3d;
+      --green-light: #dce9e1;
+      --orange: #ee7a32;
+      --orange-dark: #d96320;
+      --border: #dedfd9;
+      --shadow: 0 22px 70px rgba(23, 33, 29, 0.10);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 243, 233, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(23, 33, 29, 0.08);
+    }
+
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      font-size: 22px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: var(--green);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 15px;
+      box-shadow: 0 10px 26px rgba(33, 79, 61, .22);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange-dark);
+    }
+
+    .nav-button,
+    .button-primary,
+    .button-secondary {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+
+    .nav-button {
+      padding: 12px 18px;
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .nav-button:hover,
+    .button-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      padding: 100px 0 82px;
+      overflow: hidden;
+    }
+
+    .hero-wrap {
+      position: relative;
+    }
+
+    .hero-copy {
+      max-width: 980px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--green-light);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    h1 {
+      font-size: clamp(56px, 7.5vw, 104px);
+      line-height: .92;
+      letter-spacing: -0.07em;
+      font-weight: 950;
+      max-width: 1050px;
+      margin-bottom: 30px;
+    }
+
+    .accent {
+      color: var(--orange);
+    }
+
+    .hero-text {
+      max-width: 720px;
+      font-size: clamp(18px, 2vw, 22px);
+      color: var(--muted);
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 42px;
+    }
+
+    .button-primary {
+      padding: 16px 24px;
+      background: var(--green);
+      color: var(--white);
+      box-shadow: 0 16px 30px rgba(33, 79, 61, .18);
+    }
+
+    .button-secondary {
+      padding: 16px 24px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.55);
+    }
+
+    .button-secondary:hover {
+      background: var(--white);
+    }
+
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 28px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .hero-proof span::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+      margin-right: 7px;
+    }
+
+    .hero-shape {
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      background: var(--orange);
+      opacity: .08;
+      right: -130px;
+      top: -70px;
+    }
+
+    .strip {
+      background: var(--ink);
+      color: var(--white);
+      padding: 18px 0;
+    }
+
+    .strip-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px 44px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section.white {
+      background: var(--white);
+    }
+
+    .section-head {
+      max-width: 730px;
+      margin-bottom: 52px;
+    }
+
+    .section-kicker {
+      color: var(--orange-dark);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin-bottom: 18px;
+    }
+
+    .section-head p {
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+
+    .feature-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--green-light);
+      color: var(--green);
+      font-weight: 900;
+      margin-bottom: 24px;
+    }
+
+    .feature h3,
+    .project h3,
+    .price-card h3,
+    .step h3 {
+      font-size: 21px;
+      letter-spacing: -0.025em;
+      margin-bottom: 10px;
+    }
+
+    .feature p,
+    .project p,
+    .step p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--cream);
+      transition: .22s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .project-preview {
+      height: 230px;
+      padding: 22px;
+      background: linear-gradient(135deg, var(--green), #112c22);
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-preview.orange {
+      background: linear-gradient(135deg, #e67230, #9e3f13);
+    }
+
+    .project-preview.dark {
+      background: linear-gradient(135deg, #242e2a, #0d1512);
+    }
+
+    .project-window {
+      background: var(--white);
+      width: 100%;
+      height: 170px;
+      border-radius: 14px 14px 0 0;
+      box-shadow: 0 18px 50px rgba(0,0,0,.2);
+      padding: 15px;
+    }
+
+    .window-dots {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 22px;
+    }
+
+    .window-dots span {
+      width: 7px;
+      height: 7px;
+      background: #d4d8d5;
+      border-radius: 50%;
+    }
+
+    .window-line {
+      height: 9px;
+      border-radius: 99px;
+      background: #e4e8e5;
+      margin-bottom: 9px;
+    }
+
+    .window-line.short {
+      width: 55%;
+    }
+
+    .window-line.medium {
+      width: 76%;
+    }
+
+    .project-content {
+      padding: 26px;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .price-card {
+      border-radius: 30px;
+      padding: 42px;
+      border: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    .price-card.featured {
+      background: var(--green);
+      color: var(--white);
+      border-color: var(--green);
+    }
+
+    .price-label {
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      margin-bottom: 22px;
+    }
+
+    .price {
+      font-size: clamp(54px, 6vw, 76px);
+      font-weight: 950;
+      line-height: 1;
+      letter-spacing: -0.06em;
+      margin-bottom: 10px;
+    }
+
+    .price small {
+      font-size: 17px;
+      letter-spacing: 0;
+      font-weight: 700;
+    }
+
+    .price-sub {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .featured .price-sub {
+      color: rgba(255,255,255,.72);
+    }
+
+    .price-list {
+      list-style: none;
+      display: grid;
+      gap: 13px;
+    }
+
+    .price-list li::before {
+      content: "✓";
+      font-weight: 900;
+      margin-right: 10px;
+      color: var(--orange);
+    }
+
+    .featured .price-list li::before {
+      color: #f7c7a4;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      padding: 30px 0;
+      border-top: 2px solid var(--ink);
+    }
+
+    .step-number {
+      color: var(--orange-dark);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 24px;
+    }
+
+    .faq {
+      max-width: 860px;
+    }
+
+    details {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+    }
+
+    details:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    summary {
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 850;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details p {
+      color: var(--muted);
+      padding-top: 13px;
+      max-width: 760px;
+    }
+
+    .cta {
+      background: var(--orange);
+      border-radius: 34px;
+      padding: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .cta h2 {
+      max-width: 650px;
+      margin: 0;
+    }
+
+    .cta p {
+      margin-top: 14px;
+      max-width: 620px;
+      color: rgba(23,33,29,.74);
+      font-size: 17px;
+    }
+
+    .cta .button-primary {
+      background: var(--ink);
+      white-space: nowrap;
+    }
+
+    footer {
+      padding: 42px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-brand {
+      font-weight: 900;
+      color: var(--ink);
+      font-size: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links a:not(.nav-button) {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 72px;
+      }
+
+      .features,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cta {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 44px 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .brand {
+        font-size: 19px;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+      }
+
+      .nav-button {
+        padding: 10px 14px;
+        font-size: 13px;
+      }
+
+      h1 {
+        font-size: clamp(48px, 16vw, 70px);
+      }
+
+      .hero-text {
+        font-size: 18px;
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card {
+        padding: 30px 24px;
+      }
+
+      .cta {
+        border-radius: 24px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <span class="brand-mark">WW</span>
+        WebWallaby
+      </a>
+
+      <div class="nav-links">
+        <a href="#work">Our Work</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#process">How It Works</a>
+        <a href="#contact" class="nav-button">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-wrap">
+      <div class="hero-shape"></div>
+
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Websites for Australian small business
+        </div>
+
+        <h1>
+          Big websites for
+          <span class="accent">small business.</span>
+        </h1>
+
+        <p class="hero-text">
+          Professional websites without the big agency price tag.
+          WebWallaby helps Australian small businesses get online,
+          look credible and make it easier for customers to get in touch.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#pricing" class="button-primary">View Pricing</a>
+          <a href="#work" class="button-secondary">See Our Work</a>
+        </div>
+
+        <div class="hero-proof">
+          <span>Mobile friendly</span>
+          <span>No long-term lock-in</span>
+          <span>Australian small business focused</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="strip">
+    <div class="container strip-inner">
+      <span>Website Design</span>
+      <span>Mobile Optimisation</span>
+      <span>SEO Basics</span>
+      <span>Hosting & SSL</span>
+      <span>Ongoing Website Care</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-kicker">Simple by design</div>
+        <h2>Everything you need to get your business online.</h2>
+        <p>
+          We keep the process straightforward, the pricing clear and the website
+          focused on what matters most: helping customers understand your business
+          and contact you.
+        </p>
+      </div>
+
+      <div class="features">
+
+        <article class="feature">
+          <div class="feature-number">01</div>
+          <h3>Built for your business</h3>
+          <p>
+            Your site is tailored around your services, business details,
+            service areas and brand rather than looking like a generic template.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-number">02</div>
+          <h3>Looks great everywhere</h3>
+          <p>
+            Every site is designed to work across phones, tablets and desktops,
+            giving customers a professional experience on any device.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-number">03</div>
+          <h3>Easy to look after</h3>
+          <p>
+            Choose Website Care and we'll handle hosting, SSL, technical upkeep
+            and minor content updates for you.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section white" id="work">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-kicker">Our work</div>
+        <h2>See what your business could look like online.</h2>
+        <p>
+          A few concept websites created for Australian local businesses.
+        </p>
+      </div>
+
+      <div class="projects">
+
+        <a class="project"
+           href="websites/mku-plumbing-and-drainage-solutions.html"
+           target="_blank">
+          <div class="project-preview">
+            <div class="project-window">
+              <div class="window-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="window-line medium"></div>
+              <div class="window-line"></div>
+              <div class="window-line short"></div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>MKU Plumbing</h3>
+            <p>Local plumbing and drainage website concept.</p>
+            <span class="project-link">View concept →</span>
+          </div>
+        </a>
+
+        <a class="project"
+           href="websites/s4p-plumbing-gas-fitting.html"
+           target="_blank">
+          <div class="project-preview orange">
+            <div class="project-window">
+              <div class="window-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="window-line"></div>
+              <div class="window-line medium"></div>
+              <div class="window-line short"></div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>S4P Plumbing & Gas</h3>
+            <p>Professional plumbing and gas fitting website concept.</p>
+            <span class="project-link">View concept →</span>
+          </div>
+        </a>
+
+        <a class="project"
+           href="websites/hightech-plumbing-and-roofing.html"
+           target="_blank">
+          <div class="project-preview dark">
+            <div class="project-window">
+              <div class="window-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="window-line short"></div>
+              <div class="window-line"></div>
+              <div class="window-line medium"></div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Hightech Plumbing</h3>
+            <p>Plumbing and roofing website concept.</p>
+            <span class="project-link">View concept →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-kicker">Straightforward pricing</div>
+        <h2>No agency-sized price tag.</h2>
+        <p>
+          Start with the website, then add ongoing care if you'd rather have us
+          look after the technical side.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <article class="price-card featured">
+          <div class="price-label">Website Setup</div>
+          <div class="price">$499</div>
+          <div class="price-sub">One-off website setup</div>
+
+          <ul class="price-list">
+            <li>Professional small business website</li>
+            <li>Mobile-friendly design</li>
+            <li>Your services and business information</li>
+            <li>Contact and call-to-action sections</li>
+            <li>Basic search engine optimisation setup</li>
+            <li>Domain connection</li>
+            <li>Two rounds of revisions</li>
+          </ul>
+        </article>
+
+        <article class="price-card">
+          <div class="price-label">Website Care</div>
+          <div class="price">$39<small>/month</small></div>
+          <div class="price-sub">Optional ongoing website care</div>
+
+          <ul class="price-list">
+            <li>Website hosting</li>
+            <li>SSL security certificate</li>
+            <li>Technical maintenance</li>
+            <li>Minor content updates</li>
+            <li>Ongoing website support</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section white" id="process">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-kicker">How it works</div>
+        <h2>From idea to live website.</h2>
+        <p>
+          We've kept the process simple so you can concentrate on running your business.
+        </p>
+      </div>
+
+      <div class="steps">
+
+        <article class="step">
+          <div class="step-number">STEP 01</div>
+          <h3>Tell us about your business</h3>
+          <p>
+            Send through your services, business details, service areas, logo
+            and any photos you'd like included.
+          </p>
+        </article>
+
+        <article class="step">
+          <div class="step-number">STEP 02</div>
+          <h3>We build your website</h3>
+          <p>
+            We turn your information into a professional website designed
+            around your business.
+          </p>
+        </article>
+
+        <article class="step">
+          <div class="step-number">STEP 03</div>
+          <h3>You review it</h3>
+          <p>
+            You'll see the website before it goes live and can request changes
+            through the included revision rounds.
+          </p>
+        </article>
+
+        <article class="step">
+          <div class="step-number">STEP 04</div>
+          <h3>We launch</h3>
+          <p>
+            Once you're happy, we connect your domain and launch the finished website.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-kicker">FAQ</div>
+        <h2>A few things you might be wondering.</h2>
+      </div>
+
+      <div class="faq">
+
+        <details>
+          <summary>Who owns my domain?</summary>
+          <p>
+            You do. We recommend that your domain is registered in your own name
+            so you remain in control of it.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do I have to sign up for Website Care?</summary>
+          <p>
+            No. Website Care is optional. It's available for businesses that would
+            prefer us to handle hosting, SSL, technical maintenance and minor updates.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I request changes to the website?</summary>
+          <p>
+            Yes. Website Setup includes two rounds of revisions before launch.
+            Larger additions, new pages or integrations can be quoted separately.
+          </p>
+        </details>
+
+        <details>
+          <summary>How long does it take?</summary>
+          <p>
+            Timing depends on the size of the website and how quickly we receive
+            your business information, images and feedback.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can you use my existing logo and photos?</summary>
+          <p>
+            Absolutely. If you have your own logo, photos and branding, we can use
+            them to make the website feel more like your business.
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+
+      <div class="cta">
+        <div>
+          <h2>Ready to give your business a proper home online?</h2>
+          <p>
+            WebWallaby builds straightforward, professional websites for Australian
+            small businesses without the traditional agency price tag.
+          </p>
+        </div>
+
+        <a href="#pricing" class="button-primary">
+          Website Setup $499
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">WebWallaby</div>
+      <div>Big websites for small business.</div>
+      <div>© 2026 WebWallaby</div>
+    </div>
+  </footer>
+
+</body>
+</html>
