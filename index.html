@@ -589,13 +589,49 @@ aspect-ratio: 1758 / 855;
     }
 
     @media (max-width: 900px) {
-      .nav-links a:not(.nav-button) {
-        display: none;
-      }
+      .nav-links {
+  display: none;
+  position: absolute;
+  top: 78px;
+  left: 20px;
+  right: 20px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  padding: 18px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.nav-links.open {
+  display: flex;
+}
+
+.nav-links a {
+  padding: 12px 14px;
+}
+
+.menu-toggle {
+  display: block;
+}
 
       .hero {
         padding-top: 72px;
       }
+
+      .menu-toggle {
+  display: none;
+  border: 0;
+  background: var(--ink);
+  color: var(--white);
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  font-size: 22px;
+  cursor: pointer;
+}
 
       .features,
       .projects {
@@ -682,13 +718,17 @@ aspect-ratio: 1758 / 855;
         WebWallaby
       </a>
 
-      <div class="nav-links">
-        <a href="#work">Our Work</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#process">How It Works</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact" class="nav-button">Get Started</a>
-      </div>
+      <div class="nav-links" id="navLinks">
+  <a href="#work">Our Work</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#process">How It Works</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact" class="nav-button">Get Started</a>
+</div>
+
+<button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+  ☰
+</button>
     </div>
   </nav>
 
@@ -1059,6 +1099,19 @@ aspect-ratio: 1758 / 855;
       <div>© 2026 WebWallaby</div>
     </div>
   </footer>
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
 
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+    });
+  });
+</script>
 </body>
 </html>
