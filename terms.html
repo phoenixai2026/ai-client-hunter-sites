@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Terms of Service | WebWallaby</title>
+  <meta name="description" content="WebWallaby Terms of Service for website design, development and Website Care services.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <style>
+    :root {
+      --ink: #17211d;
+      --muted: #617069;
+      --cream: #f7f3e9;
+      --white: #ffffff;
+      --green: #214f3d;
+      --green-light: #dce9e1;
+      --orange: #ee7a32;
+      --orange-dark: #d96320;
+      --border: #dedfd9;
+      --shadow: 0 22px 70px rgba(23, 33, 29, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(980px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 243, 233, 0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(23, 33, 29, 0.08);
+    }
+
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: var(--green);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-size: 15px;
+      font-weight: 900;
+      box-shadow: 0 10px 26px rgba(33, 79, 61, .22);
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .hero {
+      padding: 86px 0 60px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      margin-bottom: 24px;
+      border-radius: 999px;
+      background: var(--green-light);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    h1 {
+      max-width: 850px;
+      margin-bottom: 24px;
+      font-size: clamp(50px, 7vw, 82px);
+      line-height: .95;
+      letter-spacing: -0.06em;
+      font-weight: 950;
+    }
+
+    .hero-text {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .terms-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 54px;
+      box-shadow: var(--shadow);
+      margin-bottom: 70px;
+    }
+
+    .notice {
+      padding: 22px 24px;
+      margin-bottom: 44px;
+      border-radius: 18px;
+      background: var(--green-light);
+      color: var(--green);
+      font-size: 15px;
+    }
+
+    .terms-section {
+      padding: 34px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .terms-section:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .number {
+      display: inline-block;
+      margin-bottom: 7px;
+      color: var(--orange-dark);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: 12px;
+      font-size: 25px;
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    .terms-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin: 14px 0 14px 24px;
+    }
+
+    li {
+      margin-bottom: 7px;
+    }
+
+    .contact-box {
+      margin-top: 26px;
+      padding: 24px;
+      border-radius: 18px;
+      background: var(--cream);
+    }
+
+    footer {
+      padding: 38px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-brand {
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 28px, 980px);
+      }
+
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .brand {
+        font-size: 19px;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+      }
+
+      .back-button {
+        padding: 10px 14px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 64px 0 44px;
+      }
+
+      h1 {
+        font-size: clamp(44px, 13vw, 62px);
+      }
+
+      .terms-card {
+        padding: 30px 22px;
+        border-radius: 22px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+
+      <a href="index.html" class="brand">
+        <span class="brand-mark">WW</span>
+        WebWallaby
+      </a>
+
+      <a href="index.html" class="back-button">
+        ← Back to WebWallaby
+      </a>
+
+    </div>
+  </nav>
+
+
+  <header class="hero">
+    <div class="container">
+
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        WebWallaby
+      </div>
+
+      <h1>Terms of Service</h1>
+
+      <p class="hero-text">
+        These Terms apply to website design, development, hosting,
+        maintenance and related services provided by WebWallaby.
+      </p>
+
+      <div class="meta">
+        <span>Version 1.0</span>
+        <span>Effective 12 September 2026</span>
+      </div>
+
+    </div>
+  </header>
+
+
+  <main class="container">
+
+    <div class="terms-card">
+
+      <div class="notice">
+        By accepting a quote, making payment or actively confirming acceptance
+        of these Terms, you agree to be bound by them.
+      </div>
+
+
+      <section class="terms-section">
+        <div class="number">01</div>
+        <h2>Website Setup</h2>
+
+        <p>
+          WebWallaby provides website design and development services for
+          small businesses.
+        </p>
+
+        <p>
+          Unless otherwise agreed in writing, the standard Website Setup fee
+          is $499.
+        </p>
+
+        <p>Website Setup includes:</p>
+
+        <ul>
+          <li>a professionally designed small business website</li>
+          <li>mobile-friendly design</li>
+          <li>customer-supplied business information and services</li>
+          <li>contact and call-to-action sections</li>
+          <li>basic search engine optimisation setup</li>
+          <li>connection of a customer-owned domain</li>
+          <li>two rounds of reasonable revisions before launch</li>
+        </ul>
+
+        <p>
+          Work outside the agreed scope may be quoted separately.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">02</div>
+        <h2>Domain Name</h2>
+
+        <p>
+          The customer is responsible for purchasing and maintaining their
+          domain name unless otherwise agreed.
+        </p>
+
+        <p>
+          WebWallaby recommends that the domain is registered directly in the
+          customer's name so the customer retains ownership and control of it.
+        </p>
+
+        <p>
+          Domain registration and renewal fees are not included in the $499
+          Website Setup fee unless specifically stated in writing.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">03</div>
+        <h2>Customer Information and Materials</h2>
+
+        <p>
+          The customer is responsible for providing accurate business
+          information, contact details, services, pricing, opening hours,
+          service areas and other content required for the website.
+        </p>
+
+        <p>
+          The customer confirms that they own, or have permission to use, all
+          logos, photographs, text, trademarks, videos and other materials
+          supplied to WebWallaby.
+        </p>
+
+        <p>
+          WebWallaby may rely on information and materials provided by the
+          customer without independently verifying their accuracy or ownership.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">04</div>
+        <h2>Website Concepts</h2>
+
+        <p>
+          Any concept, draft or preview provided before payment or final
+          approval is supplied for demonstration purposes only.
+        </p>
+
+        <p>
+          Concepts may contain placeholder text, temporary images or draft
+          information and are not the customer's final production website until
+          approved and launched.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">05</div>
+        <h2>Revisions</h2>
+
+        <p>
+          Website Setup includes two rounds of revisions before launch.
+        </p>
+
+        <p>
+          A revision round means a reasonable group of requested changes
+          submitted together.
+        </p>
+
+        <p>
+          Additional revision rounds, substantial redesigns, new pages, new
+          functionality or work outside the original scope may incur an
+          additional fee. WebWallaby will advise the customer before carrying
+          out chargeable additional work.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">06</div>
+        <h2>Customer Approval</h2>
+
+        <p>
+          Before launch, the customer will be given an opportunity to review
+          the website.
+        </p>
+
+        <p>The customer is responsible for checking:</p>
+
+        <ul>
+          <li>spelling and grammar</li>
+          <li>business information</li>
+          <li>phone numbers and email addresses</li>
+          <li>services and pricing</li>
+          <li>opening hours</li>
+          <li>images and logos</li>
+          <li>links</li>
+          <li>legal or regulatory information relevant to their business</li>
+        </ul>
+
+        <p>
+          Once the customer approves the website for launch, WebWallaby may
+          rely on that approval as confirmation that the customer is satisfied
+          with the website content.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">07</div>
+        <h2>Payment</h2>
+
+        <p>
+          Unless otherwise agreed in writing, the Website Setup fee must be
+          paid before WebWallaby begins final production work.
+        </p>
+
+        <p>
+          Additional work outside the agreed scope must be paid in accordance
+          with the separate quote or invoice provided.
+        </p>
+
+        <p>
+          Fees already paid for completed work are generally non-refundable,
+          subject to any rights the customer may have under Australian law.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">08</div>
+        <h2>Website Care</h2>
+
+        <p>
+          Customers may choose optional Website Care for $39 per month.
+        </p>
+
+        <p>Website Care currently includes:</p>
+
+        <ul>
+          <li>website hosting</li>
+          <li>SSL security certificate</li>
+          <li>routine technical maintenance</li>
+          <li>minor content updates</li>
+          <li>general website support</li>
+        </ul>
+
+        <p>
+          Website Care does not include major redesigns, new pages, custom
+          functionality, third-party integrations, large content changes or
+          other substantial development work unless otherwise agreed.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">09</div>
+        <h2>Minor Updates</h2>
+
+        <p>Minor updates generally include simple changes such as:</p>
+
+        <ul>
+          <li>updating text</li>
+          <li>changing business hours</li>
+          <li>changing contact details</li>
+          <li>replacing an existing image</li>
+          <li>small wording changes</li>
+          <li>updating an existing service description</li>
+        </ul>
+
+        <p>
+          Significant layout changes, new sections, new pages, integrations
+          or substantial development may be quoted separately.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">10</div>
+        <h2>Website Care Cancellation</h2>
+
+        <p>
+          Website Care may be cancelled at any time.
+        </p>
+
+        <p>
+          Unless otherwise agreed, Website Care will continue until the end
+          of the customer's current paid billing period.
+        </p>
+
+        <p>
+          After Website Care ends, WebWallaby is no longer responsible for
+          managed hosting, maintenance, technical support or minor updates.
+        </p>
+
+        <p>
+          The customer's domain remains the customer's property. Where
+          reasonably practicable, WebWallaby can provide the customer with
+          their website files on request.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">11</div>
+        <h2>Website Availability</h2>
+
+        <p>
+          WebWallaby will take reasonable steps to keep websites operating
+          reliably. However, uninterrupted or error-free operation cannot
+          be guaranteed.
+        </p>
+
+        <p>
+          Availability may be affected by hosting providers, domain registrars,
+          DNS services, internet providers, software platforms, maintenance,
+          outages, cyber incidents or other circumstances outside WebWallaby's
+          reasonable control.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">12</div>
+        <h2>Third-Party Services</h2>
+
+        <p>
+          WebWallaby may use third-party services including hosting providers,
+          domain registrars, email providers, analytics platforms, payment
+          providers, APIs and other software services.
+        </p>
+
+        <p>
+          WebWallaby is not responsible for changes, outages, suspension,
+          discontinuation or failures caused by third-party providers outside
+          WebWallaby's reasonable control.
+        </p>
+
+        <p>
+          Third-party fees are not included unless specifically stated.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">13</div>
+        <h2>Search Engines and Business Results</h2>
+
+        <p>
+          WebWallaby may perform basic search engine optimisation setup as
+          part of Website Setup.
+        </p>
+
+        <p>WebWallaby does not guarantee:</p>
+
+        <ul>
+          <li>Google or other search engine rankings</li>
+          <li>website visitor numbers</li>
+          <li>customer enquiries</li>
+          <li>sales or revenue</li>
+          <li>leads</li>
+          <li>business growth</li>
+          <li>any particular commercial outcome</li>
+        </ul>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">14</div>
+        <h2>Intellectual Property</h2>
+
+        <p>
+          Once the customer has paid all amounts owing for Website Setup, the
+          customer may use the finished website for their business.
+        </p>
+
+        <p>
+          The customer retains ownership of materials they supplied to
+          WebWallaby.
+        </p>
+
+        <p>
+          WebWallaby retains ownership of its pre-existing tools, reusable
+          code, templates, processes, systems, methods and know-how.
+        </p>
+
+        <p>
+          Third-party software, fonts, libraries, images and other materials
+          remain subject to their respective licences.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">15</div>
+        <h2>Portfolio Use</h2>
+
+        <p>
+          Unless the customer asks otherwise in writing, WebWallaby may display
+          the completed website or screenshots of it as examples of its work.
+        </p>
+
+        <p>
+          WebWallaby will not deliberately publish confidential customer
+          information as part of portfolio use.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">16</div>
+        <h2>Customer Responsibilities</h2>
+
+        <p>
+          The customer is responsible for ensuring their website and business
+          comply with laws and regulations that apply specifically to their
+          industry or activities.
+        </p>
+
+        <p>
+          WebWallaby does not provide legal, accounting or regulatory
+          compliance advice.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">17</div>
+        <h2>Security</h2>
+
+        <p>
+          WebWallaby takes reasonable steps to use secure website practices.
+          However, no website, hosting service or internet-connected system
+          can be guaranteed to be completely secure.
+        </p>
+
+        <p>
+          Customers should promptly notify WebWallaby if they become aware of
+          a suspected security issue affecting a website managed under
+          Website Care.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">18</div>
+        <h2>Limitation of Liability</h2>
+
+        <p>
+          To the maximum extent permitted by law, WebWallaby is not liable for
+          indirect, incidental or consequential loss, including loss of profits,
+          revenue, customers, business opportunities or business interruption.
+        </p>
+
+        <p>
+          Where WebWallaby is legally entitled to limit its liability,
+          WebWallaby's total liability relating to a particular service will
+          be limited to the amount paid by the customer for the service giving
+          rise to the claim.
+        </p>
+
+        <p>
+          Nothing in these Terms excludes or limits any guarantee, right or
+          remedy that cannot lawfully be excluded or limited, including rights
+          available under the Australian Consumer Law.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">19</div>
+        <h2>Delays</h2>
+
+        <p>
+          WebWallaby is not responsible for delays caused by the customer
+          failing to provide requested information, content, approvals or
+          feedback.
+        </p>
+
+        <p>
+          Estimated completion dates are estimates unless WebWallaby expressly
+          agrees in writing to a fixed deadline.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">20</div>
+        <h2>Ending a Project</h2>
+
+        <p>
+          Either party may request to end a project before completion.
+        </p>
+
+        <p>
+          The customer remains responsible for paying for work already
+          completed and any non-refundable third-party costs incurred on
+          their behalf.
+        </p>
+
+        <p>
+          WebWallaby may stop work if payment is overdue, the customer
+          repeatedly fails to provide required information, or the customer
+          engages in abusive, unlawful or unreasonable conduct.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">21</div>
+        <h2>Disputes</h2>
+
+        <p>
+          If a dispute arises, both parties agree to first attempt to resolve
+          the issue directly and in good faith.
+        </p>
+
+        <p>
+          The party raising the dispute should provide reasonable details of
+          the issue and the outcome they are seeking.
+        </p>
+
+        <p>
+          Both parties should make reasonable efforts to resolve the matter
+          before commencing formal proceedings.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">22</div>
+        <h2>Changes to These Terms</h2>
+
+        <p>
+          WebWallaby may update these Terms from time to time.
+        </p>
+
+        <p>
+          The version accepted by the customer when they place their order
+          will apply to that order unless both parties agree otherwise.
+        </p>
+      </section>
+
+
+      <section class="terms-section">
+        <div class="number">23</div>
+        <h2>Contact</h2>
+
+        <p>
+          Questions about these Terms can be sent to WebWallaby.
+        </p>
+
+        <div class="contact-box">
+          <strong>WebWallaby</strong><br>
+          Email: filipe.vongue@tickemaster.com.au
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">WebWallaby</div>
+      <div>Terms of Service · Version 1.0</div>
+      <div>© 2026 WebWallaby</div>
+    </div>
+  </footer>
+
+</body>
+</html>
