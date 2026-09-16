@@ -562,21 +562,25 @@ aspect-ratio: 1758 / 855;
       border-radius: 34px;
       padding: 64px;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
     }
 
     .cta h2 {
       max-width: 650px;
-      margin: 0;
+      margin: 0 0 26px;
     }
 
     .cta p {
-      margin-top: 14px;
-      max-width: 620px;
+      margin: 0 0 18px;
+      max-width: 750px;
       color: rgba(23,33,29,.74);
       font-size: 17px;
+    }
+
+    .cta p:last-child {
+      margin-bottom: 0;
     }
 
     .cta .button-primary {
@@ -658,9 +662,8 @@ aspect-ratio: 1758 / 855;
   }
 
   .cta {
-    flex-direction: column;
-    align-items: flex-start;
     padding: 44px 30px;
+    gap: 26px;
   }
 }
 
