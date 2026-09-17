@@ -12,6 +12,7 @@
   >
 
   <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#214f3d">
 
   <style>
     :root {
@@ -62,7 +63,7 @@
       top: 0;
       z-index: 100;
 
-      background: rgba(247, 243, 233, 0.94);
+      background: rgba(247, 243, 233, 0.92);
       backdrop-filter: blur(16px);
 
       border-bottom: 1px solid rgba(23, 33, 29, 0.08);
@@ -278,18 +279,25 @@
     .footer-inner {
       display: flex;
       justify-content: space-between;
-
+      align-items: center;
       gap: 20px;
-
       color: var(--muted);
-
       font-size: 13px;
     }
 
     .footer-brand {
       color: var(--ink);
       font-weight: 900;
+      font-size: 18px;
     }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    .footer-links a:hover { color: var(--orange-dark); }
 
     @media (max-width: 700px) {
 
@@ -948,19 +956,12 @@
 
   <footer>
     <div class="container footer-inner">
-
-      <div class="footer-brand">
-        WebLorosae
+      <div class="footer-brand">WebLorosae</div>
+      <div class="footer-links">
+        <a href="terms.html" aria-current="page">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
       </div>
-
-      <div>
-        Terms of Service · Version 1.1
-      </div>
-
-      <div>
-        © 2026 WebLorosae
-      </div>
-
+      <div>© 2026 WebLorosae</div>
     </div>
   </footer>
 
