@@ -683,7 +683,7 @@ aspect-ratio: 1758 / 855;
         height: 38px;
       }
 
-      .nav-button {
+      .back-button {
         padding: 10px 14px;
         font-size: 13px;
       }
@@ -726,6 +726,21 @@ aspect-ratio: 1758 / 855;
     }
   
 
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 12px 18px;
+
+      border-radius: 999px;
+
+      background: var(--ink);
+      color: var(--white);
+
+      font-size: 14px;
+      font-weight: 800;
+    }
     .policy-hero { padding: 82px 0 42px; }
     .policy-hero h1 { font-size: clamp(42px, 6vw, 76px); line-height: 1.04; margin: 0 0 20px; }
     .policy-hero p { max-width: 760px; color: var(--muted); font-size: 18px; }
@@ -748,13 +763,7 @@ aspect-ratio: 1758 / 855;
   <nav class="nav" aria-label="Main navigation">
     <div class="container nav-inner">
       <a href="index.html" class="brand"><span class="brand-mark">WL</span>WebLorosae</a>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html#pricing">Pricing</a>
-        <a href="index.html#process">How It Works</a>
-        <a href="index.html#faq">FAQ</a>
-        <a href="index.html#contact" class="nav-button">Get Started</a>
-      </div>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+      <a href="index.html" class="back-button">← Back to WebLorosae</a>
     </div>
   </nav>
   <header class="policy-hero">
@@ -788,19 +797,5 @@ aspect-ratio: 1758 / 855;
     <div class="footer-links"><a href="terms.html">Terms of Service</a><a href="privacy.html" aria-current="page">Privacy Policy</a></div>
     <div>© 2026 WebLorosae</div>
   </div></footer>
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    menuToggle.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-    });
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-  </script>
 </body>
 </html>
