@@ -756,6 +756,14 @@ aspect-ratio: 1758 / 855;
     .policy-card a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
     .footer-links { display: flex; flex-wrap: wrap; gap: 22px; }
     .footer-links a:hover { color: var(--orange-dark); }
+    /* Match the Terms of Service back button on phones and small tablets.
+       Keep this after the base .back-button rule so mobile values win. */
+    @media (max-width: 700px) {
+      .back-button {
+        padding: 10px 14px;
+        font-size: 13px;
+      }
+    }
     @media (max-width: 600px) { .policy-hero { padding: 54px 0 28px; } .policy-wrap { padding-bottom: 60px; } }
 </style>
 </head>
