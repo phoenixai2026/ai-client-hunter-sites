@@ -1,0 +1,47 @@
+name: Enable public page indexing once
+on:
+  push:
+    paths: ['.github/workflows/enable-public-indexing-once.yml']
+permissions:
+  contents: write
+jobs:
+  indexing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update indexing directives and sitemap
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          pages = ['index.html','privacy.html','terms.html']
+          for filename in pages:
+              path = Path(filename)
+              before = path.read_text(encoding='utf-8')
+              pattern = r'<meta\s+[^>]*name=["\']robots["\'][^>]*>'
+              matches = re.findall(pattern, before, flags=re.I)
+              assert len(matches) == 1 and 'noindex' in matches[0].lower(), f'Unexpected robots directive in {filename}: {matches}'
+              after = before.replace(matches[0], '<meta name="robots" content="index, follow">', 1)
+              assert 'noindex' not in after.lower() or filename != 'index.html', 'Homepage still has a noindex directive'
+              path.write_text(after, encoding='utf-8')
+              print('Enabled indexing:', filename)
+          demos = list(Path('websites').glob('*.html'))
+          assert demos, 'No demo pages found'
+          for page in demos:
+              content = page.read_text(encoding='utf-8')
+              assert re.search(r'<meta\s+[^>]*name=["\']robots["\'][^>]*noindex|<meta\s+[^>]*content=["\'][^"\']*noindex[^"\']*["\'][^>]*name=["\']robots', content, re.I), f'Demo missing noindex: {page}'
+          Path('sitemap.xml').write_text('''<?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            <url><loc>https://weblorosae.com.au/</loc></url>
+            <url><loc>https://weblorosae.com.au/terms.html</loc></url>
+            <url><loc>https://weblorosae.com.au/privacy.html</loc></url>
+          </urlset>
+          ''', encoding='utf-8')
+          Path('robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: https://weblorosae.com.au/sitemap.xml\n', encoding='utf-8')
+          print(f'Validated {len(demos)} demos keep noindex; sitemap contains only 3 public pages.')
+          PY
+      - name: Commit indexing configuration
+        run: |
+          git add index.html privacy.html terms.html sitemap.xml robots.txt
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Enable indexing for public WebLorosae pages and publish sitemap'
+          git push origin HEAD:main
