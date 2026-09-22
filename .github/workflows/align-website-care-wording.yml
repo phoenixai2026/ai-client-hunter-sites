@@ -1,0 +1,30 @@
+name: Align Website Care wording
+on:
+  push:
+    paths: ['.github/workflows/align-website-care-wording.yml']
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace homepage wording and verify
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          old='Choose “No, I’ll manage the website myself” when ordering.'
+          new='Choose “No, Website Setup only” when ordering.'
+          assert s.count(old)==1, f'Expected one exact match; found {s.count(old)}'
+          p.write_text(s.replace(old,new),encoding='utf-8')
+          updated=p.read_text(encoding='utf-8')
+          assert old not in updated and updated.count(new)==1
+          print('Verified exactly one homepage wording change.')
+          PY
+      - name: Commit homepage
+        run: |
+          git add index.html
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Match Website Care homepage wording to onboarding form'
+          git push origin HEAD:main
