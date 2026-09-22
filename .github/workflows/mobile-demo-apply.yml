@@ -1,0 +1,56 @@
+name: Apply mobile demo improvements
+on:
+  push:
+    paths: ['.github/workflows/mobile-demo-apply.yml']
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply styling to all demos
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          source=Path('.github/workflows/mobile-demo-polish.yml').read_text()
+          addition=source.split("          additions = '''",1)[1].split("          '''",1)[0]
+          shared=Path('assets/demo.css')
+          content=shared.read_text()
+          marker='/* WebLorosae mobile usability enhancements */'
+          assert marker not in content
+          demos=sorted(Path('websites').glob('*.html'))
+          shared_sites=[]
+          standalone=[]
+          for page in demos:
+              text=page.read_text()
+              if '../assets/demo.css' in text:
+                  shared_sites.append(str(page))
+              else:
+                  standalone.append(str(page))
+          assert shared_sites
+          shared.write_text(content.rstrip()+'\n'+addition+'\n')
+          # Standalone demo pages have bespoke layouts: retain them and add a small
+          # mobile-only enhancement stylesheet instead of overriding their desktop rules.
+          extra='''\n/* Responsive refinements for standalone demo pages */\n@media(max-width:700px){\n  body{overflow-x:hidden}\n  h1{font-size:clamp(34px,9vw,48px);line-height:1.1;letter-spacing:-1.3px;overflow-wrap:break-word}\n  p{font-size:max(16px,1em);line-height:1.6}\n  .hero .actions,.hero-actions,.hero-buttons,.cta-buttons{display:flex;flex-direction:column;align-items:stretch;gap:12px}\n  .hero .actions a,.hero-actions a,.hero-buttons a,.cta-buttons a{width:100%;min-height:54px;display:inline-flex;align-items:center;justify-content:center;text-align:center;font-size:16px;padding:12px 16px}\n  a.button,.btn,.button-primary,.button-secondary{min-height:52px;font-size:16px}\n  .sticky-call,.mobile-call{min-height:56px}\n}\n'''
+          css=Path('assets/demo-standalone-mobile.css')
+          css.write_text(extra)
+          for name in standalone:
+              path=Path(name)
+              html=path.read_text()
+              assert '</head>' in html.lower(), name
+              import re
+              html,count=re.subn(r'</head>', '<link rel="stylesheet" href="../assets/demo-standalone-mobile.css">\n</head>',html,count=1,flags=re.I)
+              assert count==1
+              path.write_text(html)
+          assert marker in shared.read_text()
+          assert all('../assets/demo-standalone-mobile.css' in Path(p).read_text() for p in standalone)
+          print('Shared styles applied to',len(shared_sites),'demos:',shared_sites)
+          print('Standalone styles applied to',len(standalone),'demos:',standalone)
+          print('TOTAL DEMOS:',len(demos))
+          PY
+      - name: Commit mobile changes
+        run: |
+          git add assets/demo.css assets/demo-standalone-mobile.css websites
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Improve mobile layouts across all demo sites'
+          git push origin HEAD:main
