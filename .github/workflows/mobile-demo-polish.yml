@@ -1,0 +1,79 @@
+name: Improve demo mobile layouts
+on:
+  push:
+    paths:
+      - '.github/workflows/mobile-demo-polish.yml'
+permissions:
+  contents: write
+jobs:
+  polish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply and verify shared mobile styling
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          css = Path('assets/demo.css')
+          original = css.read_text(encoding='utf-8')
+          marker = '/* WebLorosae mobile usability enhancements */'
+          if marker in original:
+              raise SystemExit('Mobile enhancements already present; stopping to avoid duplicate rules.')
+          assert '@media(max-width:700px)' in original
+          demos = list(Path('websites').glob('*.html'))
+          assert demos and all('../assets/demo.css' in f.read_text(encoding='utf-8') for f in demos), 'A demo does not load the shared stylesheet.'
+          additions = '''
+          /* WebLorosae mobile usability enhancements */
+          @media(max-width:700px){
+            body{padding-bottom:76px}
+            .preview-inner{font-size:12px;line-height:1.45;gap:12px}
+            .preview-inner p{max-width:none;min-width:0;flex:1}
+            .preview-inner a{display:inline-flex;align-items:center;min-height:44px;font-size:12px}
+            .navigation{gap:10px}
+            .nav-links{flex-shrink:0}
+            .nav-links .button{min-height:48px;font-size:13px;padding:11px 14px;gap:8px}
+            .identity{min-width:0;max-width:none;flex:1}
+            .brand-name{font-size:15px;overflow-wrap:anywhere}
+            .brand-name small{font-size:9px;letter-spacing:1px}
+            h1{font-size:clamp(36px,10vw,49px);line-height:1.08;letter-spacing:-1.6px;overflow-wrap:break-word}
+            .intro{font-size:17px;line-height:1.65}
+            .hero-note{font-size:14px;line-height:1.5}
+            .actions{display:flex;flex-direction:column;align-items:stretch;gap:12px}
+            .actions .button{width:100%;min-height:54px;font-size:16px;padding:14px 18px;gap:12px;text-align:center}
+            .button{min-height:52px;font-size:16px;padding:13px 18px}
+            .eyebrow{font-size:11px}
+            .image-label{font-size:12px}
+            .service-strip{font-size:12px}
+            .section-head p,.service-card p,.steps p,.job-card p,details p,.owner-card p,.process-copy p,.contact-section p{font-size:16px;line-height:1.6}
+            .service-card a,.owner-actions a:not(.button){font-size:15px;min-height:44px;align-items:center}
+            .steps h3,.job-card h3{font-size:19px}
+            .job-card label,summary{font-size:16px}
+            .job-card select{min-height:52px;font-size:16px}
+            .job-card .small-print,.contact-note{font-size:13px}
+            .owner-actions .button{min-height:54px;font-size:16px;text-align:center}
+            .site-footer{font-size:13px}
+            .footer-inner a{min-height:44px;display:inline-flex;align-items:center}
+            .mobile-call{gap:10px;padding:8px 18px max(8px,env(safe-area-inset-bottom))}
+            .mobile-call span{font-size:13px;line-height:1.3;flex:1;min-width:0}
+            .mobile-call .button{min-height:48px;font-size:13px;padding:10px 12px;gap:6px;text-align:center;flex-shrink:0}
+          }
+          @media(max-width:370px){
+            .wrap{width:calc(100% - 28px)}
+            .brand-name{font-size:13px}
+            .monogram{width:32px;height:32px}
+            .nav-links .button{font-size:12px;padding:10px}
+            .mobile-call .button{font-size:12px;padding:10px}
+          }
+          '''
+          css.write_text(original.rstrip() + '\n' + additions + '\n', encoding='utf-8')
+          updated = css.read_text(encoding='utf-8')
+          assert updated.count(marker) == 1
+          assert updated.startswith(original.rstrip())
+          print(f'Shared mobile stylesheet updated for {len(demos)} demo sites; desktop rules preserved.')
+          PY
+      - name: Publish styling changes to main
+        run: |
+          git add assets/demo.css
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Improve mobile typography and touch targets across demo sites'
+          git push origin HEAD:main
