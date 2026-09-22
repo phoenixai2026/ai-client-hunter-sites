@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://weblorosae.com.au/sitemap.xml
