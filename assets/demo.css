@@ -5,3 +5,46 @@
 @media(max-width:1000px){.wrap{width:calc(100% - 40px)}.nav-links{gap:18px}.nav-links .optional-link{display:none}.hero-grid{gap:30px}h1{font-size:49px;letter-spacing:-2px}.hero-image{height:440px}.service-grid{grid-template-columns:repeat(2,1fr)}.process-grid,.contact-grid,.faq-grid{gap:40px}.brand-name{font-size:16px}.section-head{align-items:start}}
 @media(max-width:700px){html{scroll-padding-top:100px}body{padding-bottom:76px}.wrap{width:calc(100% - 36px)}.preview-inner{align-items:center;font-size:10px;gap:15px}.preview-inner p{max-width:245px}.navigation{min-height:77px;gap:12px}.identity{gap:9px;max-width:calc(100% - 91px)}.brand-name{font-size:14px;letter-spacing:-.3px}.brand-name small{font-size:8px;letter-spacing:1px}.monogram{width:36px;height:36px;font-size:13px}.nav-links>a:not(.button){display:none}.nav-links .button{font-size:11px;min-height:42px;padding:10px 12px}.hero{padding:35px 0 28px}.hero-grid{grid-template-columns:1fr;gap:32px}h1{font-size:clamp(40px,11.5vw,57px);letter-spacing:-2px}.eyebrow{font-size:9px;margin-bottom:18px}.intro{font-size:16px;margin-bottom:23px}.hero-image{height:310px;border-radius:6px 6px 55px 6px}.image-caption{left:12px;bottom:14px;padding:18px 22px;max-width:260px}.image-caption strong{font-size:21px}.image-caption small{font-size:9px}.hero-note{font-size:11px}.service-strip{margin-top:27px;gap:8px 20px;justify-content:flex-start;font-size:10px}.service-strip span:before{font-size:16px}.section{padding:55px 0}.section-head{display:block;margin-bottom:28px}.section-head p{margin-top:20px}.service-grid{grid-template-columns:1fr}.service-card{min-height:0;padding:24px}.service-top{margin-bottom:20px}.process-grid,.contact-grid,.faq-grid,.owner-card{grid-template-columns:1fr;gap:27px}.job-card{padding:24px}h2{font-size:35px;letter-spacing:-1.5px}.owner-card{padding:27px}.owner-card h2{font-size:31px}.owner-section{padding-bottom:45px}.footer-inner{display:block}.footer-inner a{display:inline-block;margin-top:12px}.mobile-call{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:30;background:var(--paper);border-top:1px solid var(--line);padding:10px 18px max(10px,env(safe-area-inset-bottom));gap:12px;align-items:center;justify-content:space-between}.mobile-call span{font-size:12px;font-weight:700}.mobile-call .button{font-size:12px;min-height:44px;padding:10px 18px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+          /* WebLorosae mobile usability enhancements */
+          @media(max-width:700px){
+            body{padding-bottom:76px}
+            .preview-inner{font-size:12px;line-height:1.45;gap:12px}
+            .preview-inner p{max-width:none;min-width:0;flex:1}
+            .preview-inner a{display:inline-flex;align-items:center;min-height:44px;font-size:12px}
+            .navigation{gap:10px}
+            .nav-links{flex-shrink:0}
+            .nav-links .button{min-height:48px;font-size:13px;padding:11px 14px;gap:8px}
+            .identity{min-width:0;max-width:none;flex:1}
+            .brand-name{font-size:15px;overflow-wrap:anywhere}
+            .brand-name small{font-size:9px;letter-spacing:1px}
+            h1{font-size:clamp(36px,10vw,49px);line-height:1.08;letter-spacing:-1.6px;overflow-wrap:break-word}
+            .intro{font-size:17px;line-height:1.65}
+            .hero-note{font-size:14px;line-height:1.5}
+            .actions{display:flex;flex-direction:column;align-items:stretch;gap:12px}
+            .actions .button{width:100%;min-height:54px;font-size:16px;padding:14px 18px;gap:12px;text-align:center}
+            .button{min-height:52px;font-size:16px;padding:13px 18px}
+            .eyebrow{font-size:11px}
+            .image-label{font-size:12px}
+            .service-strip{font-size:12px}
+            .section-head p,.service-card p,.steps p,.job-card p,details p,.owner-card p,.process-copy p,.contact-section p{font-size:16px;line-height:1.6}
+            .service-card a,.owner-actions a:not(.button){font-size:15px;min-height:44px;align-items:center}
+            .steps h3,.job-card h3{font-size:19px}
+            .job-card label,summary{font-size:16px}
+            .job-card select{min-height:52px;font-size:16px}
+            .job-card .small-print,.contact-note{font-size:13px}
+            .owner-actions .button{min-height:54px;font-size:16px;text-align:center}
+            .site-footer{font-size:13px}
+            .footer-inner a{min-height:44px;display:inline-flex;align-items:center}
+            .mobile-call{gap:10px;padding:8px 18px max(8px,env(safe-area-inset-bottom))}
+            .mobile-call span{font-size:13px;line-height:1.3;flex:1;min-width:0}
+            .mobile-call .button{min-height:48px;font-size:13px;padding:10px 12px;gap:6px;text-align:center;flex-shrink:0}
+          }
+          @media(max-width:370px){
+            .wrap{width:calc(100% - 28px)}
+            .brand-name{font-size:13px}
+            .monogram{width:32px;height:32px}
+            .nav-links .button{font-size:12px;padding:10px}
+            .mobile-call .button{font-size:12px;padding:10px}
+          }
+

@@ -1,0 +1,11 @@
+
+/* Responsive refinements for standalone demo pages */
+@media(max-width:700px){
+  body{overflow-x:hidden}
+  h1{font-size:clamp(34px,9vw,48px);line-height:1.1;letter-spacing:-1.3px;overflow-wrap:break-word}
+  p{font-size:max(16px,1em);line-height:1.6}
+  .hero .actions,.hero-actions,.hero-buttons,.cta-buttons{display:flex;flex-direction:column;align-items:stretch;gap:12px}
+  .hero .actions a,.hero-actions a,.hero-buttons a,.cta-buttons a{width:100%;min-height:54px;display:inline-flex;align-items:center;justify-content:center;text-align:center;font-size:16px;padding:12px 16px}
+  a.button,.btn,.button-primary,.button-secondary{min-height:52px;font-size:16px}
+  .sticky-call,.mobile-call{min-height:56px}
+}
