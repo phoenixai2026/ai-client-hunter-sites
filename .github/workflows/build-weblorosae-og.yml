@@ -1,0 +1,35 @@
+name: Build WebLorosae social preview
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/weblorosae-og-source.svg'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install SVG renderer
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y librsvg2-bin
+      - name: Render social preview
+        run: |
+          mkdir -p images
+          rsvg-convert -w 1200 -h 630 assets/weblorosae-og-source.svg -o images/weblorosae-social-preview.png
+      - name: Commit social preview
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images/weblorosae-social-preview.png
+          if git diff --cached --quiet; then
+            echo "No image changes to commit"
+            exit 0
+          fi
+          git commit -m "Update WebLorosae Open Graph image"
+          git push
