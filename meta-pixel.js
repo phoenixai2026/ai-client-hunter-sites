@@ -39,6 +39,7 @@
       saveChoice(choice);
       box.remove();
       if (choice==='accepted') loadPixel();
+      if (choice==='declined' && loaded) window.location.reload();
     });
     document.body.appendChild(box);
   }
