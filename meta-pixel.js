@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   var consentKey = 'weblorosae_meta_pixel_consent_v1';
-  var pixelId = '1462417659041905';
+  var pixelId = '3134843963390017';
   var loaded = false;
   function storedChoice() {
     try { return window.localStorage.getItem(consentKey); } catch (e) { return null; }
