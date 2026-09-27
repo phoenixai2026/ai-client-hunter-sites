@@ -44,18 +44,12 @@
     document.body.appendChild(box);
   }
   function addSettingsLink() {
-    var footer = document.querySelector('footer');
-    if (!footer || document.getElementById('wl-cookie-settings')) return;
-    var a=document.createElement('a');
-    a.id='wl-cookie-settings';
-    a.href='#';
-    a.textContent='Advertising cookie settings';
-    a.style.cssText='display:inline-block;margin:12px 16px;color:inherit;text-decoration:underline;font-size:13px';
-    a.addEventListener('click',function(e) {
+    var a = document.getElementById('wl-cookie-settings');
+    if (!a) return;
+    a.addEventListener('click', function(e) {
       e.preventDefault();
       showConsent();
     });
-    footer.appendChild(a);
   }
   document.addEventListener('DOMContentLoaded',function() {
     addSettingsLink();
