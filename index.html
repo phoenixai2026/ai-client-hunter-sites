@@ -599,7 +599,10 @@ aspect-ratio: 1758 / 855;
       white-space: nowrap;
     }
 
-    .footer-links { display: flex; flex-wrap: wrap; gap: 22px; }
+    .footer-legal { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; }
+    .footer-cookie-settings { color: inherit; text-decoration: underline; font-size: 13px; }
+    .footer-cookie-settings:hover { color: var(--orange-dark); }
     .footer-links a:hover { color: var(--orange-dark); }
 
     footer {
@@ -1215,9 +1218,12 @@ aspect-ratio: 1758 / 855;
   <div class="container footer-inner">
     <div class="footer-brand">WebLorosae</div>
 
-    <div class="footer-links">
-      <a href="terms.html">Terms of Service</a>
-      <a href="privacy.html">Privacy Policy</a>
+    <div class="footer-legal">
+      <div class="footer-links">
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+      <a href="#" id="wl-cookie-settings" class="footer-cookie-settings">Advertising cookie settings</a>
     </div>
 
     <div>© 2026 WebLorosae</div>
