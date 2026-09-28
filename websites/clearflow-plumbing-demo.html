@@ -49,6 +49,16 @@ section.content{padding:88px 0;scroll-margin-top:110px}.section-head{max-width:7
 .pricing{background:#fff;border-top:1px solid var(--line)}.price-panel{display:grid;grid-template-columns:1fr 1fr;gap:22px}.price-card{background:var(--cream);border:1px solid var(--line);border-radius:15px;padding:32px}.price-card strong{display:block;font:800 42px Manrope,sans-serif;letter-spacing:-.055em;margin:10px 0 12px}.price-card p{color:var(--muted);font-size:14px}.price-card ul{padding-left:20px;color:var(--muted);font-size:14px}.price-card li{margin:8px 0}.price-card.optional{background:var(--sage)}.disclaimer{max-width:790px;text-align:center;color:var(--muted);font-size:12px;margin:23px auto 0}
 .final{background:var(--forest);color:#fff;padding:83px 0;text-align:center}.final h2{font-size:clamp(32px,4vw,50px);max-width:720px;margin:auto}.final p{max-width:630px;margin:19px auto 27px;color:#deebf5}.final .actions{justify-content:center}
 footer{background:#0b2c47;color:#d8e8f4;padding:26px 0;font-size:12px}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px}footer a{color:#e8f4fc}
+
+/* Example interactive enquiry preparation section, not a functioning plumbing booking form. */
+.help-section{background:#123f68;padding:78px 0;color:#fff;scroll-margin-top:110px}
+.help-heading{max-width:735px;margin:0 auto 32px;text-align:center}.help-heading .eyebrow{color:#b8e7ff}.help-heading h2{font-size:clamp(32px,4vw,47px)}.help-heading p{margin:14px auto 0;color:#e0edf8;font-size:16px}
+.help-panel{background:#fff;color:var(--ink);border-radius:18px;max-width:790px;margin:auto;padding:35px;box-shadow:0 24px 50px #061f3433}
+.help-panel label{display:block;font:800 22px Manrope,sans-serif;letter-spacing:-.025em;margin-bottom:15px}
+.help-panel select{display:block;width:100%;font:500 17px 'DM Sans',sans-serif;color:#193a57;background:#fff;border:2px solid #d3e2ef;border-radius:10px;padding:16px;min-height:59px}
+.help-panel h3{margin:30px 0 10px;font-size:21px}.help-panel p{font-size:15px;color:var(--muted)}.help-panel .button{width:100%;margin-top:24px;text-align:center}
+.help-panel .help-small{font-size:12px;margin-top:16px}.help-caption{text-align:center;color:#dbeaf5;font-size:12px;margin:18px auto 0;max-width:680px}
+@media(max-width:600px){.help-section{padding:63px 0;scroll-margin-top:95px}.help-panel{padding:25px 20px}.help-panel label{font-size:20px}.help-panel select{font-size:16px}}
 @media(max-width:930px){.hero-layout,.split{grid-template-columns:1fr}.hero-layout{gap:35px}.visual{min-height:390px;max-width:660px}.grid{grid-template-columns:repeat(2,1fr)}.nav-links{gap:14px}.nav-links a:not(.button):nth-child(2){display:none}}
 @media(max-width:600px){html{scroll-padding-top:95px}.wrap{width:min(100% - 36px,1140px)}.nav{min-height:70px}.brand{font-size:18px}.brand-mark{height:37px;width:37px;font-size:20px}.nav-links a:not(.button){display:none}.nav-links .button{padding:10px 11px;font-size:12px;white-space:nowrap}.notice{font-size:10px;padding:9px 13px}.hero{padding:52px 0 60px}.hero h1{font-size:clamp(37px,10vw,53px)}.hero p{font-size:15px}.visual{min-height:310px}.visual-note{bottom:12px;left:12px;right:12px;font-size:12px;padding:13px}.strip .wrap{gap:9px;text-align:center}.strip i{display:none}section.content{padding:65px 0;scroll-margin-top:95px}.grid,.steps,.price-panel{grid-template-columns:1fr}.section-head{margin-bottom:30px}.split{gap:25px}.example-box{padding:29px;min-height:315px}.area{padding:65px 0}.final{padding:65px 0}.actions .button{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
@@ -87,6 +97,18 @@ footer{background:#0b2c47;color:#d8e8f4;padding:26px 0;font-size:12px}footer .wr
 <section class="content" id="how-it-works"><div class="wrap"><div class="section-head"><div class="eyebrow">A straightforward customer journey</div><h2>From searching to getting in touch.</h2><p>Here's how a real plumber could use a one-page website to present their services.</p></div>
 <div class="steps"><div class="step"><div class="num">01 / DISCOVER</div><h3>They find your business</h3><p>Prospective customers arrive through your marketing, referrals or other online channels.</p></div><div class="step"><div class="num">02 / EXPLORE</div><h3>They see what you offer</h3><p>Clearly arranged service descriptions help visitors decide whether to enquire.</p></div><div class="step"><div class="num">03 / CONNECT</div><h3>They contact you</h3><p>Your actual phone, email, booking system or enquiry form makes it easy to take the next step.</p></div></div>
 </div></section>
+
+<section id="help-selector" class="help-section"><div class="wrap">
+<div class="help-heading"><div class="eyebrow">Example customer enquiry experience</div><h2>What would you like help with?</h2><p>Give visitors an easy starting point. This interactive example demonstrates a service selector you could include on your own plumbing website.</p></div>
+<div class="help-panel">
+<label for="plumbing-help">Choose a plumbing service</label>
+<select id="plumbing-help" aria-describedby="plumbing-help-tip"><option value="">Choose a service</option><option value="emergency">Emergency plumbing</option><option value="drains">Blocked drains</option><option value="hotwater">Hot water systems</option><option value="leaks">Leak detection</option><option value="repairs">Tap and toilet repairs</option><option value="maintenance">General maintenance</option><option value="other">Something else</option></select>
+<h3 id="plumbing-help-heading">A useful first conversation</h3>
+<p id="plumbing-help-tip" aria-live="polite">Have your suburb, a short description of the issue and your preferred timing ready. Ask about availability and the next steps.</p>
+<a class="button dark" href="https://weblorosae.com.au/#contact">Get a Website with This Feature ↗</a>
+<p class="help-small">Demonstration only: selecting a service does not send an enquiry or book a plumber. This button takes you to WebLorosae to enquire about website creation.</p>
+</div><p class="help-caption">For an actual plumbing business, this section can be adapted to its real services, availability and preferred enquiry method.</p>
+</div></section>
 <section class="area"><div class="wrap"><div class="eyebrow" style="color:#316d94">Your neighbourhood, clearly explained</div><h2>Show customers where you work.</h2><p>A finished website can show your real service suburbs or region. We haven't invented locations, phone numbers or availability for this fictional concept.</p></div></section>
 <section id="pricing" class="content pricing"><div class="wrap"><div class="section-head"><div class="eyebrow">WebLorosae website pricing</div><h2>Simple website options.</h2><p>These prices are for WebLorosae website services, not fictional ClearFlow plumbing services.</p></div>
 <div class="price-panel">
@@ -98,5 +120,27 @@ footer{background:#0b2c47;color:#d8e8f4;padding:26px 0;font-size:12px}footer .wr
 </div></section>
 </main>
 <footer><div class="wrap"><div>© 2026 WebLorosae · ClearFlow Plumbing is a fictional demonstration, not a real plumbing business.</div><div><a href="https://weblorosae.com.au/">WebLorosae</a> · <a href="https://weblorosae.com.au/privacy.html">Privacy</a> · <a href="https://weblorosae.com.au/terms.html">Terms</a></div></div></footer>
+<script>
+(function(){
+  const select=document.getElementById('plumbing-help');
+  const heading=document.getElementById('plumbing-help-heading');
+  const tip=document.getElementById('plumbing-help-tip');
+  if(!select||!heading||!tip)return;
+  const tips={
+    emergency:['Preparing for an urgent plumbing call','Describe the problem, your suburb and whether water or gas is involved. If there is immediate danger, contact the relevant emergency service or utility rather than relying on a demo website.'],
+    drains:['Discussing a blocked drain','Explain where the blockage appears to be and when the problem started. Ask the real plumbing business about service coverage and available inspection options.'],
+    hotwater:['Talking about your hot water system','Have the system type and a brief description of the fault ready. Ask the real plumbing business what information it needs before discussing an appointment.'],
+    leaks:['Explaining a possible leak','Note where you have noticed water or dampness and roughly when it started. Ask the real plumbing business about availability and the next steps.'],
+    repairs:['Arranging tap or toilet repairs','Describe the fitting and what is not working. If practical, have clear photos ready to share with your chosen plumber.'],
+    maintenance:['Discussing plumbing maintenance','List the maintenance jobs you have in mind, your suburb and your preferred timing so you can have a useful initial conversation.'],
+    other:['Tell your plumber what you need','Prepare a brief description of the work and the property location. The real plumbing business can then advise whether it provides that service.']
+  };
+  select.addEventListener('change',function(){
+    const item=tips[select.value];
+    heading.textContent=item?item[0]:'A useful first conversation';
+    tip.textContent=item?item[1]:'Have your suburb, a short description of the issue and your preferred timing ready. Ask about availability and the next steps.';
+  });
+})();
+</script>
 </body>
 </html>
