@@ -59,6 +59,12 @@ footer{background:#0b2c47;color:#d8e8f4;padding:26px 0;font-size:12px}footer .wr
 .help-panel h3{margin:30px 0 10px;font-size:21px}.help-panel p{font-size:15px;color:var(--muted)}.help-panel .button{width:100%;margin-top:24px;text-align:center}
 .help-panel .help-small{font-size:12px;margin-top:16px}.help-caption{text-align:center;color:#dbeaf5;font-size:12px;margin:18px auto 0;max-width:680px}
 @media(max-width:600px){.help-section{padding:63px 0;scroll-margin-top:95px}.help-panel{padding:25px 20px}.help-panel label{font-size:20px}.help-panel select{font-size:16px}}
+
+.gallery-section{background:#f0f6fb}.gallery-note{text-align:center;max-width:750px;margin:25px auto 0;font-size:12px;color:var(--muted)}
+.photo-grid{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:208px 208px;gap:16px}.photo-card{position:relative;overflow:hidden;border-radius:15px;margin:0;background:#dbe9f4}.photo-card.photo-large{grid-row:span 2}.photo-card img{height:100%;width:100%;object-fit:cover}.photo-card:after{content:"";position:absolute;inset:50% 0 0;background:linear-gradient(transparent,#0b2c47c9)}.photo-card figcaption{position:absolute;bottom:14px;left:17px;right:17px;color:#fff;z-index:1;font-weight:700;font-size:13px}
+.mobile-display{display:grid;place-items:center;gap:16px}.mobile-display>p{font-size:12px!important;margin:0!important}.mobile-phone{background:#f8fcff;width:270px;min-height:420px;border:9px solid #18364d;border-radius:38px;padding:13px 8px 8px;box-shadow:14px 20px 32px #1c486027;transform:rotate(1.5deg)}.mobile-speaker{background:#324e64;width:54px;height:5px;border-radius:8px;margin:0 auto 14px}.mobile-head{font:800 17px Manrope,sans-serif;padding:10px}.mobile-head b{display:inline-grid;place-items:center;background:#153e66;color:#fff;width:26px;height:26px;border-radius:7px;font-size:12px;margin-right:4px}.mobile-head small{font-size:9px;color:#527a99}.mobile-phone img{width:100%;height:133px;object-fit:cover}.mobile-body{padding:16px}.mobile-body small{font-size:8px;letter-spacing:.14em;font-weight:800;color:#3178a6}.mobile-body h3{font-size:23px;margin:8px 0}.mobile-body p{font-size:12px;color:var(--muted);margin:0 0 13px}.mobile-button{background:#b8e7ff;border-radius:7px;text-align:center;padding:10px;text-decoration:none;display:block;font-size:12px;font-weight:800}.mobile-lines{height:24px;margin:20px 0;background:repeating-linear-gradient(to bottom,#e5eef5 0px,#e5eef5 5px,transparent 5px,transparent 12px)}
+.demo-fields{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}.demo-fields label{font-size:13px;margin:0 0 6px;font-weight:800}.demo-fields label small{color:#557790;font-weight:500;font-size:11px}.demo-fields input,.demo-fields textarea,.demo-fields select{width:100%;min-height:48px;background:#fff;border:2px solid #d3e2ef;border-radius:8px;font:500 15px 'DM Sans',sans-serif;color:#193a57;padding:11px}.demo-fields textarea{resize:vertical}.demo-fields .demo-wide{grid-column:1/-1}.preview-action{border:0;cursor:pointer;width:100%;font:800 15px 'DM Sans',sans-serif;margin-top:23px}.enquiry-preview{background:#eef6fb;border:1px solid #c8dceb;padding:18px;border-radius:12px;margin-top:16px}.enquiry-preview p{white-space:pre-line;overflow-wrap:anywhere}
+@media(max-width:670px){.photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:240px 180px}.photo-card.photo-large{grid-column:span 2;grid-row:auto}.demo-fields{grid-template-columns:1fr}.demo-fields .demo-wide{grid-column:1}}
 @media(max-width:930px){.hero-layout,.split{grid-template-columns:1fr}.hero-layout{gap:35px}.visual{min-height:390px;max-width:660px}.grid{grid-template-columns:repeat(2,1fr)}.nav-links{gap:14px}.nav-links a:not(.button):nth-child(2){display:none}}
 @media(max-width:600px){html{scroll-padding-top:95px}.wrap{width:min(100% - 36px,1140px)}.nav{min-height:70px}.brand{font-size:18px}.brand-mark{height:37px;width:37px;font-size:20px}.nav-links a:not(.button){display:none}.nav-links .button{padding:10px 11px;font-size:12px;white-space:nowrap}.notice{font-size:10px;padding:9px 13px}.hero{padding:52px 0 60px}.hero h1{font-size:clamp(37px,10vw,53px)}.hero p{font-size:15px}.visual{min-height:310px}.visual-note{bottom:12px;left:12px;right:12px;font-size:12px;padding:13px}.strip .wrap{gap:9px;text-align:center}.strip i{display:none}section.content{padding:65px 0;scroll-margin-top:95px}.grid,.steps,.price-panel{grid-template-columns:1fr}.section-head{margin-bottom:30px}.split{gap:25px}.example-box{padding:29px;min-height:315px}.area{padding:65px 0}.final{padding:65px 0}.actions .button{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
@@ -68,78 +74,82 @@ footer{background:#0b2c47;color:#d8e8f4;padding:26px 0;font-size:12px}footer .wr
 <div class="notice">FICTIONAL WEBSITE CONCEPT · CREATED BY <a href="https://weblorosae.com.au/">WEBLOROSAE</a> · NOT AN OPERATING PLUMBING BUSINESS</div>
 <header><nav class="nav wrap" aria-label="Main navigation">
 <a href="#top" class="brand" aria-label="ClearFlow Plumbing demo home"><span class="brand-mark" aria-hidden="true">C</span><span>ClearFlow<small>Plumbing · Demo concept</small></span></a>
-<div class="nav-links"><a href="#services">Services</a><a href="#benefits">Why a website?</a><a href="#pricing">Website pricing</a><a class="button dark" href="https://weblorosae.com.au/#contact">Get This Website</a></div>
+<div class="nav-links"><a href="#services">Services</a><a href="#help-selector">Enquire</a><a href="#work-gallery">Our work</a><a class="button dark" href="#help-selector">Enquire · Demo</a></div>
 </nav></header>
 <main>
-<section class="hero" id="top"><div class="wrap hero-layout">
-<div><div class="eyebrow">A plumbing website concept by WebLorosae</div><h1>Built for the job.<br><span>Designed to be found.</span></h1><p>A clear, professional website gives customers one place to see your services and get in touch. This fictional example shows what a WebLorosae one-page plumbing website could look like for your own business.</p><div class="actions"><a class="button" href="https://weblorosae.com.au/#contact">Get a Website Like This ↗</a><a class="button outline" href="#services">Explore the concept ↓</a></div><p class="micro">Demonstration only. ClearFlow Plumbing is fictional. Buttons advertising website creation take you to WebLorosae, not a plumbing service.</p></div>
-<div class="visual"><img src="../assets/plumbing-fixture.webp" width="900" height="650" fetchpriority="high" alt="Illustrative plumbing fixture photograph showing the kind of professional imagery a plumbing website could feature"><div class="visual-note"><span class="tick" aria-hidden="true">✓</span><span>Make it easy to discover your services and enquire</span></div></div>
-</div></section>
+<section class="hero" id="top"><div class="wrap hero-layout"><div>
+<div class="eyebrow">ClearFlow Plumbing · Fictional business</div>
+<h1>Plumbing problems?<br><span>Let's get it sorted.</span></h1>
+<p>From blocked drains and dripping taps to hot water troubles, here's how a local plumbing business could present its services and make it easy for customers to get in touch.</p>
+<div class="actions"><a class="button" href="#help-selector">Discuss your job · Demo ↓</a><a class="button outline" href="#services">View services ↓</a></div>
+<p class="micro">Illustrative website only. ClearFlow Plumbing is fictional and does not provide plumbing services or bookings.</p></div>
+<div class="visual"><img src="../assets/plumbing-fixture.webp" width="900" height="650" fetchpriority="high" alt="Illustrative professional plumbing fixture photograph"><div class="visual-note"><span class="tick" aria-hidden="true">✓</span><span>Clear services. Easy enquiries. Mobile-friendly design.</span></div></div></div></section>
 <div class="strip"><div class="wrap"><span>Mobile-friendly layout</span><i>✦</i><span>Clear service information</span><i>✦</i><span>Simple enquiries</span></div></div>
 <section id="services" class="content"><div class="wrap">
-<div class="section-head"><div class="eyebrow">Example services</div><h2>Everything customers need to know, without the guesswork.</h2><p>These are illustrative service descriptions. Your finished website would reflect the services you actually provide.</p></div>
+<div class="section-head"><div class="eyebrow">Example services</div><h2>Plumbing help for the jobs that matter.</h2><p>A customer should be able to understand what's on offer at a glance. These services are fictional examples for this design.</p></div>
 <div class="grid">
-<article class="service"><div class="icon" aria-hidden="true">↗</div><h3>Emergency Plumbing</h3><p>Help customers quickly identify whether you offer emergency plumbing support and how to enquire.</p></article>
-<article class="service"><div class="icon" aria-hidden="true">≈</div><h3>Blocked Drains</h3><p>Explain drainage services in straightforward language and make contacting your business simple.</p></article>
-<article class="service"><div class="icon" aria-hidden="true">◉</div><h3>Hot Water Systems</h3><p>Highlight installation, maintenance or repairs if these are part of your real offering.</p></article>
-<article class="service"><div class="icon" aria-hidden="true">⌕</div><h3>Leak Detection</h3><p>Describe the problems you solve so homeowners know when to reach out.</p></article>
-<article class="service"><div class="icon" aria-hidden="true">＋</div><h3>Tap &amp; Toilet Repairs</h3><p>Showcase common household jobs with clear, accessible service information.</p></article>
-<article class="service"><div class="icon" aria-hidden="true">▤</div><h3>General Maintenance</h3><p>Give repeat customers a simple way to find your maintenance services and contact details.</p></article>
+<article class="service"><div class="icon" aria-hidden="true">↗</div><h3>Emergency Plumbing</h3><p>Clearly show customers your real emergency service hours and contact information, if available.</p></article>
+<article class="service"><div class="icon" aria-hidden="true">≈</div><h3>Blocked Drains</h3><p>Explain drainage services and the types of blockages you can help investigate.</p></article>
+<article class="service"><div class="icon" aria-hidden="true">◉</div><h3>Hot Water Systems</h3><p>Describe your hot water system installation, maintenance or repair services.</p></article>
+<article class="service"><div class="icon" aria-hidden="true">⌕</div><h3>Leak Detection</h3><p>Help customers recognise when it's time to enquire about a suspected leak.</p></article>
+<article class="service"><div class="icon" aria-hidden="true">＋</div><h3>Tap &amp; Toilet Repairs</h3><p>Make everyday household plumbing jobs easy to find and enquire about.</p></article>
+<article class="service"><div class="icon" aria-hidden="true">▤</div><h3>General Maintenance</h3><p>Showcase the maintenance services and areas your business actually covers.</p></article>
+</div><p class="gallery-note">Example services only. A real website uses the owner's actual services, business details and credentials.</p>
+</div></section>
+<section id="work-gallery" class="content gallery-section"><div class="wrap">
+<div class="section-head"><div class="eyebrow">Illustrative photography</div><h2>Let your work speak for itself.</h2><p>Relevant images give visitors a clearer sense of the service. A real plumber's website can feature genuine job and team photography.</p></div>
+<div class="photo-grid">
+<figure class="photo-card photo-large"><img src="https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=960" loading="lazy" alt="Illustrative plumber working with tools on pipe repairs" onerror="this.onerror=null;this.src='../assets/plumbing-fixture.webp';"><figcaption>Professional workmanship · Illustrative photo</figcaption></figure>
+<figure class="photo-card"><img src="https://images.pexels.com/photos/7220892/pexels-photo-7220892.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" loading="lazy" alt="Illustrative close-up plumbing maintenance work" onerror="this.onerror=null;this.src='../assets/plumbing-fixture.webp';"><figcaption>Everyday maintenance · Illustrative photo</figcaption></figure>
+<figure class="photo-card"><img src="../assets/plumbing-fixture.webp" loading="lazy" alt="Illustrative modern plumbing fixture"><figcaption>Professional presentation · Illustrative photo</figcaption></figure>
+</div><p class="gallery-note">Illustrative photography, not work performed by ClearFlow. The two stock-image URLs are external and may depend on Pexels availability.</p>
+</div></section>
+<section class="content alt" id="benefits"><div class="wrap split"><div>
+<div class="eyebrow">Designed around the customer</div><h2>Useful information, wherever you are.</h2>
+<p>Customers can learn about services, check coverage areas and prepare an enquiry, whether they're sitting at home or using their phone on the go.</p>
+<div class="feature"><div class="check">✓</div><div><b>See the available services</b><p>Understand what the business can help with.</p></div></div>
+<div class="feature"><div class="check">✓</div><div><b>Browse on your phone</b><p>Easy-to-read content and clear action buttons.</p></div></div>
+<div class="feature"><div class="check">✓</div><div><b>Prepare a useful enquiry</b><p>Choose a service, explain the problem and specify your timing.</p></div></div></div>
+<div class="mobile-display"><div class="mobile-phone"><div class="mobile-speaker"></div><div class="mobile-head"><b>CF</b> ClearFlow <small>DEMO</small></div><img src="../assets/plumbing-fixture.webp" loading="lazy" alt="Example plumbing website image inside a mobile screen"><div class="mobile-body"><small>EXAMPLE PLUMBING WEBSITE</small><h3>Plumbing made simple.</h3><p>Services and an easy way to make contact.</p><a class="mobile-button" href="#help-selector">Choose a service ↓</a><div class="mobile-lines"></div></div></div><p>Illustration of the mobile experience</p></div>
+</div></section>
+<section class="content" id="how-it-works"><div class="wrap"><div class="section-head"><div class="eyebrow">The customer journey</div><h2>From the first visit to an enquiry.</h2><p>Show visitors a straightforward way to understand your services and start a conversation.</p></div><div class="steps">
+<div class="step"><div class="num">01 / FIND</div><h3>Explore the services</h3><p>Quickly see which plumbing jobs the business covers.</p></div>
+<div class="step"><div class="num">02 / PREPARE</div><h3>Describe the issue</h3><p>Choose a service, add your suburb and explain the job.</p></div>
+<div class="step"><div class="num">03 / CONTACT</div><h3>Get in touch</h3><p>A real business can receive the enquiry using its own genuine contact form or booking system.</p></div>
 </div></div></section>
-<section class="content alt" id="benefits"><div class="wrap split">
-<div><div class="eyebrow">Beyond social media</div><h2>One professional place for your business online.</h2><p>This concept illustrates how a focused, single-page site can show customers what you do before they call.</p>
-<div class="feature"><div class="check" aria-hidden="true">✓</div><div><b>Showcase your services</b><p>Make it clear what customers can contact you about.</p></div></div>
-<div class="feature"><div class="check" aria-hidden="true">✓</div><div><b>Designed for mobile</b><p>Easy to read on the phones customers already use.</p></div></div>
-<div class="feature"><div class="check" aria-hidden="true">✓</div><div><b>A clear path to enquiries</b><p>Display your own genuine contact details and preferred enquiry method.</p></div></div>
-<div class="feature"><div class="check" aria-hidden="true">✓</div><div><b>Your own identity</b><p>Customise the website with your business branding, areas served and imagery.</p></div></div></div>
-<div class="example-box"><div class="eyebrow">Your website, your information</div><strong>Let your work speak for itself.</strong><p>A real WebLorosae website can include your own photographs, approved qualifications, actual service areas and genuine reviews, where you provide them.</p><span class="tag">Fictional layout · Your details go here</span></div>
-</div></section>
-<section class="content" id="how-it-works"><div class="wrap"><div class="section-head"><div class="eyebrow">A straightforward customer journey</div><h2>From searching to getting in touch.</h2><p>Here's how a real plumber could use a one-page website to present their services.</p></div>
-<div class="steps"><div class="step"><div class="num">01 / DISCOVER</div><h3>They find your business</h3><p>Prospective customers arrive through your marketing, referrals or other online channels.</p></div><div class="step"><div class="num">02 / EXPLORE</div><h3>They see what you offer</h3><p>Clearly arranged service descriptions help visitors decide whether to enquire.</p></div><div class="step"><div class="num">03 / CONNECT</div><h3>They contact you</h3><p>Your actual phone, email, booking system or enquiry form makes it easy to take the next step.</p></div></div>
-</div></section>
-
-<section id="help-selector" class="help-section"><div class="wrap">
-<div class="help-heading"><div class="eyebrow">Example customer enquiry experience</div><h2>What would you like help with?</h2><p>Give visitors an easy starting point. This interactive example demonstrates a service selector you could include on your own plumbing website.</p></div>
-<div class="help-panel">
-<label for="plumbing-help">Choose a plumbing service</label>
+<section id="help-selector" class="help-section"><div class="wrap"><div class="help-heading"><div class="eyebrow">Interactive example · Not a real booking form</div>
+<h2>What would you like help with?</h2><p>Try the customer enquiry experience. Nothing entered here is sent, saved or booked.</p></div>
+<div class="help-panel"><label for="plumbing-help">Choose a service</label>
 <select id="plumbing-help" aria-describedby="plumbing-help-tip"><option value="">Choose a service</option><option value="emergency">Emergency plumbing</option><option value="drains">Blocked drains</option><option value="hotwater">Hot water systems</option><option value="leaks">Leak detection</option><option value="repairs">Tap and toilet repairs</option><option value="maintenance">General maintenance</option><option value="other">Something else</option></select>
-<h3 id="plumbing-help-heading">A useful first conversation</h3>
-<p id="plumbing-help-tip" aria-live="polite">Have your suburb, a short description of the issue and your preferred timing ready. Ask about availability and the next steps.</p>
-<a class="button dark" href="https://weblorosae.com.au/#contact">Get a Website with This Feature ↗</a>
-<p class="help-small">Demonstration only: selecting a service does not send an enquiry or book a plumber. This button takes you to WebLorosae to enquire about website creation.</p>
-</div><p class="help-caption">For an actual plumbing business, this section can be adapted to its real services, availability and preferred enquiry method.</p>
-</div></section>
-<section class="area"><div class="wrap"><div class="eyebrow" style="color:#316d94">Your neighbourhood, clearly explained</div><h2>Show customers where you work.</h2><p>A finished website can show your real service suburbs or region. We haven't invented locations, phone numbers or availability for this fictional concept.</p></div></section>
+<h3 id="plumbing-help-heading">A useful first conversation</h3><p id="plumbing-help-tip" aria-live="polite">Choose a service to see what you might tell a real plumber.</p>
+<div class="demo-fields"><div><label for="demo-suburb">Suburb <small>(demo)</small></label><input id="demo-suburb" type="text" placeholder="e.g. Your suburb" maxlength="60" autocomplete="off"></div>
+<div><label for="demo-timing">Preferred timing <small>(demo)</small></label><select id="demo-timing"><option value="">Choose an option</option><option>As soon as practical</option><option>Within a few days</option><option>Flexible</option></select></div>
+<div class="demo-wide"><label for="demo-job">Tell us about the job <small>(demo)</small></label><textarea id="demo-job" rows="3" maxlength="280" placeholder="Describe the issue. Don't include personal details."></textarea></div></div>
+<button id="demo-preview-button" type="button" class="button dark preview-action">Preview your enquiry ↓</button>
+<div id="demo-enquiry-preview" class="enquiry-preview" aria-live="polite" hidden><h3>Enquiry preview</h3><p id="demo-enquiry-result"></p><p class="help-small">This has NOT been submitted, sent or saved.</p></div>
+<p class="help-small"><b>Fictional demo only:</b> This interactive preview doesn't send an enquiry or make a booking. A real plumber's website could instead connect a genuine contact form or booking platform.</p>
+</div><p class="help-caption">Interested in this feature for your business? See the WebLorosae offer at the end of this demo.</p></div></section>
+<section class="area"><div class="wrap"><div class="eyebrow" style="color:#316d94">Your neighbourhood, clearly explained</div><h2>Show customers where you work.</h2><p>A real plumbing website would show that business's genuine service area and contact details. ClearFlow doesn't claim to service any suburb because it's fictional.</p></div></section>
 <section id="pricing" class="content pricing"><div class="wrap"><div class="section-head"><div class="eyebrow">WebLorosae website pricing</div><h2>Simple website options.</h2><p>These prices are for WebLorosae website services, not fictional ClearFlow plumbing services.</p></div>
 <div class="price-panel">
 <div class="price-card"><div class="eyebrow" style="color:#326d99">One-off setup</div><h3>Website Setup</h3><strong>From $499</strong><p>A professional one-page website designed around your business, services and branding.</p><ul><li>Mobile-friendly page design</li><li>Your own supplied business information and contact details</li><li>Website Setup Only option for self-managed hosting</li></ul></div>
 <div class="price-card optional"><div class="eyebrow" style="color:#326d99">Optional ongoing service</div><h3>Website Care</h3><strong>$39<span style="font-size:17px;letter-spacing:0">/month</span></strong><p>Choose optional ongoing Website Care if you'd prefer WebLorosae to manage your website after setup.</p><ul><li>Website Care is optional</li><li>Website Setup Only is available</li><li>See WebLorosae's current website and terms for full inclusions</li></ul></div>
 </div><p class="disclaimer">All website prices shown are starting prices as advertised by WebLorosae. The real scope and inclusions are explained on the WebLorosae website and terms. No plumbing service can be booked through this demo.</p></div></section>
-<section class="final"><div class="wrap"><div class="eyebrow">Ready to make it yours?</div><h2>Want a website like this for your plumbing business?</h2><p>This is a fictional example. WebLorosae can create a website using your own business name, branding, services and contact details. Have questions before ordering? We're happy to hear from you.</p>
-<div class="actions"><a class="button" href="https://weblorosae.com.au/#contact">Visit WebLorosae ↗</a><a class="button outline" href="mailto:hello@weblorosae.com.au?subject=Plumbing%20website%20demo%20enquiry">Ask a Question by Email</a></div>
-</div></section>
+<section class="final" id="get-this-site"><div class="wrap"><div class="eyebrow">Created by WebLorosae</div><h2>Picture a website like this with your own business name.</h2>
+<p>We'll tailor the design around your business, genuine services, photographs, preferred contact method and service area. Website Setup from $499. Website Care is optional at $39/month.</p>
+<div class="actions"><a class="button" href="https://weblorosae.com.au/#contact">Get a Website Like This ↗</a><a class="button outline" href="mailto:hello@weblorosae.com.au?subject=ClearFlow%20Plumbing%20demo%20enquiry">Have a Question? Email Us</a></div>
+<p class="micro">ClearFlow Plumbing is a fictional example and is not taking plumbing enquiries.</p></div></section>
 </main>
-<footer><div class="wrap"><div>© 2026 WebLorosae · ClearFlow Plumbing is a fictional demonstration, not a real plumbing business.</div><div><a href="https://weblorosae.com.au/">WebLorosae</a> · <a href="https://weblorosae.com.au/privacy.html">Privacy</a> · <a href="https://weblorosae.com.au/terms.html">Terms</a></div></div></footer>
+<footer><div class="wrap"><div>© 2026 WebLorosae · ClearFlow Plumbing is fictional. Illustrative photography: <a href="https://www.pexels.com/photo/plumber-repairing-pipe-with-wrench-indoors-32588548/">Pexels</a> and <a href="https://www.pexels.com/photo/a-person-holding-brown-doorknob-7220892/">Pexels</a>.</div><div><a href="https://weblorosae.com.au/">WebLorosae</a> · <a href="https://weblorosae.com.au/privacy.html">Privacy</a> · <a href="https://weblorosae.com.au/terms.html">Terms</a></div></div></footer>
 <script>
 (function(){
-  const select=document.getElementById('plumbing-help');
-  const heading=document.getElementById('plumbing-help-heading');
-  const tip=document.getElementById('plumbing-help-tip');
-  if(!select||!heading||!tip)return;
-  const tips={
-    emergency:['Preparing for an urgent plumbing call','Describe the problem, your suburb and whether water or gas is involved. If there is immediate danger, contact the relevant emergency service or utility rather than relying on a demo website.'],
-    drains:['Discussing a blocked drain','Explain where the blockage appears to be and when the problem started. Ask the real plumbing business about service coverage and available inspection options.'],
-    hotwater:['Talking about your hot water system','Have the system type and a brief description of the fault ready. Ask the real plumbing business what information it needs before discussing an appointment.'],
-    leaks:['Explaining a possible leak','Note where you have noticed water or dampness and roughly when it started. Ask the real plumbing business about availability and the next steps.'],
-    repairs:['Arranging tap or toilet repairs','Describe the fitting and what is not working. If practical, have clear photos ready to share with your chosen plumber.'],
-    maintenance:['Discussing plumbing maintenance','List the maintenance jobs you have in mind, your suburb and your preferred timing so you can have a useful initial conversation.'],
-    other:['Tell your plumber what you need','Prepare a brief description of the work and the property location. The real plumbing business can then advise whether it provides that service.']
-  };
-  select.addEventListener('change',function(){
-    const item=tips[select.value];
-    heading.textContent=item?item[0]:'A useful first conversation';
-    tip.textContent=item?item[1]:'Have your suburb, a short description of the issue and your preferred timing ready. Ask about availability and the next steps.';
-  });
+const s=document.getElementById('plumbing-help'),t=document.getElementById('plumbing-help-tip'),hd=document.getElementById('plumbing-help-heading'),btn=document.getElementById('demo-preview-button'),p=document.getElementById('demo-enquiry-preview'),out=document.getElementById('demo-enquiry-result');
+const tips={emergency:['Preparing for urgent plumbing help','For immediate danger, contact the appropriate emergency service or utility. This fictional website offers no emergency response.'],drains:['About blocked drains','Describe where the blockage appears and when it started.'],hotwater:['About hot water','Note your system type and a brief description of the issue.'],leaks:['About suspected leaks','Describe where you noticed dampness or water.'],repairs:['About tap and toilet repairs','Describe which fitting is affected and the problem.'],maintenance:['About maintenance','Prepare a brief list of the jobs you need help with.'],other:['About your job','Give a short description of the issue so a plumber can advise.']};
+s.addEventListener('change',function(){const m=tips[s.value];hd.textContent=m?m[0]:'A useful first conversation';t.textContent=m?m[1]:'Choose a service to see what you might tell a real plumber.';p.hidden=true;});
+btn.addEventListener('click',function(){
+const area=document.getElementById('demo-suburb').value.trim().slice(0,60),time=document.getElementById('demo-timing').value,job=document.getElementById('demo-job').value.trim().slice(0,280);
+out.textContent='Service: '+(s.value?s.options[s.selectedIndex].text:'Not selected')+'\nSuburb: '+(area||'Not provided')+'\nPreferred timing: '+(time||'Not provided')+'\nJob: '+(job||'Not provided');p.hidden=false;p.scrollIntoView({behavior:'smooth',block:'nearest'});
+});
 })();
 </script>
 </body>
