@@ -50,7 +50,7 @@ section.content{padding:88px 0;scroll-margin-top:110px}.section-head{max-width:7
 .final{background:var(--forest);color:#fff;padding:83px 0;text-align:center}.final h2{font-size:clamp(32px,4vw,50px);max-width:720px;margin:auto}.final p{max-width:630px;margin:19px auto 27px;color:#deebf5}.final .actions{justify-content:center}
 footer{background:#0b2c47;color:#d8e8f4;padding:26px 0;font-size:12px}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px}footer a{color:#e8f4fc}
 
-/* Example interactive enquiry preparation section, not a functioning plumbing booking form. */
+/* Simple service selector inspired by the personalised workflow demos. */
 .help-section{background:#123f68;padding:78px 0;color:#fff;scroll-margin-top:110px}
 .help-heading{max-width:735px;margin:0 auto 32px;text-align:center}.help-heading .eyebrow{color:#b8e7ff}.help-heading h2{font-size:clamp(32px,4vw,47px)}.help-heading p{margin:14px auto 0;color:#e0edf8;font-size:16px}
 .help-panel{background:#fff;color:var(--ink);border-radius:18px;max-width:790px;margin:auto;padding:35px;box-shadow:0 24px 50px #061f3433}
@@ -117,18 +117,14 @@ footer{background:#0b2c47;color:#d8e8f4;padding:26px 0;font-size:12px}footer .wr
 <div class="step"><div class="num">02 / PREPARE</div><h3>Describe the issue</h3><p>Choose a service, add your suburb and explain the job.</p></div>
 <div class="step"><div class="num">03 / CONTACT</div><h3>Get in touch</h3><p>A real business can receive the enquiry using its own genuine contact form or booking system.</p></div>
 </div></div></section>
-<section id="help-selector" class="help-section"><div class="wrap"><div class="help-heading"><div class="eyebrow">Interactive example · Not a real booking form</div>
-<h2>What would you like help with?</h2><p>Try the customer enquiry experience. Nothing entered here is sent, saved or booked.</p></div>
-<div class="help-panel"><label for="plumbing-help">Choose a service</label>
+<section id="help-selector" class="help-section"><div class="wrap"><div class="help-heading"><div class="eyebrow">Simple customer next step</div>
+<h2>What would you like help with?</h2><p>Choose a service to see the kind of information a customer could have ready before contacting the business.</p></div>
+<div class="help-panel"><label for="plumbing-help">What would you like help with?</label>
 <select id="plumbing-help" aria-describedby="plumbing-help-tip"><option value="">Choose a service</option><option value="emergency">Emergency plumbing</option><option value="drains">Blocked drains</option><option value="hotwater">Hot water systems</option><option value="leaks">Leak detection</option><option value="repairs">Tap and toilet repairs</option><option value="maintenance">General maintenance</option><option value="other">Something else</option></select>
-<h3 id="plumbing-help-heading">A useful first conversation</h3><p id="plumbing-help-tip" aria-live="polite">Choose a service to see what you might tell a real plumber.</p>
-<div class="demo-fields"><div><label for="demo-suburb">Suburb <small>(demo)</small></label><input id="demo-suburb" type="text" placeholder="e.g. Your suburb" maxlength="60" autocomplete="off"></div>
-<div><label for="demo-timing">Preferred timing <small>(demo)</small></label><select id="demo-timing"><option value="">Choose an option</option><option>As soon as practical</option><option>Within a few days</option><option>Flexible</option></select></div>
-<div class="demo-wide"><label for="demo-job">Tell us about the job <small>(demo)</small></label><textarea id="demo-job" rows="3" maxlength="280" placeholder="Describe the issue. Don't include personal details."></textarea></div></div>
-<button id="demo-preview-button" type="button" class="button dark preview-action">Preview your enquiry ↓</button>
-<div id="demo-enquiry-preview" class="enquiry-preview" aria-live="polite" hidden><h3>Enquiry preview</h3><p id="demo-enquiry-result"></p><p class="help-small">This has NOT been submitted, sent or saved.</p></div>
-<p class="help-small"><b>Fictional demo only:</b> This interactive preview doesn't send an enquiry or make a booking. A real plumber's website could instead connect a genuine contact form or booking platform.</p>
-</div><p class="help-caption">Interested in this feature for your business? See the WebLorosae offer at the end of this demo.</p></div></section>
+<h3 id="plumbing-help-heading">A useful first conversation</h3><p id="plumbing-help-tip" aria-live="polite">Have your suburb, a short description of the issue and your preferred timing ready.</p>
+<a class="button dark" href="#get-this-site">Get a website like this <span aria-hidden="true">↗</span></a>
+<p class="help-small">This selector is part of the website demonstration. ClearFlow Plumbing is fictional, so it does not send an enquiry or make a booking.</p>
+</div><p class="help-caption">On a real customer website, this section can point to the business's genuine phone number, enquiry form or booking system.</p></div></section>
 <section class="area"><div class="wrap"><div class="eyebrow" style="color:#316d94">Your neighbourhood, clearly explained</div><h2>Show customers where you work.</h2><p>A real plumbing website would show that business's genuine service area and contact details. ClearFlow doesn't claim to service any suburb because it's fictional.</p></div></section>
 <section id="pricing" class="content pricing"><div class="wrap"><div class="section-head"><div class="eyebrow">WebLorosae website pricing</div><h2>Simple website options.</h2><p>These prices are for WebLorosae website services, not fictional ClearFlow plumbing services.</p></div>
 <div class="price-panel">
@@ -143,13 +139,9 @@ footer{background:#0b2c47;color:#d8e8f4;padding:26px 0;font-size:12px}footer .wr
 <footer><div class="wrap"><div>© 2026 WebLorosae · ClearFlow Plumbing is fictional. Illustrative photography: <a href="https://www.pexels.com/photo/close-up-of-man-using-a-spanner-16509869/">Pexels</a> <a href="https://www.pexels.com/photo/plumber-repairing-power-source-7859953/">Pexels</a> and <a href="https://www.pexels.com/photo/gray-water-heater-in-the-bathroom-9551366/">Pexels</a>.</div><div><a href="https://weblorosae.com.au/">WebLorosae</a> · <a href="https://weblorosae.com.au/privacy.html">Privacy</a> · <a href="https://weblorosae.com.au/terms.html">Terms</a></div></div></footer>
 <script>
 (function(){
-const s=document.getElementById('plumbing-help'),t=document.getElementById('plumbing-help-tip'),hd=document.getElementById('plumbing-help-heading'),btn=document.getElementById('demo-preview-button'),p=document.getElementById('demo-enquiry-preview'),out=document.getElementById('demo-enquiry-result');
-const tips={emergency:['Preparing for urgent plumbing help','For immediate danger, contact the appropriate emergency service or utility. This fictional website offers no emergency response.'],drains:['About blocked drains','Describe where the blockage appears and when it started.'],hotwater:['About hot water','Note your system type and a brief description of the issue.'],leaks:['About suspected leaks','Describe where you noticed dampness or water.'],repairs:['About tap and toilet repairs','Describe which fitting is affected and the problem.'],maintenance:['About maintenance','Prepare a brief list of the jobs you need help with.'],other:['About your job','Give a short description of the issue so a plumber can advise.']};
-s.addEventListener('change',function(){const m=tips[s.value];hd.textContent=m?m[0]:'A useful first conversation';t.textContent=m?m[1]:'Choose a service to see what you might tell a real plumber.';p.hidden=true;});
-btn.addEventListener('click',function(){
-const area=document.getElementById('demo-suburb').value.trim().slice(0,60),time=document.getElementById('demo-timing').value,job=document.getElementById('demo-job').value.trim().slice(0,280);
-out.textContent='Service: '+(s.value?s.options[s.selectedIndex].text:'Not selected')+'\nSuburb: '+(area||'Not provided')+'\nPreferred timing: '+(time||'Not provided')+'\nJob: '+(job||'Not provided');p.hidden=false;p.scrollIntoView({behavior:'smooth',block:'nearest'});
-});
+const s=document.getElementById('plumbing-help'),t=document.getElementById('plumbing-help-tip'),hd=document.getElementById('plumbing-help-heading');
+const tips={emergency:['Discuss emergency plumbing','Have your suburb and a clear description of the urgent issue ready. Confirm emergency availability and call-out pricing directly with the business.'],drains:['Discuss blocked drains','Describe where the blockage appears, when it started and whether more than one drain is affected.'],hotwater:['Discuss hot water systems','Have the system type, any visible model details and a short description of the problem ready.'],leaks:['Discuss leak detection','Describe where you noticed water, dampness or unusual meter activity and when it began.'],repairs:['Discuss tap and toilet repairs','Note which fitting is affected, what it is doing and how long the problem has been happening.'],maintenance:['Discuss general maintenance','Have your suburb and a short list of the plumbing jobs you would like looked at.'],other:['Discuss your plumbing job','Have your suburb, a short description of the issue and your preferred timing ready.']};
+s.addEventListener('change',function(){const m=tips[s.value];hd.textContent=m?m[0]:'A useful first conversation';t.textContent=m?m[1]:'Have your suburb, a short description of the issue and your preferred timing ready.';});
 })();
 </script>
 </body>
