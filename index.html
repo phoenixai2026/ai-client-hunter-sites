@@ -276,14 +276,14 @@
     .strip {
       background: var(--ink);
       color: var(--white);
-      padding: 18px 0;
+      padding: 15px 0;
     }
 
     .strip-inner {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 16px 44px;
+      justify-content: space-between;
+      gap: 18px 28px;
       font-size: 13px;
       font-weight: 800;
       letter-spacing: .02em;
@@ -531,12 +531,16 @@ aspect-ratio: 1758 / 855;
     .steps {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      gap: 26px;
+      position: relative;
     }
 
     .step {
-      padding: 30px 0;
-      border-top: 2px solid var(--ink);
+      background: #f8f8f4;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--ink);
+      border-radius: 20px;
+      padding: 30px 26px;
     }
 
     .step-number {
@@ -775,6 +779,11 @@ aspect-ratio: 1758 / 855;
         justify-content: center;
       }
     }
+    .process-review-section {
+    background: var(--cream) !important;
+    border-top: 1px solid var(--border);
+  }
+
   </style>
   <script defer src="/meta-pixel.js"></script>
 </head>
@@ -1042,7 +1051,7 @@ aspect-ratio: 1758 / 855;
     </div>
   </section>
 
-  <section class="section white" id="process">
+  <section class="section white process-review-section" id="process">
     <div class="container">
 
       <div class="section-head">
