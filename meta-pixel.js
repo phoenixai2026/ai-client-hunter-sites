@@ -56,7 +56,7 @@
     if (storedChoice() === 'accepted') loadPixel();
     else if (storedChoice() !== 'declined') showConsent();
     // A click is an indication of interest, NOT a completed lead or purchase.
-    document.querySelectorAll('a[href*="fvautomation.app.n8n.cloud/form/"]').forEach(function(link) {
+    document.querySelectorAll('#contact a.button-primary[href^="mailto:"]').forEach(function(link) {
       link.addEventListener('click',function() {
         if (loaded && typeof window.fbq === 'function') window.fbq('trackCustom','GetStartedClick');
       });
