@@ -8,8 +8,12 @@ export function levelConfig(level){if(!Number.isInteger(level)||level<1||level>M
 export function generate(level,seed=`campaign-${level}`){const cfg=levelConfig(level),r=random(hash(seed)),total=cfg.sets*3;
   const positions=[];for(let i=0;i<total;i++){const x=i%cfg.columns,y=Math.floor(i/cfg.columns);positions.push({x,y,z:0});}
   let count=0;if(cfg.layers>1){const candidates=shuffle(positions.map((_,i)=>i).filter(i=>i>=cfg.columns && i<total-cfg.columns),r);for(const i of candidates){if(count>=Math.floor(total*(cfg.layers===2?.16:.25)))break;let x=positions[i].x,y=positions[i].y;if(positions.some((p,j)=>j!==i&&p.x===x&&p.y===y))continue;positions[i].z=1;positions[i].x=(x+1)%cfg.columns;positions[i].y=y-1;count++;}}
-  const faces=[];for(let i=0;i<cfg.sets;i++){let f=i%cfg.types;faces.push(f,f,f)}shuffle(faces,r);
-  return {id:String(seed),level,tiles:positions.map((p,i)=>({id:i,...p,face:faces[i],removed:false})),tray:[],moves:0,undos:[],used:{hint:0,undo:0,shuffle:0},completed:false,failed:false};
+  // Build a selectable winning sequence, then assign each consecutive three tiles a matching face.
+  const pending=new Set(positions.map((_,i)=>i)),order=[];
+  while(pending.size){const exposed=[...pending].filter(i=>!positions.some((p,j)=>pending.has(j)&&j!==i&&p.x===positions[i].x&&p.y===positions[i].y&&p.z>positions[i].z));if(!exposed.length)throw Error('Inaccessible board');const chosen=exposed[Math.floor(r()*exposed.length)];pending.delete(chosen);order.push(chosen);}
+  const groupFaces=shuffle(Array.from({length:cfg.sets},(_,i)=>i%cfg.types),r),faces=Array(total);
+  order.forEach((i,n)=>faces[i]=groupFaces[Math.floor(n/3)]);
+  return {id:String(seed),level,solution:order,tiles:positions.map((p,i)=>({id:i,...p,face:faces[i],removed:false})),tray:[],moves:0,undos:[],used:{hint:0,undo:0,shuffle:0},completed:false,failed:false};
 }
 export function playable(tile,tiles){return !tile.removed&&!tiles.some(t=>!t.removed&&t.id!==tile.id&&t.x===tile.x&&t.y===tile.y&&t.z>tile.z)}
 export function visibleTiles(state){return state.tiles.filter(t=>playable(t,state.tiles))}
