@@ -1,8 +1,812 @@
 <!doctype html>
 <html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>First Business Website Australia | WebLorosae</title><meta name="description" content="Starting a business? Give customers one place to learn what you do, where you operate and how to contact you. WebLorosae offers one-page website setup from $499."><meta name="robots" content="index, follow"><link rel="canonical" href="https://weblorosae.com.au/first-business-website.html"><link rel="icon" href="/favicon.ico"><meta property="og:title" content="First Business Website Australia | WebLorosae"><meta property="og:type" content="website"><meta property="og:url" content="https://weblorosae.com.au/first-business-website.html"><meta property="og:description" content="Starting a business? Give customers one place to learn what you do, where you operate and how to contact you. WebLorosae offers one-page website setup from $499."><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"First Business Website Australia | WebLorosae","url":"https://weblorosae.com.au/first-business-website.html","description":"Starting a business? Give customers one place to learn what you do, where you operate and how to contact you. WebLorosae offers one-page website setup from $499."}</script>
-<style>:root{--ink:#17211d;--green:#214f3d;--cream:#f7f3e9;--orange:#ee7a32;--muted:#617069}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.7 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--green)}.wrap{width:min(1050px,calc(100% - 36px));margin:auto}.nav{background:white;padding:20px 0;border-bottom:1px solid #dedfd9}.nav .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}.brand{font-weight:900;color:var(--ink);font-size:23px;text-decoration:none}.navlinks{display:flex;gap:18px;flex-wrap:wrap}.navlinks a{font-weight:700;text-decoration:none}.hero{padding:76px 0}h1{font-size:clamp(40px,6vw,70px);line-height:1.07;letter-spacing:-.055em;max-width:900px}h2{font-size:clamp(27px,4vw,42px);line-height:1.2;letter-spacing:-.035em}.lead{font-size:21px;color:var(--muted);max-width:730px}.eyebrow{font-size:13px;font-weight:850;letter-spacing:.12em;color:var(--green);text-transform:uppercase}.btn{background:var(--green);color:white;border-radius:50px;display:inline-block;text-decoration:none;font-weight:800;padding:13px 24px;margin-top:14px}.price{color:var(--green);font-weight:800}.white{background:white;padding:60px 0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{padding:26px;border:1px solid #dedfd9;border-radius:20px;background:var(--cream)}.faq{padding:55px 0}.question{padding:15px 0;border-bottom:1px solid #dedfd9}.cta{margin:24px 0 60px;background:var(--orange);border-radius:25px;padding:34px}footer{padding:26px 0;border-top:1px solid #dedfd9}footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}@media(max-width:650px){.cards{grid-template-columns:1fr}.hero{padding:45px 0}.lead{font-size:18px}}</style></head>
-<body><nav class="nav"><div class="wrap"><a class="brand" href="/">WebLorosae</a><div class="navlinks"><a href="/">Home</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQs</a><a href="/#contact">Get Started</a></div></div></nav><main>
-<header class="hero"><div class="wrap"><p class="eyebrow">Websites for Australian small business</p><h1>Your first business website, made straightforward</h1><p class="lead">Starting a business? Give customers one place to learn what you do, where you operate and how to contact you. WebLorosae offers one-page website setup from $499.</p><p class="price">One-page website setup from $499 · Optional Website Care $39/month</p><a href="/#contact" class="btn">Get Started</a></div></header>
-<section class="white"><div class="wrap"><h2>Build a website that helps customers understand your business</h2><p>A clear, mobile-friendly website gives prospective customers the essentials without unnecessary complexity. Here are three useful starting points:</p><div class="cards"><article class="card"><h3>01</h3><p>Prepare your business name and service description</p></article><article class="card"><h3>02</h3><p>List the areas you serve and contact details</p></article><article class="card"><h3>03</h3><p>Gather any photos or branding you can use</p></article></div><h2>How it works</h2><p>Explore our pricing, examples and process on the homepage, then use the Get Started section to make an enquiry. The scope and any additional needs can be discussed before you decide.</p><p>Related guide: <a href="/affordable-website-design.html">Affordable website design options</a>.</p></div></section>
-<section class="faq"><div class="wrap"><h2>Frequently asked questions</h2><article class="question"><h3>Do I need lots of pages?</h3><p>Not necessarily. One clear page can be a practical starting point for a small business.</p></article><article class="question"><h3>What do I need to get started?</h3><p>Your business details, services, preferred contact information and any relevant images.</p></article><article class="question"><h3>What about ongoing updates?</h3><p>Website Care is optional at $39 per month. Discuss hosting and care requirements before proceeding.</p></article></div></section><div class="wrap"><aside class="cta"><h2>Ready for a business website?</h2><p>See our current examples and get in touch through the existing enquiry process.</p><a class="btn" href="/#contact">Visit Get Started</a></aside></div></main>
-<footer><div class="wrap"><span>© 2026 WebLorosae</span><span><a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a></span></div></footer></body></html>
+<style>
+    .project-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+  display: block;
+}
+    :root {
+      --ink: #17211d;
+      --muted: #617069;
+      --cream: #f7f3e9;
+      --cream-dark: #eee8da;
+      --white: #ffffff;
+      --green: #214f3d;
+      --green-light: #dce9e1;
+      --orange: #ee7a32;
+      --orange-dark: #d96320;
+      --border: #dedfd9;
+      --shadow: 0 22px 70px rgba(23, 33, 29, 0.10);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 95px;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 243, 233, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(23, 33, 29, 0.08);
+    }
+
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      font-size: 22px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: var(--green);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 15px;
+      box-shadow: 0 10px 26px rgba(33, 79, 61, .22);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange-dark);
+    }
+
+    .nav-button,
+    .button-primary,
+    .button-secondary {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+
+    .nav-button {
+      padding: 12px 18px;
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .nav-button:hover,
+    .button-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      padding: 100px 0 82px;
+      overflow: hidden;
+    }
+
+    .hero-wrap {
+      position: relative;
+    }
+
+    .hero-copy {
+      max-width: 980px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--green-light);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    h1 {
+      font-size: clamp(56px, 7.5vw, 104px);
+      line-height: .92;
+      letter-spacing: -0.07em;
+      font-weight: 950;
+      max-width: 1050px;
+      margin-bottom: 30px;
+    }
+
+    .accent {
+      color: var(--orange);
+    }
+
+    .hero-text {
+      max-width: 720px;
+      font-size: clamp(18px, 2vw, 22px);
+      color: var(--muted);
+      margin-bottom: 34px;
+    }
+
+    .hero-offer {
+      margin: -12px 0 24px;
+      font-size: clamp(15px, 1.7vw, 18px);
+      color: var(--green);
+      font-weight: 650;
+    }
+
+    .hero-offer strong { font-weight: 900; }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 42px;
+    }
+
+    .button-primary {
+      padding: 16px 24px;
+      background: var(--green);
+      color: var(--white);
+      box-shadow: 0 16px 30px rgba(33, 79, 61, .18);
+    }
+
+    .button-secondary {
+      padding: 16px 24px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.55);
+    }
+
+    .button-secondary:hover {
+      background: var(--white);
+    }
+
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 28px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .hero-proof span::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+      margin-right: 7px;
+    }
+
+    .hero-shape {
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      background: var(--orange);
+      opacity: .08;
+      right: -130px;
+      top: -70px;
+    }
+
+    .strip {
+      background: var(--ink);
+      color: var(--white);
+      padding: 15px 0;
+    }
+
+    .strip-inner {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 18px 16px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      text-align: center;
+      align-items: center;
+    }
+
+    .strip-inner span:nth-child(1) { grid-column: 1 / 3; }
+    .strip-inner span:nth-child(2) { grid-column: 3 / 5; }
+    .strip-inner span:nth-child(3) { grid-column: 5 / 7; }
+    .strip-inner span:nth-child(4) { grid-column: 2 / 4; }
+    .strip-inner span:nth-child(5) { grid-column: 4 / 6; }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section.white {
+  background: var(--white);
+}
+
+#work {
+  display: none;
+}
+
+    .section-head {
+      max-width: 730px;
+      margin-bottom: 52px;
+    }
+
+    .section-kicker {
+      color: var(--orange-dark);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin-bottom: 18px;
+    }
+
+    .section-head p {
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+
+    .feature-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--green-light);
+      color: var(--green);
+      font-weight: 900;
+      margin-bottom: 24px;
+    }
+
+    .feature h3,
+    .project h3,
+    .price-card h3,
+    .step h3 {
+      font-size: 21px;
+      letter-spacing: -0.025em;
+      margin-bottom: 10px;
+    }
+
+    .feature p,
+    .project p,
+    .step p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project {
+      display: flex;
+flex-direction: column;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--cream);
+      transition: .22s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .project-preview {
+      height: auto;
+aspect-ratio: 1758 / 855;
+      padding: 0;
+      background: linear-gradient(135deg, var(--green), #112c22);
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-preview.orange {
+      background: linear-gradient(135deg, #e67230, #9e3f13);
+    }
+
+    .project-preview.dark {
+      background: linear-gradient(135deg, #242e2a, #0d1512);
+    }
+
+    .project-window {
+      background: var(--white);
+      width: 100%;
+      height: 170px;
+      border-radius: 14px 14px 0 0;
+      box-shadow: 0 18px 50px rgba(0,0,0,.2);
+      padding: 15px;
+    }
+
+    .window-dots {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 22px;
+    }
+
+    .window-dots span {
+      width: 7px;
+      height: 7px;
+      background: #d4d8d5;
+      border-radius: 50%;
+    }
+
+    .window-line {
+      height: 9px;
+      border-radius: 99px;
+      background: #e4e8e5;
+      margin-bottom: 9px;
+    }
+
+    .window-line.short {
+      width: 55%;
+    }
+
+    .window-line.medium {
+      width: 76%;
+    }
+
+    .project-content {
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+    .project-link {
+      display: inline-block;
+      margin-top: auto;
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .price-card {
+      border-radius: 30px;
+      padding: 42px;
+      border: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    .price-card.featured {
+      background: var(--green);
+      color: var(--white);
+      border-color: var(--green);
+    }
+
+    .price-label {
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      margin-bottom: 22px;
+    }
+
+    .price {
+      font-size: clamp(54px, 6vw, 76px);
+      font-weight: 950;
+      line-height: 1;
+      letter-spacing: -0.06em;
+      margin-bottom: 10px;
+    }
+
+    .price small {
+      font-size: 17px;
+      letter-spacing: 0;
+      font-weight: 700;
+    }
+
+    .price-sub {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .featured .price-sub {
+      color: rgba(255,255,255,.72);
+    }
+
+    .price-list {
+      list-style: none;
+      display: grid;
+      gap: 13px;
+    }
+
+    .price-list li::before {
+      content: "✓";
+      font-weight: 900;
+      margin-right: 10px;
+      color: var(--orange);
+    }
+
+    .featured .price-list li::before {
+      color: #f7c7a4;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 26px;
+      position: relative;
+    }
+
+    .step {
+      background: #f8f8f4;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--ink);
+      border-radius: 20px;
+      padding: 30px 26px;
+    }
+
+    .step p + p {
+      margin-top: 18px;
+    }
+
+    .step-number {
+      color: var(--orange-dark);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 24px;
+    }
+
+    .faq {
+      max-width: 860px;
+    }
+
+    details {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+    }
+
+    details:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    summary {
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 850;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details p {
+      color: var(--muted);
+      padding-top: 13px;
+      max-width: 760px;
+    }
+
+    /* Keep the Get Started panel compact without changing the rest of the page. */
+    #contact {
+      padding: 48px 0;
+    }
+
+    .cta {
+      background: var(--orange);
+      border-radius: 34px;
+      padding: 48px 56px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .cta h2 {
+      max-width: 650px;
+      margin: 0 0 22px;
+    }
+
+    .cta p {
+      margin: 0 0 14px;
+      max-width: 750px;
+      color: rgba(23,33,29,.74);
+      font-size: 17px;
+    }
+
+    .cta p:last-child {
+      margin-bottom: 0;
+    }
+
+    .cta .button-primary {
+      background: var(--ink);
+      white-space: nowrap;
+    }
+
+    .footer-legal { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; }
+    .footer-cookie-settings { color: inherit; text-decoration: none; font-size: 13px; }
+    .footer-cookie-settings:hover { color: var(--orange-dark); }
+    .footer-links a:hover { color: var(--orange-dark); }
+
+    footer {
+      padding: 42px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-brand {
+      font-weight: 900;
+      color: var(--ink);
+      font-size: 18px;
+    }
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: var(--ink);
+  color: var(--white);
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  font-size: 22px;
+  cursor: pointer;
+}
+    @media (max-width: 900px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 78px;
+    left: 20px;
+    right: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 18px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+  }
+.menu-toggle {
+  display: block;
+}
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 12px 14px;
+  }
+
+  .nav-links a:not(.nav-button) {
+    font-size: 20px;
+  }
+
+  .hero {
+    padding-top: 72px;
+  }
+
+  .features,
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cta {
+    padding: 36px 30px;
+    gap: 20px;
+  }
+}
+
+    @media (max-width: 600px) {
+      .strip-inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px 28px;
+      }
+
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+.hero-shape {
+  width: 300px;
+  height: 300px;
+  right: -120px;
+  top: 20px;
+}
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .brand {
+        font-size: 19px;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+      }
+
+      .nav-button {
+        min-height: 54px;
+        padding: 13px 18px;
+        font-size: 16px;
+      }
+
+      h1 {
+  font-size: clamp(42px, 13vw, 58px);
+  line-height: .95;
+}
+
+      .hero-text {
+        font-size: 18px;
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+
+      #why-weblorosae .hero-actions {
+        margin-bottom: 0;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card {
+        padding: 30px 24px;
+      }
+
+      #contact {
+        padding: 32px 0;
+      }
+
+      .cta {
+        border-radius: 24px;
+        padding: 32px 24px;
+        gap: 20px;
+      }
+
+      .cta .button-primary {
+        align-self: center;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-legal {
+        width: 100%;
+      }
+
+      .footer-links {
+        justify-content: center;
+      }
+    }
+    .process-review-section {
+    background: var(--cream) !important;
+    border-top: 1px solid var(--border);
+  }
+
+  
+
+/* SEO landing pages: same design primitives as homepage */
+.seo-hero .hero-copy{max-width:950px}
+.seo-hero h1{max-width:900px}
+.seo-lead{font-size:clamp(18px,2vw,22px);color:var(--muted);max-width:740px;margin:0 0 24px}
+.seo-hero .hero-offer{margin:0 0 26px}
+.seo-content{background:var(--white)}
+.seo-content .features{margin:30px 0 44px}
+.seo-content .feature{min-height:175px}
+.seo-content h2{margin-top:32px}
+.seo-content p,.seo-faq p{color:var(--muted);max-width:800px}
+.seo-content a:not(.button-primary),.seo-faq a{color:var(--green);font-weight:800;text-decoration:underline}
+.seo-faq .question{border-bottom:1px solid var(--border);padding:18px 0}
+.seo-faq .question h3{font-size:20px;margin-bottom:8px}
+.seo-cta{background:var(--orange);border-radius:34px;padding:48px 56px;margin-bottom:60px}
+.seo-cta h2{margin-bottom:18px}
+.seo-cta p{margin-bottom:18px;max-width:720px}
+.seo-cta .button-primary{background:var(--ink)}
+.seo-bottom{padding-bottom:30px}
+@media(max-width:600px){.seo-cta{border-radius:24px;padding:32px 24px}.seo-hero .hero-actions{margin-bottom:0}}
+</style></head>
+<body><nav class="nav"><div class="container nav-inner"><a class="brand" href="/"><span class="brand-mark">WL</span>WebLorosae</a><div class="nav-links" id="navLinks"><a href="/#pricing">Pricing</a><a href="/#process">How It Works</a><a href="/#faq">FAQ</a><a href="/#contact" class="nav-button">Get Started</a></div><button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button></div></nav><main>
+<header class="hero seo-hero"><div class="container hero-wrap"><div class="hero-shape"></div><div class="hero-copy"><div class="eyebrow"><span class="eyebrow-dot"></span>Websites for Australian small business</div><h1>Your first business website, made straightforward</h1><p class="seo-lead">Starting a business? Give customers one place to learn what you do, where you operate and how to contact you. WebLorosae offers one-page website setup from $499.</p><p class="hero-offer">One-page website setup from $499 · Optional Website Care $39/month</p><div class="hero-actions"><a href="/#contact" class="button-primary">Get Started</a><a href="/#pricing" class="button-secondary">View Pricing</a></div><div class="hero-proof"><span>Mobile friendly</span><span>No long-term lock-in</span><span>Australian small business focused</span></div></div></div></header>
+<section class="section seo-content"><div class="container"><h2>Build a website that helps customers understand your business</h2><p>A clear, mobile-friendly website gives prospective customers the essentials without unnecessary complexity. Here are three useful starting points:</p><div class="features"><article class="feature"><h3>01</h3><p>Prepare your business name and service description</p></article><article class="feature"><h3>02</h3><p>List the areas you serve and contact details</p></article><article class="feature"><h3>03</h3><p>Gather any photos or branding you can use</p></article></div><h2>How it works</h2><p>Explore our pricing, examples and process on the homepage, then use the Get Started section to make an enquiry. The scope and any additional needs can be discussed before you decide.</p><p>Related guide: <a href="/affordable-website-design.html">Affordable website design options</a>.</p></div></section>
+<section class="section seo-faq"><div class="container"><h2>Frequently asked questions</h2><article class="question"><h3>Do I need lots of pages?</h3><p>Not necessarily. One clear page can be a practical starting point for a small business.</p></article><article class="question"><h3>What do I need to get started?</h3><p>Your business details, services, preferred contact information and any relevant images.</p></article><article class="question"><h3>What about ongoing updates?</h3><p>Website Care is optional at $39 per month. Discuss hosting and care requirements before proceeding.</p></article></div></section><div class="container seo-bottom"><aside class="seo-cta"><h2>Ready for a business website?</h2><p>See our current examples and get in touch through the existing enquiry process.</p><a class="button-primary" href="/#contact">Visit Get Started</a></aside></div></main>
+<footer><div class="container footer-inner"><div class="footer-brand">WebLorosae</div><div class="footer-legal"><div class="footer-links"><a href="/terms.html">Terms of Service</a><a href="/privacy.html">Privacy Policy</a></div></div><div>© 2026 WebLorosae</div></div></footer><script>const menuToggle=document.getElementById('menuToggle');const navLinks=document.getElementById('navLinks');menuToggle.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open))});navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menuToggle.setAttribute('aria-expanded','false')}));</script></body></html>
