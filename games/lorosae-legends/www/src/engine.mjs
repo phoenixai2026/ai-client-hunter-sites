@@ -1,29 +1,28 @@
-/* Lorosae Legends: deterministic, original triple-collection puzzle engine. */
-export const FACE_NAMES=['Sunrise','Mountain','Tais','Wave','Coffee','Drum','Star','Shell','Flower','Boat','Palm','Bird'];
+/* Lorosae Legends: original Mahjong-solitaire pair-matching engine. */
 export const MAX_LEVEL=50;
-export function hash(s){let h=2166136261;for(const c of String(s)){h=Math.imul(h^c.charCodeAt(0),16777619)}return h>>>0}
+export const FACE_NAMES=['Sunrise','Mountain','Tais','Wave','Coffee','Drum','Star','Shell','Flower','Boat','Palm','Bird'];
+export function hash(s){let h=2166136261;for(const c of String(s))h=Math.imul(h^c.charCodeAt(0),16777619);return h>>>0}
 export function random(seed){let x=seed>>>0;return ()=>{x+=0x6d2b79f5;let t=x;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296}}
-function shuffle(a,r){for(let i=a.length-1;i>0;i--){let j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-export function levelConfig(level){if(!Number.isInteger(level)||level<1||level>MAX_LEVEL)throw Error('Invalid level');const sets=Math.min(6+Math.floor((level-1)*0.30),19);return {sets,columns:6,rows:Math.ceil(sets*3/6),layers:level<4?1:level<15?2:3,types:Math.min(4+Math.floor(level/6),12)};}
-export function generate(level,seed=`campaign-${level}`){const cfg=levelConfig(level),r=random(hash(seed)),total=cfg.sets*3;
-  const positions=[];for(let i=0;i<total;i++){const x=i%cfg.columns,y=Math.floor(i/cfg.columns);positions.push({x,y,z:0});}
-  let count=0;if(cfg.layers>1){const candidates=shuffle(positions.map((_,i)=>i).filter(i=>i>=cfg.columns && i<total-cfg.columns),r);for(const i of candidates){if(count>=Math.floor(total*(cfg.layers===2?.16:.25)))break;let x=positions[i].x,y=positions[i].y;if(positions.some((p,j)=>j!==i&&p.x===x&&p.y===y))continue;positions[i].z=1;positions[i].x=(x+1)%cfg.columns;positions[i].y=y-1;count++;}}
-  // Build a selectable winning sequence, then assign each consecutive three tiles a matching face.
-  const pending=new Set(positions.map((_,i)=>i)),order=[];
-  while(pending.size){const exposed=[...pending].filter(i=>!positions.some((p,j)=>pending.has(j)&&j!==i&&p.x===positions[i].x&&p.y===positions[i].y&&p.z>positions[i].z));if(!exposed.length)throw Error('Inaccessible board');const chosen=exposed[Math.floor(r()*exposed.length)];pending.delete(chosen);order.push(chosen);}
-  const groupFaces=shuffle(Array.from({length:cfg.sets},(_,i)=>i%cfg.types),r),faces=Array(total);
-  order.forEach((i,n)=>faces[i]=groupFaces[Math.floor(n/3)]);
-  return {id:String(seed),level,solution:order,tiles:positions.map((p,i)=>({id:i,...p,face:faces[i],removed:false})),tray:[],moves:0,undos:[],used:{hint:0,undo:0,shuffle:0},completed:false,failed:false};
-}
-export function playable(tile,tiles){return !tile.removed&&!tiles.some(t=>!t.removed&&t.id!==tile.id&&t.x===tile.x&&t.y===tile.y&&t.z>tile.z)}
-export function visibleTiles(state){return state.tiles.filter(t=>playable(t,state.tiles))}
+export function shuffle(a,r){for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+export function levelConfig(level){if(!Number.isInteger(level)||level<1||level>50)throw Error('Invalid level');return {pairs:Math.min(12+Math.floor((level-1)*1.15),68),columns:8,layers:level<4?1:level<17?2:level<35?3:4,types:Math.min(6+Math.floor(level/7),12)}}
+export function playable(tile,tiles){if(tile.removed)return false;const remaining=tiles.filter(t=>!t.removed&&t.id!==tile.id);if(remaining.some(t=>t.x===tile.x&&t.y===tile.y&&t.z>tile.z))return false;const left=remaining.some(t=>t.z===tile.z&&t.y===tile.y&&t.x===tile.x-1);const right=remaining.some(t=>t.z===tile.z&&t.y===tile.y&&t.x===tile.x+1);return !left||!right}
+export function visibleTiles(s){return s.tiles.filter(t=>playable(t,s.tiles))}
 export function clone(s){return JSON.parse(JSON.stringify(s))}
-export function pick(state,id){if(state.completed||state.failed) return {state,reason:'finished'};const t=state.tiles.find(t=>t.id===id);if(!t||!playable(t,state.tiles))return {state,reason:'blocked'};const s=clone(state);s.undos.push({tiles:state.tiles.map(x=>x.removed),tray:[...state.tray],moves:state.moves});if(s.undos.length>60)s.undos.shift();s.tiles.find(x=>x.id===id).removed=true;s.tray.push(t.face);s.moves++;
-  if(s.tray.filter(f=>f===t.face).length===3)s.tray=s.tray.filter(f=>f!==t.face);
-  s.completed=s.tiles.every(t=>t.removed)&&s.tray.length===0;s.failed=!s.completed&&s.tray.length>=7;return {state:s,reason:s.completed?'won':s.failed?'full':'picked'};
+export function generate(level,seed=`campaign-${level}`){
+ const cfg=levelConfig(level),rng=random(hash(seed)),count=cfg.pairs*2,spots=[];
+ const rows=Math.ceil(count/8);for(let i=0;i<count;i++)spots.push({id:i,x:i%8,y:Math.floor(i/8),z:0});
+ if(cfg.layers>1){let top=Math.min(Math.floor(count*.24),16);for(let i=0;i<top;i++){const p=spots[count-top+i];p.z=1;p.x=1+i%6;p.y=1+Math.floor(i/6)}}
+ if(cfg.layers>2){let top=Math.min(Math.floor(count*.08),8);for(let i=0;i<top;i++){const p=spots[count-top+i];p.z=2;p.x=2+i%4;p.y=2+Math.floor(i/4)}}
+ if(cfg.layers>3){let top=Math.min(Math.floor(count*.03),4);for(let i=0;i<top;i++){const p=spots[count-top+i];p.z=3;p.x=3+i%2;p.y=3+Math.floor(i/2)}}
+ const remaining=new Set(spots.map(t=>t.id)),solution=[];
+ while(remaining.size){const avail=shuffle(spots.filter(t=>remaining.has(t.id)&&playable(t,spots.filter(x=>remaining.has(x.id)))),rng);if(avail.length<2)throw Error('Cannot construct level');const pair=avail.slice(0,2).map(t=>t.id);solution.push(pair);pair.forEach(id=>remaining.delete(id))}
+ const assigned=Array(count);const faces=shuffle(Array.from({length:cfg.pairs},(_,i)=>i%cfg.types),rng);solution.forEach((pair,i)=>pair.forEach(id=>assigned[id]=faces[i]));
+ return {version:2,id:String(seed),level,tiles:spots.map((p,i)=>({...p,face:assigned[i],removed:false})),solution,moves:0,selected:null,undos:[],used:{hint:0,undo:0,shuffle:0},completed:false};
 }
-export function undo(state){if(!state.undos.length)return state;const s=clone(state),p=s.undos.pop();s.tiles.forEach((t,i)=>t.removed=p.tiles[i]);s.tray=p.tray;s.moves=p.moves;s.failed=false;s.completed=false;s.used.undo++;return s}
-export function shuffleRemaining(state){if(state.completed)return state;const s=clone(state),r=random(hash(s.id+':shuffle:'+s.moves+':'+s.used.shuffle)),pool=s.tiles.filter(t=>!t.removed).map(t=>t.face);shuffle(pool,r);s.tiles.filter(t=>!t.removed).forEach((t,i)=>t.face=pool[i]);s.undos=[];s.used.shuffle++;return s}
-export function hint(state){const vis=visibleTiles(state);const matches=vis.filter(t=>state.tray.includes(t.face));if(matches.length)return matches[0].id;const counts=new Map();vis.forEach(t=>counts.set(t.face,(counts.get(t.face)||0)+1));return vis.find(t=>counts.get(t.face)>=2)?.id??vis[0]?.id??null}
-export function dateKey(date=new Date()){const y=date.getFullYear(),m=String(date.getMonth()+1).padStart(2,'0'),d=String(date.getDate()).padStart(2,'0');return `${y}-${m}-${d}`}
-export function validate(s){if(!s||!Array.isArray(s.tiles)||!Array.isArray(s.tray))return false;const ids=new Set(s.tiles.map(t=>t.id));if(ids.size!==s.tiles.length||s.tray.length>7)return false;return s.tiles.every(t=>Number.isInteger(t.face)&&t.face>=0&&t.face<12&&typeof t.removed==='boolean')}
+export function pairs(s){const vis=visibleTiles(s),out=[];for(let i=0;i<vis.length;i++)for(let j=i+1;j<vis.length;j++)if(vis[i].face===vis[j].face)out.push([vis[i].id,vis[j].id]);return out}
+export function pick(s,id){if(s.completed)return {state:s,reason:'complete'};const tile=s.tiles.find(t=>t.id===id);if(!tile||!playable(tile,s.tiles))return {state:s,reason:'blocked'};const next=clone(s);if(next.selected===id){next.selected=null;return {state:next,reason:'deselected'}};if(next.selected===null){next.selected=id;return {state:next,reason:'selected'}};const previous=next.tiles.find(t=>t.id===next.selected);if(!previous||previous.removed||previous.face!==tile.face){next.selected=id;return {state:next,reason:'different'}};next.undos.push({ids:[previous.id,tile.id]});if(next.undos.length>100)next.undos.shift();previous.removed=true;next.tiles.find(t=>t.id===id).removed=true;next.selected=null;next.moves++;next.completed=next.tiles.every(t=>t.removed);return {state:next,reason:next.completed?'won':'matched'}}
+export function undo(s){if(!s.undos.length)return s;const next=clone(s),last=next.undos.pop();last.ids.forEach(id=>next.tiles.find(t=>t.id===id).removed=false);next.selected=null;next.completed=false;next.moves--;next.used.undo++;return next}
+export function shuffleRemaining(s){if(s.completed)return s;const next=clone(s),rng=random(hash(next.id+':shuffle:'+next.used.shuffle+':'+next.moves));const remaining=next.tiles.filter(t=>!t.removed);const faces=shuffle(remaining.map(t=>t.face),rng);remaining.forEach((t,i)=>t.face=faces[i]);next.selected=null;next.undos=[];next.used.shuffle++;return next}
+export function hint(s){return pairs(s)[0]??null}
+export function dateKey(date=new Date()){return [date.getFullYear(),String(date.getMonth()+1).padStart(2,'0'),String(date.getDate()).padStart(2,'0')].join('-')}
+export function validate(s){return !!(s&&s.version===2&&Array.isArray(s.tiles)&&s.tiles.length>0&&s.tiles.length%2===0&&s.tiles.every(t=>Number.isInteger(t.face)&&t.face>=0&&t.face<12&&typeof t.removed==='boolean')&&Array.isArray(s.undos)&&s.tiles.map(t=>t.id).every((v,i,a)=>a.indexOf(v)===i))}
