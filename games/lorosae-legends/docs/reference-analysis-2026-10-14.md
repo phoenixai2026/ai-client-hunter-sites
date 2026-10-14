@@ -29,3 +29,6 @@ Reference: user-supplied 76-second portrait screen recording of Vita Mahjong, 51
 
 ## Status
 Reference analysis only; not a claim that the redesigned interface or correct gameplay mechanics are implemented.
+
+## Implementation note
+Portrait-first redesign now committed in `www/index.html`, `www/style.css` and `www/src/game.mjs` (14 October 2026). Pair-matching engine is retained provisionally. The selection strip's original reference-game behaviour remains unverified, as does native-device appearance; do not treat the interface as a finished match to the video. Android CI should be checked for the newest workflow run before downloading a new APK.
