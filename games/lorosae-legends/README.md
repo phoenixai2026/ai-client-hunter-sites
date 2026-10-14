@@ -1,21 +1,24 @@
 # Lorosae Legends | WebLorosae Games
 
-Original English-language East Timorese-inspired triple-match puzzle. This standalone project is on the `feature/lorosae-legends-game` branch, separate from the live WebLorosae website.
+Original East Timorese-inspired **Mahjong solitaire**, with two-tile pair matching and English-language UI. This game is independent from the main WebLorosae website.
 
-## Contents
-- `www/index.html`, `www/style.css`, `www/src/game.mjs`, `www/src/engine.mjs`: standalone browser game
-- `src/engine.mjs`: puzzle engine source
-- `tests/engine.test.mjs`: automated Node.js tests
-- `capacitor.config.json`, `package.json`: Capacitor application scaffold
+## Gameplay revision (14 October 2026)
+- Tap two identical **free** tiles to remove the pair immediately.
+- A tile is free only when no tile above covers its position and either its left or right edge is unblocked.
+- No seven-slot tray and no triple-matching.
+- 50 deterministic layered campaign puzzles, generated with known winning pair-removal routes.
+- Hint, Undo, Shuffle, local progress, daily challenge and achievements.
+- Original symbol vocabulary and sunrise, coastal and Tais-inspired styling.
+- The save key is versioned, because previous triple-match progress is not compatible.
 
-## Gameplay
-50 deterministic campaign layouts, triple-collection mechanic, seven-slot tray, visually layered boards, daily challenge, hints, undo, shuffle, local save, and achievements. No third-party art or game assets bundled.
+## Test
+`npm test` runs engine tests, including verifying winning paths through all 50 levels. A passing suite establishes a known solution for each generated board, **not** guaranteed success for every possible player decision. Native builds and user-experience testing remain separate.
 
-## Run
-From this folder: `npm test`. To play, run `python3 -m http.server 8080 --directory www` and open http://localhost:8080. Native build prerequisites: `npm install`, `npx cap add android` or `npx cap add ios`, `npx cap sync`, and Android Studio or Xcode/macOS, with signing credentials.
+## Play locally
+`python3 -m http.server 8080 --directory www` then visit http://localhost:8080.
 
-## QA limitations
-The four automated tests passed in the local working copy on 14 October 2026. The solver test uses undo, shuffle and occasional regenerated rescue seeds, and therefore is NOT a mathematical proof of guaranteed solvability. Browser/device smoke tests, performance QA, balancing and signed native builds have not been completed.
+## Android test build
+GitHub Actions workflow `.github/workflows/lorosae-android-debug.yml` builds a debug APK on commits to `feature/lorosae-legends-game`. Download the successful build artifact from the Actions page. Native installation and gameplay need testing on a real device.
 
-## Production safeguards
-No modifications to `main`, GitHub Pages, the WebLorosae live website, app-store accounts or payments. Do not merge or publish until complete device QA and approval.
+## Release controls
+This is a draft development branch. Nothing has been merged into `main` or published to the live site or app stores. Artwork, interaction polish, multiple-device testing, level balancing and iPhone builds remain to be completed.
